@@ -86,9 +86,7 @@
 
 
 
-<meta name="description" content="#循环（迭代器与生成器）的那点事
-##while
-
+<meta name="description" content="循环（迭代器与生成器）的那点事while
 while 执行时的基本流程图
 
 
@@ -98,14 +96,14 @@ while语句的基本格式
 如下：
 12345678910while &amp;lt;exception&amp;gt;:    &amp;lt;suite&amp;gt;    &amp;lt;break&amp;gt;else:    &amp;lt;suite&amp;gt;
 
-tip">
+tips:
+
+讲">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python process control cycle: While and For">
 <meta property="og:url" content="http://yer.pub/2016/12/09/python-process-control-cycle-While-and-For/index.html">
 <meta property="og:site_name" content="Run! Sugar,Run!">
-<meta property="og:description" content="#循环（迭代器与生成器）的那点事
-##while
-
+<meta property="og:description" content="循环（迭代器与生成器）的那点事while
 while 执行时的基本流程图
 
 
@@ -115,13 +113,13 @@ while语句的基本格式
 如下：
 12345678910while &amp;lt;exception&amp;gt;:    &amp;lt;suite&amp;gt;    &amp;lt;break&amp;gt;else:    &amp;lt;suite&amp;gt;
 
-tip">
-<meta property="og:updated_time" content="2016-12-09T03:25:47.011Z">
+tips:
+
+讲">
+<meta property="og:updated_time" content="2016-12-09T03:34:20.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python process control cycle: While and For">
-<meta name="twitter:description" content="#循环（迭代器与生成器）的那点事
-##while
-
+<meta name="twitter:description" content="循环（迭代器与生成器）的那点事while
 while 执行时的基本流程图
 
 
@@ -131,7 +129,9 @@ while语句的基本格式
 如下：
 12345678910while &amp;lt;exception&amp;gt;:    &amp;lt;suite&amp;gt;    &amp;lt;break&amp;gt;else:    &amp;lt;suite&amp;gt;
 
-tip">
+tips:
+
+讲">
 
 
 
@@ -359,9 +359,7 @@ tip">
       
 
       
-        <p>#循环（迭代器与生成器）的那点事</p>
-<p>##while</p>
-<ul>
+        <h1 id="循环（迭代器与生成器）的那点事"><a href="#循环（迭代器与生成器）的那点事" class="headerlink" title="循环（迭代器与生成器）的那点事"></a>循环（迭代器与生成器）的那点事</h1><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><ul>
 <li>while 执行时的基本流程图</li>
 </ul>
 <blockquote>
@@ -403,8 +401,7 @@ tip">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">a = <span class="number">10</span></div><div class="line"></div><div class="line">b = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line"></div><div class="line">    <span class="keyword">if</span> a == <span class="number">1</span>: <span class="keyword">break</span></div><div class="line"></div><div class="line">    b += <span class="number">1</span></div><div class="line"></div><div class="line">    print(<span class="string">"b="</span>,b)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> b == <span class="number">100</span>: <span class="keyword">break</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> a == <span class="number">3</span>: <span class="keyword">continue</span></div><div class="line"></div><div class="line">    a -= <span class="number">1</span></div><div class="line"></div><div class="line">    print(<span class="string">"a="</span>,a)</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line"></div><div class="line">        <span class="keyword">pass</span></div></pre></td></tr></table></figure>
 <hr>
-<p>##for</p>
-<blockquote>
+<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><blockquote>
 <p>for语句的基本格式和一般用法</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> &lt;target&gt; <span class="keyword">in</span> &lt;object&gt;:</div><div class="line"></div><div class="line">    &lt;suite1&gt;</div><div class="line"></div><div class="line"><span class="keyword">else</span>:</div><div class="line"></div><div class="line">    &lt;suite2&gt;</div></pre></td></tr></table></figure>
@@ -471,19 +468,14 @@ tip">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func10</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    a = <span class="string">"abcdefg"</span></div><div class="line"></div><div class="line">    j = <span class="number">0</span></div><div class="line"></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line"></div><div class="line">        <span class="keyword">print</span> x, <span class="string">"offset is "</span>,j</div><div class="line"></div><div class="line">        j += <span class="number">1</span></div><div class="line"></div><div class="line">&gt;&gt;&gt;</div><div class="line"></div><div class="line"></div><div class="line">a offset <span class="keyword">is</span>  <span class="number">0</span></div><div class="line"></div><div class="line">b offset <span class="keyword">is</span>  <span class="number">1</span></div><div class="line"></div><div class="line">c offset <span class="keyword">is</span>  <span class="number">2</span></div><div class="line"></div><div class="line">d offset <span class="keyword">is</span>  <span class="number">3</span></div><div class="line"></div><div class="line">e offset <span class="keyword">is</span>  <span class="number">4</span></div><div class="line"></div><div class="line">f offset <span class="keyword">is</span>  <span class="number">5</span></div><div class="line"></div><div class="line">g offset <span class="keyword">is</span>  <span class="number">6</span></div></pre></td></tr></table></figure>
 <p>但内置函数enumerate可以帮我们做</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func11</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    a = <span class="string">"abcdefg"</span></div><div class="line"></div><div class="line">    j = <span class="number">0</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">for</span> m, n <span class="keyword">in</span> enumerate(a):</div><div class="line"></div><div class="line">        <span class="keyword">print</span> n, <span class="string">"offset is --"</span>, m</div></pre></td></tr></table></figure>
-<p>##列表解析</p>
-<p>##文件迭代器</p>
-<p>###文件读取方法大集合</p>
-<ul>
+<h2 id="列表解析"><a href="#列表解析" class="headerlink" title="列表解析"></a>列表解析</h2><h2 id="文件迭代器"><a href="#文件迭代器" class="headerlink" title="文件迭代器"></a>文件迭代器</h2><h3 id="文件读取方法大集合"><a href="#文件读取方法大集合" class="headerlink" title="文件读取方法大集合"></a>文件读取方法大集合</h3><ul>
 <li>基本读取文件方法</li>
 </ul>
 <ul>
 <li>with的用法</li>
 </ul>
-<p>##生成器-generator</p>
-<p>yield</p>
-<p>##迭代器</p>
-
+<h2 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器-generator"></a>生成器-generator</h2><p>yield</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2>
       
     </div>
 
@@ -564,8 +556,17 @@ tip">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -611,6 +612,22 @@ tip">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#循环（迭代器与生成器）的那点事"><span class="nav-number">1.</span> <span class="nav-text">循环（迭代器与生成器）的那点事</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">1.1.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for"><span class="nav-number">1.2.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表解析"><span class="nav-number">1.3.</span> <span class="nav-text">列表解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件迭代器"><span class="nav-number">1.4.</span> <span class="nav-text">文件迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件读取方法大集合"><span class="nav-number">1.4.1.</span> <span class="nav-text">文件读取方法大集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器-generator"><span class="nav-number">1.5.</span> <span class="nav-text">生成器-generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器"><span class="nav-number">1.6.</span> <span class="nav-text">迭代器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
