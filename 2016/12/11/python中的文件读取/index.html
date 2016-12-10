@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Sugar,run" />
+  <meta name="keywords" content="python, 文件, 读写," />
 
 
 
@@ -86,16 +86,22 @@
 
 
 
-<meta name="description" content="The blog for Sugar. Want you be happy.">
+<meta name="description" content="深入python中文件读取的各类方法
+参考文档
+基本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="New World!">
-<meta property="og:url" content="http://sugar.yer.pub/2016/12/09/New-World/index.html">
+<meta property="og:title" content="python中的文件读取">
+<meta property="og:url" content="http://sugar.yer.pub/2016/12/11/python中的文件读取/index.html">
 <meta property="og:site_name" content="Run! Sugar,Run!">
-<meta property="og:description" content="The blog for Sugar. Want you be happy.">
-<meta property="og:updated_time" content="2016-12-09T09:34:43.920Z">
+<meta property="og:description" content="深入python中文件读取的各类方法
+参考文档
+基本">
+<meta property="og:updated_time" content="2016-12-10T18:43:48.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="New World!">
-<meta name="twitter:description" content="The blog for Sugar. Want you be happy.">
+<meta name="twitter:title" content="python中的文件读取">
+<meta name="twitter:description" content="深入python中文件读取的各类方法
+参考文档
+基本">
 
 
 
@@ -123,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://sugar.yer.pub/2016/12/09/New-World/"/>
+  <link rel="canonical" href="http://sugar.yer.pub/2016/12/11/python中的文件读取/"/>
 
 
 
 
 
-  <title> New World! | Run! Sugar,Run! </title>
+  <title> python中的文件读取 | Run! Sugar,Run! </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -250,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://sugar.yer.pub/2016/12/09/New-World/">
+  <link itemprop="mainEntityOfPage" href="http://sugar.yer.pub/2016/12/11/python中的文件读取/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Ouroporos">
@@ -274,7 +280,7 @@
             
             
               
-                New World!
+                python中的文件读取
               
             
           </h1>
@@ -287,8 +293,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Veröffentlicht am</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T05:43:00+08:00">
-                2016-12-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-11T02:40:29+08:00">
+                2016-12-11
               </time>
             
 
@@ -323,7 +329,10 @@
       
 
       
-        
+        <h1 id="深入python中文件读取的各类方法"><a href="#深入python中文件读取的各类方法" class="headerlink" title="深入python中文件读取的各类方法"></a>深入python中文件读取的各类方法</h1><blockquote>
+<p>参考<a href="http://www.pythondoc.com/" target="_blank" rel="external">文档</a></p>
+<h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2></blockquote>
+
       
     </div>
 
@@ -344,20 +353,26 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python-文件-读写/" rel="tag"># python, 文件, 读写</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/11/居住证办理/" rel="next" title="居住证办理">
+                <i class="fa fa-chevron-left"></i> 居住证办理
+              </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/09/python-process-control-cycle-While-and-For/" rel="prev" title="python process control cycle: While and For">
-                python process control cycle: While and For <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -404,8 +419,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -458,6 +482,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入python中文件读取的各类方法"><span class="nav-number">1.</span> <span class="nav-text">深入python中文件读取的各类方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本"><span class="nav-number">1.1.</span> <span class="nav-text">基本</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
