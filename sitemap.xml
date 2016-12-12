@@ -2,6 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sugar.yer.pub/404.html</loc>
+    
+    <lastmod>2016-12-12T12:12:15.782Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/</loc>
+    
+    <lastmod>2016-12-12T11:47:48.105Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/12/hello-world/</loc>
+    
+    <lastmod>2016-12-12T11:44:19.509Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/09/New-World/</loc>
+    
+    <lastmod>2016-12-12T11:44:17.085Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2016-12-12T11:44:17.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/</loc>
+    
+    <lastmod>2016-12-12T11:43:42.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/11/python%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</loc>
+    
+    <lastmod>2016-12-12T11:42:15.421Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/11/%E5%B1%85%E4%BD%8F%E8%AF%81%E5%8A%9E%E7%90%86/</loc>
+    
+    <lastmod>2016-12-12T11:42:15.409Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/12/%E5%9F%BA%E4%BA%8Epython%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%84%E7%B1%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2016-12-12T11:41:05.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/2016/12/09/start-hexo/</loc>
+    
+    <lastmod>2016-12-12T11:39:39.013Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/guestbook/index.html</loc>
+    
+    <lastmod>2016-12-12T11:37:50.061Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sugar.yer.pub/about/index.html</loc>
+    
+    <lastmod>2016-12-12T11:06:33.620Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://sugar.yer.pub/tags/index.html</loc>
     
     <lastmod>2016-12-12T09:58:47.761Z</lastmod>
@@ -12,76 +96,6 @@
     <loc>http://sugar.yer.pub/categories/index.html</loc>
     
     <lastmod>2016-12-12T09:50:42.838Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/12/%E5%9F%BA%E4%BA%8Epython%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%84%E7%B1%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    
-    <lastmod>2016-12-12T08:12:13.827Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/11/python%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</loc>
-    
-    <lastmod>2016-12-12T07:27:04.211Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/</loc>
-    
-    <lastmod>2016-12-12T07:18:29.760Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2016-12-12T03:30:42.980Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/about/index.html</loc>
-    
-    <lastmod>2016-12-12T03:10:26.632Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/11/%E5%B1%85%E4%BD%8F%E8%AF%81%E5%8A%9E%E7%90%86/</loc>
-    
-    <lastmod>2016-12-10T18:01:37.874Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/09/start-hexo/</loc>
-    
-    <lastmod>2016-12-09T10:20:40.621Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/</loc>
-    
-    <lastmod>2016-12-09T10:10:07.958Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/09/hello-world/</loc>
-    
-    <lastmod>2016-12-09T09:34:43.920Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/2016/12/09/New-World/</loc>
-    
-    <lastmod>2016-12-09T09:34:43.920Z</lastmod>
     
   </url>
   
