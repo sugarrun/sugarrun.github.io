@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2016-12-13T06:44:06.295Z</updated>
+  <updated>2016-12-13T07:37:29.080Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python风格指南</title>
+    <link href="http://sugar.yer.pub/2016/12/13/python%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/"/>
+    <id>http://sugar.yer.pub/2016/12/13/python风格指南/</id>
+    <published>2016-12-13T07:35:16.000Z</published>
+    <updated>2016-12-13T07:37:29.080Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p>有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。</p>
+</blockquote>
+<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">python风格规范</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
+    
+      <category term="标准" scheme="http://sugar.yer.pub/categories/python/%E6%A0%87%E5%87%86/"/>
+    
+    
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+      <category term="风格" scheme="http://sugar.yer.pub/tags/%E9%A3%8E%E6%A0%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>M站UI自动化过程</title>
@@ -55,9 +87,9 @@
     
       <category term="selenium" scheme="http://sugar.yer.pub/tags/selenium/"/>
     
-      <category term="UI自动化" scheme="http://sugar.yer.pub/tags/UI%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
       <category term="Remote" scheme="http://sugar.yer.pub/tags/Remote/"/>
+    
+      <category term="UI自动化" scheme="http://sugar.yer.pub/tags/UI%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     
   </entry>
   
