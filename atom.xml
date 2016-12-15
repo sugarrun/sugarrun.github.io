@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2016-12-14T03:04:38.036Z</updated>
+  <updated>2016-12-14T07:33:22.796Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -16,19 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://sugar.yer.pub/2016/12/14/hello-world/"/>
+    <id>http://sugar.yer.pub/2016/12/14/hello-world/</id>
+    <published>2016-12-14T07:33:22.796Z</published>
+    <updated>2016-12-14T07:33:22.796Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="helloworld" scheme="http://sugar.yer.pub/tags/helloworld/"/>
+    
+  </entry>
+  
+  <entry>
     <title>简单递归</title>
     <link href="http://sugar.yer.pub/2016/12/14/%E7%AE%80%E5%8D%95%E9%80%92%E5%BD%92/"/>
     <id>http://sugar.yer.pub/2016/12/14/简单递归/</id>
     <published>2016-12-14T02:57:29.000Z</published>
-    <updated>2016-12-14T03:04:38.036Z</updated>
+    <updated>2016-12-14T07:44:54.495Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一些简单功能的递归实现"><a href="#一些简单功能的递归实现" class="headerlink" title="一些简单功能的递归实现"></a>一些简单功能的递归实现</h1><h2 id="递归的实现原理"><a href="#递归的实现原理" class="headerlink" title="递归的实现原理"></a>递归的实现原理</h2><h2 id="计算列表长度，不限深度"><a href="#计算列表长度，不限深度" class="headerlink" title="计算列表长度，不限深度"></a>计算列表长度，不限深度</h2><p>如：有列表如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>), (<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)],[(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>), (<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>)]]</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h1 id="一些简单功能的递归实现"><a href="#一些简单功能的递归实现" class="headerlink" title="一些简单功能的递归实现"></a>一些简单功能的递归实现</h1><h2 id="递归的实现原理"><a href="#递归的实现原理" class="headerlink" title="递归的实现原理"></a>递归的实现原理</h2><a id="more"></a>
+<h2 id="计算列表长度，不限深度"><a href="#计算列表长度，不限深度" class="headerlink" title="计算列表长度，不限深度"></a>计算列表长度，不限深度</h2><p>如：有列表如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>), (<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)],[(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>), (<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>)]]</div></pre></td></tr></table></figure></p>
 <p>实现方式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_length</span><span class="params">(data)</span>:</span></div><div class="line">    length = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</div><div class="line">        <span class="keyword">if</span> type(i) == list:</div><div class="line">            length += get_length(i)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            length += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> length</div></pre></td></tr></table></figure></p>
 <h2 id="通过递归找出json中value值为链接"><a href="#通过递归找出json中value值为链接" class="headerlink" title="通过递归找出json中value值为链接"></a>通过递归找出json中value值为链接</h2>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;一些简单功能的递归实现&quot;&gt;&lt;a href=&quot;#一些简单功能的递归实现&quot; class=&quot;headerlink&quot; title=&quot;一些简单功能的递归实现&quot;&gt;&lt;/a&gt;一些简单功能的递归实现&lt;/h1&gt;&lt;h2 id=&quot;递归的实现原理&quot;&gt;&lt;a href=&quot;#递归的实现原理&quot; c
+      &lt;h1 id=&quot;一些简单功能的递归实现&quot;&gt;&lt;a href=&quot;#一些简单功能的递归实现&quot; class=&quot;headerlink&quot; title=&quot;一些简单功能的递归实现&quot;&gt;&lt;/a&gt;一些简单功能的递归实现&lt;/h1&gt;&lt;h2 id=&quot;递归的实现原理&quot;&gt;&lt;a href=&quot;#递归的实现原理&quot; class=&quot;headerlink&quot; title=&quot;递归的实现原理&quot;&gt;&lt;/a&gt;递归的实现原理&lt;/h2&gt;
     
     </summary>
     
@@ -46,12 +77,12 @@
     <link href="http://sugar.yer.pub/2016/12/13/python%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/"/>
     <id>http://sugar.yer.pub/2016/12/13/python风格指南/</id>
     <published>2016-12-13T07:35:16.000Z</published>
-    <updated>2016-12-13T07:37:29.080Z</updated>
+    <updated>2016-12-14T07:35:48.302Z</updated>
     
     <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
 <p>有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。</p>
 </blockquote>
-<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">python风格规范</a></p>
+<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">python风格规范</a><br><a id="more"></a></p>
 ]]></content>
     
     <summary type="html">
@@ -59,6 +90,7 @@
       &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/&quot;&gt;python风格规范&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -78,10 +110,11 @@
     <link href="http://sugar.yer.pub/2016/12/13/M%E7%AB%99UI%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%87%E7%A8%8B/"/>
     <id>http://sugar.yer.pub/2016/12/13/M站UI自动化过程/</id>
     <published>2016-12-13T03:37:13.000Z</published>
-    <updated>2016-12-13T06:44:06.295Z</updated>
+    <updated>2016-12-14T07:35:48.362Z</updated>
     
     <content type="html"><![CDATA[<h1 id="M站UI自动化过程"><a href="#M站UI自动化过程" class="headerlink" title="M站UI自动化过程"></a>M站UI自动化过程</h1><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">官网下载，linux与apple免安装</div></pre></td></tr></table></figure>
 <h4 id="创建沙盒环境"><a href="#创建沙盒环境" class="headerlink" title="创建沙盒环境"></a>创建沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv myvenv</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="切换沙盒环境"><a href="#切换沙盒环境" class="headerlink" title="切换沙盒环境"></a>切换沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source myvenv/bin/activate</div></pre></td></tr></table></figure>
 <h4 id="安装selenium包"><a href="#安装selenium包" class="headerlink" title="安装selenium包"></a>安装selenium包</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install selenium</div></pre></td></tr></table></figure>
 <h4 id="下载chromedriver，用来支持webdriver调用chrome"><a href="#下载chromedriver，用来支持webdriver调用chrome" class="headerlink" title="下载chromedriver，用来支持webdriver调用chrome"></a>下载chromedriver，用来支持webdriver调用chrome</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://chromedriver.storage.googleapis.com/2.22/chromedriver_linux64.zip</div></pre></td></tr></table></figure>
@@ -100,7 +133,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;M站UI自动化过程&quot;&gt;&lt;a href=&quot;#M站UI自动化过程&quot; class=&quot;headerlink&quot; title=&quot;M站UI自动化过程&quot;&gt;&lt;/a&gt;M站UI自动化过程&lt;/h1&gt;&lt;h3 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerli
+      &lt;h1 id=&quot;M站UI自动化过程&quot;&gt;&lt;a href=&quot;#M站UI自动化过程&quot; class=&quot;headerlink&quot; title=&quot;M站UI自动化过程&quot;&gt;&lt;/a&gt;M站UI自动化过程&lt;/h1&gt;&lt;h3 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h3&gt;&lt;h4 id=&quot;安装python&quot;&gt;&lt;a href=&quot;#安装python&quot; class=&quot;headerlink&quot; title=&quot;安装python&quot;&gt;&lt;/a&gt;安装python&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;官网下载，linux与apple免安装&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;创建沙盒环境&quot;&gt;&lt;a href=&quot;#创建沙盒环境&quot; class=&quot;headerlink&quot; title=&quot;创建沙盒环境&quot;&gt;&lt;/a&gt;创建沙盒环境&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;virtualenv myvenv&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -120,40 +154,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://sugar.yer.pub/2016/12/12/hello-world/"/>
-    <id>http://sugar.yer.pub/2016/12/12/hello-world/</id>
-    <published>2016-12-12T11:44:19.513Z</published>
-    <updated>2016-12-12T11:44:19.509Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-      <category term="helloworld" scheme="http://sugar.yer.pub/tags/helloworld/"/>
-    
-  </entry>
-  
-  <entry>
     <title>基于python环境的各类环境搭建</title>
     <link href="http://sugar.yer.pub/2016/12/12/%E5%9F%BA%E4%BA%8Epython%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%84%E7%B1%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://sugar.yer.pub/2016/12/12/基于python环境的各类环境搭建/</id>
     <published>2016-12-12T08:01:13.000Z</published>
-    <updated>2016-12-13T03:28:32.317Z</updated>
+    <updated>2016-12-14T07:35:48.326Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基于python环境的各类环境搭建"><a href="#基于python环境的各类环境搭建" class="headerlink" title="基于python环境的各类环境搭建"></a>基于python环境的各类环境搭建</h1><h2 id="—服务类—"><a href="#—服务类—" class="headerlink" title="—服务类—"></a>—服务类—</h2><table>
 <thead>
@@ -210,6 +215,7 @@
 </tbody>
 </table>
 <p>|1|jenkins走起|testcase定时任务及结果|完成|</p>
+<a id="more"></a>
 <h2 id="—页面类—"><a href="#—页面类—" class="headerlink" title="—页面类—"></a>—页面类—</h2><table>
 <thead>
 <tr>
@@ -329,7 +335,61 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;a href=&quot;#基于python环境的各类环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;/a&gt;基于python环境的各类环境搭建&lt;/h1&gt;&lt;h2 id=&quot;—服务类—
+      &lt;h1 id=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;a href=&quot;#基于python环境的各类环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;/a&gt;基于python环境的各类环境搭建&lt;/h1&gt;&lt;h2 id=&quot;—服务类—&quot;&gt;&lt;a href=&quot;#—服务类—&quot; class=&quot;headerlink&quot; title=&quot;—服务类—&quot;&gt;&lt;/a&gt;—服务类—&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;序号&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;功能&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;作用&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;状态&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;django跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;站点&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;gunicorn跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;内部分发服务&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;nginx跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;静态外部服务器&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;supervisor跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;任务监控&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;5&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;celery跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;定时任务&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;未完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;6&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;redis跑起来&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;nosql快速缓存&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;未完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;|1|jenkins走起|testcase定时任务及结果|完成|&lt;/p&gt;
     
     </summary>
     
@@ -345,12 +405,13 @@
     <link href="http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/"/>
     <id>http://sugar.yer.pub/2016/12/12/linux免密码认证配置/</id>
     <published>2016-12-12T03:26:53.000Z</published>
-    <updated>2016-12-12T11:44:17.077Z</updated>
+    <updated>2016-12-14T07:35:48.274Z</updated>
     
     <content type="html"><![CDATA[<h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
 <blockquote>
 <p>配置过程很简单，但每次都忘记一些细节，故做个笔记</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="单向免密码登陆"><a href="#单向免密码登陆" class="headerlink" title="单向免密码登陆"></a>单向免密码登陆</h3><p>服务器A，PC机B。</p>
 ]]></content>
     
@@ -359,6 +420,7 @@
       &lt;h1 id=&quot;服务器免密码认证&quot;&gt;&lt;a href=&quot;#服务器免密码认证&quot; class=&quot;headerlink&quot; title=&quot;服务器免密码认证&quot;&gt;&lt;/a&gt;服务器免密码认证&lt;/h1&gt;&lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;配置过程很简单，但每次都忘记一些细节，故做个笔记&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -374,16 +436,19 @@
     <link href="http://sugar.yer.pub/2016/12/11/python%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
     <id>http://sugar.yer.pub/2016/12/11/python中的文件读取/</id>
     <published>2016-12-10T18:40:29.000Z</published>
-    <updated>2016-12-12T11:42:15.421Z</updated>
+    <updated>2016-12-15T01:33:32.660Z</updated>
     
     <content type="html"><![CDATA[<h1 id="深入python中文件读取的各类方法"><a href="#深入python中文件读取的各类方法" class="headerlink" title="深入python中文件读取的各类方法"></a>深入python中文件读取的各类方法</h1><blockquote>
 <p>参考<a href="http://www.pythondoc.com/pythontutorial3/index.html" target="_blank" rel="external">文档</a></p>
 </blockquote>
-<h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2>]]></content>
+<h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;深入python中文件读取的各类方法&quot;&gt;&lt;a href=&quot;#深入python中文件读取的各类方法&quot; class=&quot;headerlink&quot; title=&quot;深入python中文件读取的各类方法&quot;&gt;&lt;/a&gt;深入python中文件读取的各类方法&lt;/h1&gt;&lt;blockquo
+      &lt;h1 id=&quot;深入python中文件读取的各类方法&quot;&gt;&lt;a href=&quot;#深入python中文件读取的各类方法&quot; class=&quot;headerlink&quot; title=&quot;深入python中文件读取的各类方法&quot;&gt;&lt;/a&gt;深入python中文件读取的各类方法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;参考&lt;a href=&quot;http://www.pythondoc.com/pythontutorial3/index.html&quot;&gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本方法&quot;&gt;&lt;a href=&quot;#基本方法&quot; class=&quot;headerlink&quot; title=&quot;基本方法&quot;&gt;&lt;/a&gt;基本方法&lt;/h2&gt;
     
     </summary>
     
@@ -399,10 +464,10 @@
     <link href="http://sugar.yer.pub/2016/12/11/%E5%B1%85%E4%BD%8F%E8%AF%81%E5%8A%9E%E7%90%86/"/>
     <id>http://sugar.yer.pub/2016/12/11/居住证办理/</id>
     <published>2016-12-10T17:26:18.000Z</published>
-    <updated>2016-12-12T11:42:15.409Z</updated>
+    <updated>2016-12-14T07:35:48.250Z</updated>
     
     <content type="html"><![CDATA[<h1 id="居住证办理（原暂住证）"><a href="#居住证办理（原暂住证）" class="headerlink" title="居住证办理（原暂住证）"></a>居住证办理（原暂住证）</h1><p><a href="https://bjjzzpt.com/" target="_blank" rel="external">办理居住证传送门</a></p>
-<p>今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。</p>
+<p>今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。<br><a id="more"></a></p>
 <h2 id="准备的材料"><a href="#准备的材料" class="headerlink" title="准备的材料"></a>准备的材料</h2><blockquote>
 <p>对于材料的准备，前期准备还是挺充分的，网上也有相关的提示。<br>虽说有了申请网站，而且各种<br>提示相对于之前来说也很全面，但距离商业类的服务站点，还是差了不少。</p>
 </blockquote>
@@ -428,7 +493,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;居住证办理（原暂住证）&quot;&gt;&lt;a href=&quot;#居住证办理（原暂住证）&quot; class=&quot;headerlink&quot; title=&quot;居住证办理（原暂住证）&quot;&gt;&lt;/a&gt;居住证办理（原暂住证）&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://bjjzzpt.com/&quot; tar
+      &lt;h1 id=&quot;居住证办理（原暂住证）&quot;&gt;&lt;a href=&quot;#居住证办理（原暂住证）&quot; class=&quot;headerlink&quot; title=&quot;居住证办理（原暂住证）&quot;&gt;&lt;/a&gt;居住证办理（原暂住证）&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://bjjzzpt.com/&quot;&gt;办理居住证传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。&lt;br&gt;
     
     </summary>
     
@@ -444,13 +510,13 @@
     <link href="http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/"/>
     <id>http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/</id>
     <published>2016-12-09T10:09:04.000Z</published>
-    <updated>2016-12-12T11:47:48.105Z</updated>
+    <updated>2016-12-14T07:35:48.238Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;python-unittest-基础教程分享&quot;&gt;&lt;a href=&quot;#python-unittest-基础教程分享&quot; class=&quot;headerlink&quot; title=&quot;python unittest 基础教程分享&quot;&gt;&lt;/a&gt;python unittest 基础教程
+      &lt;h1 id=&quot;python-unittest-基础教程分享&quot;&gt;&lt;a href=&quot;#python-unittest-基础教程分享&quot; class=&quot;headerlink&quot; title=&quot;python unittest 基础教程分享&quot;&gt;&lt;/a&gt;python unittest 基础教程分享&lt;/h1&gt;
     
     </summary>
     
@@ -466,7 +532,7 @@
     <link href="http://sugar.yer.pub/2016/12/09/start-hexo/"/>
     <id>http://sugar.yer.pub/2016/12/09/start-hexo/</id>
     <published>2016-12-09T01:40:20.000Z</published>
-    <updated>2016-12-12T11:39:39.013Z</updated>
+    <updated>2016-12-14T07:35:48.218Z</updated>
     
     <content type="html"><![CDATA[<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
 <p>系统：ubuntu 16.04 64位</p>
@@ -476,6 +542,7 @@
 <blockquote>
 <p>不同系统安装node参见：<a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="external">这里</a></p>
 </blockquote>
+<a id="more"></a>
 <h4 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
 <blockquote>
 <p>hexo官网很详细，见<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">这里</a></p>
@@ -489,7 +556,14 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;HEXO&quot;&gt;&lt;a href=&quot;#HEXO&quot; class=&quot;headerlink&quot; title=&quot;HEXO&quot;&gt;&lt;/a&gt;HEXO&lt;/h1&gt;&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a
+      &lt;h1 id=&quot;HEXO&quot;&gt;&lt;a href=&quot;#HEXO&quot; class=&quot;headerlink&quot; title=&quot;HEXO&quot;&gt;&lt;/a&gt;HEXO&lt;/h1&gt;&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;系统：ubuntu 16.04 64位&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;安装git&quot;&gt;&lt;a href=&quot;#安装git&quot; class=&quot;headerlink&quot; title=&quot;安装git&quot;&gt;&lt;/a&gt;安装git&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;安装node&quot;&gt;&lt;a href=&quot;#安装node&quot; class=&quot;headerlink&quot; title=&quot;安装node&quot;&gt;&lt;/a&gt;安装node&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;L https://deb.nodesource.com/setup_6.x | sudo -E bash -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install -y nodejs&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不同系统安装node参见：&lt;a href=&quot;https://nodejs.org/en/download/package-manager/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -501,12 +575,13 @@
     <link href="http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/"/>
     <id>http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/</id>
     <published>2016-12-08T22:22:48.000Z</published>
-    <updated>2016-12-12T11:43:42.417Z</updated>
+    <updated>2016-12-14T07:35:48.350Z</updated>
     
     <content type="html"><![CDATA[<h1 id="循环（迭代器与生成器）的那点事"><a href="#循环（迭代器与生成器）的那点事" class="headerlink" title="循环（迭代器与生成器）的那点事"></a>循环（迭代器与生成器）的那点事</h1><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><ul>
 <li>while 执行时的基本流程图</li>
 </ul>
 <p><img src="http://oi1wvrjc2.bkt.clouddn.com/while.png" alt="image" title="while流程图"></p>
+<a id="more"></a>
 <blockquote>
 <p>while语句的基本格式</p>
 </blockquote>
@@ -649,7 +724,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;a href=&quot;#循环（迭代器与生成器）的那点事&quot; class=&quot;headerlink&quot; title=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;/a&gt;循环（迭代器与生成器）的那点事&lt;/h1&gt;&lt;h2 id=&quot;while&quot;&gt;&lt;a hre
+      &lt;h1 id=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;a href=&quot;#循环（迭代器与生成器）的那点事&quot; class=&quot;headerlink&quot; title=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;/a&gt;循环（迭代器与生成器）的那点事&lt;/h1&gt;&lt;h2 id=&quot;while&quot;&gt;&lt;a href=&quot;#while&quot; class=&quot;headerlink&quot; title=&quot;while&quot;&gt;&lt;/a&gt;while&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;while 执行时的基本流程图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://oi1wvrjc2.bkt.clouddn.com/while.png&quot; alt=&quot;image&quot; title=&quot;while流程图&quot;&gt;&lt;/p&gt;
     
     </summary>
     

@@ -275,6 +275,134 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://sugar.yer.pub/2016/12/14/hello-world/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ouroporos">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/ouroporos.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Run! Sugar,Run!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Run! Sugar,Run!" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/14/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T15:33:22+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/14/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/14/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/14/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://sugar.yer.pub/2016/12/14/简单递归/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -377,11 +505,14 @@
 
       
         
-          
-            <h1 id="一些简单功能的递归实现"><a href="#一些简单功能的递归实现" class="headerlink" title="一些简单功能的递归实现"></a>一些简单功能的递归实现</h1><h2 id="递归的实现原理"><a href="#递归的实现原理" class="headerlink" title="递归的实现原理"></a>递归的实现原理</h2><h2 id="计算列表长度，不限深度"><a href="#计算列表长度，不限深度" class="headerlink" title="计算列表长度，不限深度"></a>计算列表长度，不限深度</h2><p>如：有列表如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>), (<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)],[(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>), (<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>)]]</div></pre></td></tr></table></figure></p>
-<p>实现方式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_length</span><span class="params">(data)</span>:</span></div><div class="line">    length = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</div><div class="line">        <span class="keyword">if</span> type(i) == list:</div><div class="line">            length += get_length(i)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            length += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> length</div></pre></td></tr></table></figure></p>
-<h2 id="通过递归找出json中value值为链接"><a href="#通过递归找出json中value值为链接" class="headerlink" title="通过递归找出json中value值为链接"></a>通过递归找出json中value值为链接</h2>
-          
+          <h1 id="一些简单功能的递归实现"><a href="#一些简单功能的递归实现" class="headerlink" title="一些简单功能的递归实现"></a>一些简单功能的递归实现</h1><h2 id="递归的实现原理"><a href="#递归的实现原理" class="headerlink" title="递归的实现原理"></a>递归的实现原理</h2>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/14/简单递归/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -531,13 +662,17 @@
 
       
         
-          
-            <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
 <p>有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。</p>
 </blockquote>
-<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">python风格规范</a></p>
-
-          
+<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">python风格规范</a><br>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/13/python风格指南/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -687,157 +822,15 @@
 
       
         
-          
-            <h1 id="M站UI自动化过程"><a href="#M站UI自动化过程" class="headerlink" title="M站UI自动化过程"></a>M站UI自动化过程</h1><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">官网下载，linux与apple免安装</div></pre></td></tr></table></figure>
+          <h1 id="M站UI自动化过程"><a href="#M站UI自动化过程" class="headerlink" title="M站UI自动化过程"></a>M站UI自动化过程</h1><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">官网下载，linux与apple免安装</div></pre></td></tr></table></figure>
 <h4 id="创建沙盒环境"><a href="#创建沙盒环境" class="headerlink" title="创建沙盒环境"></a>创建沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv myvenv</div></pre></td></tr></table></figure>
-<h4 id="切换沙盒环境"><a href="#切换沙盒环境" class="headerlink" title="切换沙盒环境"></a>切换沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source myvenv/bin/activate</div></pre></td></tr></table></figure>
-<h4 id="安装selenium包"><a href="#安装selenium包" class="headerlink" title="安装selenium包"></a>安装selenium包</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install selenium</div></pre></td></tr></table></figure>
-<h4 id="下载chromedriver，用来支持webdriver调用chrome"><a href="#下载chromedriver，用来支持webdriver调用chrome" class="headerlink" title="下载chromedriver，用来支持webdriver调用chrome"></a>下载chromedriver，用来支持webdriver调用chrome</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://chromedriver.storage.googleapis.com/2.22/chromedriver_linux64.zip</div></pre></td></tr></table></figure>
-<h4 id="将chromedriver路径加入环境变量"><a href="#将chromedriver路径加入环境变量" class="headerlink" title="将chromedriver路径加入环境变量"></a>将chromedriver路径加入环境变量</h4><blockquote>
-<p>windows和linux方式有所不同，请自行google。</p>
-</blockquote>
-<p><em>若不使用chrome的emulate devices，则不用执行关于selenium-server的步骤</em></p>
-<h4 id="下载selenium-server服务，做remote服务，可启动chrome的mobile形式"><a href="#下载selenium-server服务，做remote服务，可启动chrome的mobile形式" class="headerlink" title="下载selenium-server服务，做remote服务，可启动chrome的mobile形式"></a>下载selenium-server服务，做remote服务，可启动chrome的mobile形式</h4><p>地址如下<br><a href="http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar" target="_blank" rel="external">selenium-server</a></p>
-<h3 id="remote服务启动"><a href="#remote服务启动" class="headerlink" title="remote服务启动"></a>remote服务启动</h3><h4 id="启动selenium-server服务"><a href="#启动selenium-server服务" class="headerlink" title="启动selenium-server服务"></a>启动selenium-server服务</h4><p>两种形式：</p>
-<h5 id="通过脚本启动"><a href="#通过脚本启动" class="headerlink" title="通过脚本启动"></a>通过脚本启动</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gnome-terminal -t &quot;title-name&quot;gnome-terminal -x bash -c &quot;/usr/bin/java -jar /home/hanz/download/selenium-server-standalone-2.53.1.jar; exec bash;&quot;</div></pre></td></tr></table></figure>
-<h5 id="直接终端启动"><a href="#直接终端启动" class="headerlink" title="直接终端启动"></a>直接终端启动</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/java -jar /home/hanz/download/selenium-server-standalone-2.53.1.jar</div></pre></td></tr></table></figure>
-<h4 id="脚本中启动chrome-mobile-emulation"><a href="#脚本中启动chrome-mobile-emulation" class="headerlink" title="脚本中启动chrome_mobile_emulation"></a>脚本中启动chrome_mobile_emulation</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mobile_emulation = &#123;<span class="string">"deviceName"</span>: <span class="string">"Google Nexus 5"</span>&#125;</div><div class="line">chrome_options = webdriver.ChromeOptions()</div><div class="line">chrome_options.add_experimental_option(<span class="string">"mobileEmulation"</span>, mobile_emulation)</div><div class="line">self.driver = webdriver.Remote(command_executor=<span class="string">'http://127.0.0.1:4444/wd/hub'</span>,</div><div class="line">                               desired_capabilities=chrome_options.to_capabilities())</div></pre></td></tr></table></figure>
-<h3 id="selenium-基本语法"><a href="#selenium-基本语法" class="headerlink" title="selenium 基本语法"></a>selenium 基本语法</h3><h4 id="网上有成熟的各路教程，请参考，在最后我附了一些简明的教程链接"><a href="#网上有成熟的各路教程，请参考，在最后我附了一些简明的教程链接" class="headerlink" title="网上有成熟的各路教程，请参考，在最后我附了一些简明的教程链接"></a>网上有成熟的各路教程，请参考，在最后我附了一些简明的教程链接</h4><h4 id="webdriver常用方法"><a href="#webdriver常用方法" class="headerlink" title="webdriver常用方法"></a>webdriver常用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">'add_cookie'</span>, 在当前的会话添加一个cookie</div><div class="line"></div><div class="line"><span class="string">'application_cache'</span>, 返回一个对象ApplicationCache与浏览器的应用程序缓存交互</div><div class="line"></div><div class="line"><span class="string">'back'</span>, 返回至上一个浏览历史</div><div class="line"></div><div class="line"><span class="string">'capabilities'</span>, remote参数</div><div class="line"></div><div class="line"><span class="string">'close'</span>, 关闭</div><div class="line"></div><div class="line"><span class="string">'command_executor'</span>, remote webdriver参数</div><div class="line"></div><div class="line"><span class="string">'create_options'</span>, chrome webdriver参数</div><div class="line"></div><div class="line"><span class="string">'create_web_element'</span>, 创建具有指定element_id网络元素。</div><div class="line"></div><div class="line"><span class="string">'current_url'</span>, 当前页面的url</div><div class="line"></div><div class="line"><span class="string">'current_window_handle'</span>, 返回当前窗口的句柄</div><div class="line"></div><div class="line"><span class="string">'delete_all_cookies'</span>, 删除所有Cookie会话的范围</div><div class="line"></div><div class="line"><span class="string">'delete_cookie'</span>,删除指定名称的单一的cookie。</div><div class="line"></div><div class="line"><span class="string">'desired_capabilities'</span>, 返回正在使用当前所需功能的驱动程序</div><div class="line"></div><div class="line"><span class="string">'error_handler'</span>, 用于处理错误errorhandler.ErrorHandler对象。</div><div class="line"></div><div class="line"><span class="string">'execute'</span>,  发送到由一个command.CommandExecutor要执行的命令。</div><div class="line"></div><div class="line"><span class="string">'execute_async_script'</span>,  异步执行当前窗口/帧的JavaScript。</div><div class="line"></div><div class="line"><span class="string">'execute_script'</span>, 同步地执行在当前窗口/帧的JavaScript。</div><div class="line"></div><div class="line"><span class="string">'file_detector'</span>,</div><div class="line"></div><div class="line"><span class="string">'file_detector_context'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_element'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_element_by_class_name'</span>,通过查找类名的元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_css_selector'</span>,通过查找CSS选择器的元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_id'</span>,通过ID查找元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_link_text'</span>, 通过查找链接文本的元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_name'</span>,通过名称查找元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_partial_link_text'</span>,其链接文本的部分匹配查找元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_tag_name'</span>,查找按标签名称的元素。</div><div class="line"></div><div class="line"><span class="string">'find_element_by_xpath'</span>,与XPath查找元素。</div><div class="line"></div><div class="line"><span class="string">'find_elements'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_class_name'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_css_selector'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_id'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_link_text'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_name'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_partial_link_text'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_tag_name'</span>,</div><div class="line"></div><div class="line"><span class="string">'find_elements_by_xpath'</span>,</div><div class="line"></div><div class="line"><span class="string">'forward'</span>,前进了一步在浏览器历史记录。</div><div class="line"></div><div class="line"><span class="string">'get'</span>, 加载在当前浏览器会话的网页。</div><div class="line"></div><div class="line"><span class="string">'get_cookie'</span>,按名称获取一个Cookie。如果找到，无如果不返回cookie。</div><div class="line"></div><div class="line"><span class="string">'get_cookies'</span>,返回一组词典，对应的cookie在当前会话中可见。</div><div class="line"></div><div class="line"><span class="string">'get_log'</span>,获取日志对于给定的日志类型</div><div class="line"></div><div class="line"><span class="string">'get_screenshot_as_base64'</span>,获取当前窗口的截图为Base64编码的字符串 这是在以HTML嵌入的图像是有用的。</div><div class="line"></div><div class="line"><span class="string">'get_screenshot_as_file'</span>,获取当前窗口的截图。如果返回FALSE 任何IO错误，否则返回<span class="keyword">True</span>。使用完整路径在你的文件名。</div><div class="line"></div><div class="line"><span class="string">'get_screenshot_as_png'</span>,获取当前窗口的屏幕快照作为二进制数据。</div><div class="line"></div><div class="line"><span class="string">'get_window_position'</span>,获取当前窗口的x，y位置。</div><div class="line"></div><div class="line"><span class="string">'get_window_size'</span>,获取当前窗口的宽度和高度。</div><div class="line"></div><div class="line"><span class="string">'implicitly_wait'</span>,用粘超时隐含等待被发现的元素， 或命令来完成。这种方法只需要调用每个会话一次</div><div class="line"></div><div class="line"><span class="string">'launch_app'</span>,</div><div class="line"></div><div class="line"><span class="string">'log_types'</span>,</div><div class="line"></div><div class="line"><span class="string">'maximize_window'</span>,最大限度地增加了的webdriver使用当前窗口</div><div class="line"></div><div class="line"><span class="string">'mobile'</span>,</div><div class="line"></div><div class="line"><span class="string">'name'</span>,返回此实例中的底层浏览器的名称。</div><div class="line"></div><div class="line"><span class="string">'orientation'</span>,获取设备的当前方位</div><div class="line"></div><div class="line"><span class="string">'page_source'</span>,获取当前页面的源代码。</div><div class="line"></div><div class="line"><span class="string">'quit'</span>, 关闭浏览器并关闭启动ChromeDriver时启动的ChromeDriver可执行</div><div class="line"></div><div class="line"><span class="string">'refresh'</span>, 刷新当前页面</div><div class="line"></div><div class="line"><span class="string">'save_screenshot'</span>,获取当前窗口的截图。如果返回FALSE 任何IO错误，否则返回<span class="keyword">True</span>。使用完整路径在你的文件名。</div><div class="line"></div><div class="line"><span class="string">'service'</span>,</div><div class="line"></div><div class="line"><span class="string">'session_id'</span>,浏览器会话的字符串ID开始，这个控制的webdriver。</div><div class="line"></div><div class="line"><span class="string">'set_page_load_timeout'</span>,设置的时间量，以等待一个页面加载完成 之前抛出一个错误。</div><div class="line"></div><div class="line"><span class="string">'set_script_timeout'</span>,</div><div class="line"></div><div class="line"><span class="string">'set_window_position'</span>,设置当前窗口的x，y位置。 （window.moveTo）</div><div class="line"></div><div class="line"><span class="string">'set_window_size'</span>,设置当前窗口的宽度和高度。 （window.resizeTo）</div><div class="line"></div><div class="line"><span class="string">'start_client'</span>,开始一个新的会话之前调用。这种方法可能会被改写定义自定义启动行为。</div><div class="line"></div><div class="line"><span class="string">'start_session'</span>,创建具有所需功能的一个新的会话。</div><div class="line"></div><div class="line"><span class="string">'stop_client'</span>,执行quit命令后调用。这种方法可能会被改写定义自定义关机行为。</div><div class="line"></div><div class="line"><span class="string">'switch_to'</span>,</div><div class="line"></div><div class="line"><span class="string">'switch_to_active_element'</span>,</div><div class="line"></div><div class="line"><span class="string">'switch_to_alert'</span>,切换当前活动的alert窗口</div><div class="line"></div><div class="line"><span class="string">'switch_to_default_content'</span>,</div><div class="line"></div><div class="line"><span class="string">'switch_to_frame'</span>,切换至当前活动的frame元素</div><div class="line"></div><div class="line"><span class="string">'switch_to_window'</span>,切换至当前活动的浏览器窗口</div><div class="line"></div><div class="line"><span class="string">'title'</span>,返回当前页面的标题。</div><div class="line"></div><div class="line"><span class="string">'window_handles'</span>返回当前会话中的所有窗口的句柄。</div></pre></td></tr></table></figure>
-<h4 id="推荐文档"><a href="#推荐文档" class="headerlink" title="推荐文档"></a>推荐文档</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">英文:</div><div class="line">http://selenium-python.readthedocs.io/getting-started.html</div><div class="line"></div><div class="line">中文，我参与了翻译过程:</div><div class="line">http://selenium-python-zh.readthedocs.io/en/latest/</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://sugar.yer.pub/2016/12/12/hello-world/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Ouroporos">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/ouroporos.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Run! Sugar,Run!">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Run! Sugar,Run!" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/12/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T19:44:19+08:00">
-                2016-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/12/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/12/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/13/M站UI自动化过程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -976,8 +969,7 @@
 
       
         
-          
-            <h1 id="基于python环境的各类环境搭建"><a href="#基于python环境的各类环境搭建" class="headerlink" title="基于python环境的各类环境搭建"></a>基于python环境的各类环境搭建</h1><h2 id="—服务类—"><a href="#—服务类—" class="headerlink" title="—服务类—"></a>—服务类—</h2><table>
+          <h1 id="基于python环境的各类环境搭建"><a href="#基于python环境的各类环境搭建" class="headerlink" title="基于python环境的各类环境搭建"></a>基于python环境的各类环境搭建</h1><h2 id="—服务类—"><a href="#—服务类—" class="headerlink" title="—服务类—"></a>—服务类—</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">序号</th>
@@ -1032,123 +1024,13 @@
 </tbody>
 </table>
 <p>|1|jenkins走起|testcase定时任务及结果|完成|</p>
-<h2 id="—页面类—"><a href="#—页面类—" class="headerlink" title="—页面类—"></a>—页面类—</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">序号</th>
-<th>功能</th>
-<th>作用</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td>前台页面做起来</td>
-<td>把后台功能及数据展示做到前台页面上</td>
-<td>部分完成</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td>前台样式用起来</td>
-<td>前台样式使用通用bootstrap样式包</td>
-<td>未完成</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-django跑起来"><a href="#1-django跑起来" class="headerlink" title="1. django跑起来"></a>1. django跑起来</h3><p>引用：</p>
-<p>官方文档</p>
-<h4 id="用到的功能："><a href="#用到的功能：" class="headerlink" title="用到的功能："></a>用到的功能：</h4><p>模板分页：</p>
-<p><a href="https://mozillazg.com/2013/01/django-pagination-by-use-paginator.html" target="_blank" rel="external">https://mozillazg.com/2013/01/django-pagination-by-use-paginator.html</a></p>
-<p><a href="http://python.usyiyi.cn/django/topics/pagination.html" target="_blank" rel="external">http://python.usyiyi.cn/django/topics/pagination.html</a></p>
-<h3 id="2-gunicorn跑起来"><a href="#2-gunicorn跑起来" class="headerlink" title="2. gunicorn跑起来"></a>2. gunicorn跑起来</h3><p>引用：</p>
-<p><a href="http://foofish.net/blog/18/django-deploy" target="_blank" rel="external">http://foofish.net/blog/18/django-deploy</a></p>
-<p><a href="http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/" target="_blank" rel="external">http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/</a></p>
-<h4 id="gunicorn超时时间设置"><a href="#gunicorn超时时间设置" class="headerlink" title="gunicorn超时时间设置"></a>gunicorn超时时间设置</h4><p>引用：</p>
-<p><a href="http://stackoverflow.com/questions/6816215/gunicorn-nginx-timeout-problem" target="_blank" rel="external">http://stackoverflow.com/questions/6816215/gunicorn-nginx-timeout-problem</a></p>
-<p>脚本文件bin/gunicorn_start.sh</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">NUM_WORKERS=<span class="number">3</span></div><div class="line">TIMEOUT=<span class="number">120</span></div><div class="line"></div><div class="line"><span class="keyword">exec</span> gunicorn $&#123;DJANGO_WSGI_MODULE&#125;:application \</div><div class="line">--name $NAME \</div><div class="line">--workers $NUM_WORKERS \</div><div class="line">--timeout $TIMEOUT \</div><div class="line">--log-level=debug \</div><div class="line">--bind=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span> \</div><div class="line">--pid=$PIDFILE</div></pre></td></tr></table></figure>
-<h3 id="3-nginx跑起来"><a href="#3-nginx跑起来" class="headerlink" title="3. nginx跑起来"></a>3. nginx跑起来</h3><p>引用：</p>
-<p><a href="http://blog.csdn.net/qq_24861509/article/details/45727983" target="_blank" rel="external">http://blog.csdn.net/qq_24861509/article/details/45727983</a></p>
-<p><a href="http://www.111cn.net/sys/linux/79751.htm" target="_blank" rel="external">http://www.111cn.net/sys/linux/79751.htm</a></p>
-<h3 id="4-supervisor跑起来"><a href="#4-supervisor跑起来" class="headerlink" title="4. supervisor跑起来"></a>4. supervisor跑起来</h3><ul>
-<li>安装</li>
-</ul>
-<p><code>sudo apt-get install supervisor</code></p>
-<ul>
-<li>启动</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">service supervisor start/restart/stop</div><div class="line"></div><div class="line">/etc/init.d/supervisor start/restart/stop</div></pre></td></tr></table></figure>
-<ul>
-<li>配置文件位置</li>
-</ul>
-<p><code>/etc/supervisor/supervisord.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">; supervisor config file</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[unix_http_server]</div><div class="line"></div><div class="line">#file=/var/run/supervisor.sock   ; (the path to the socket file)</div><div class="line"></div><div class="line">file=/tmp/supervisor.sock	;</div><div class="line"></div><div class="line">chmod=0700                       ; sockef file mode (default 0700)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[supervisord]</div><div class="line"></div><div class="line">logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)</div><div class="line"></div><div class="line">pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)</div><div class="line"></div><div class="line">childlogdir=/var/log/supervisor            ; (&apos;AUTO&apos; child log dir, default $TEMP)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">; the below section must remain in the config file for RPC</div><div class="line"></div><div class="line">; (supervisorctl/web interface) to work, additional interfaces may be</div><div class="line"></div><div class="line">; added by defining them in separate rpcinterface: sections</div><div class="line"></div><div class="line">[rpcinterface:supervisor]</div><div class="line"></div><div class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[supervisorctl]</div><div class="line"></div><div class="line">#serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket</div><div class="line"></div><div class="line">serverurl=unix:///tmp/supervisor.sock ;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">; The [include] section can just contain the &quot;files&quot; setting.  This</div><div class="line"></div><div class="line">; setting can list multiple files (separated by whitespace or</div><div class="line"></div><div class="line">; newlines).  It can also contain wildcards.  The filenames are</div><div class="line"></div><div class="line">; interpreted as relative to this file.  Included files *cannot*</div><div class="line"></div><div class="line">; include files themselves.</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[include]</div><div class="line"></div><div class="line">files = /etc/supervisor/conf.d/*.conf</div></pre></td></tr></table></figure>
-<ul>
-<li>增加任务</li>
-</ul>
-<p><code>/etc/supervisor/conf.d/autohome_celery.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[program:autohome_celery]</div><div class="line"></div><div class="line">directory = /home/hanz/workspace/PycharmProjects/autohome_data_site</div><div class="line"></div><div class="line">command = /home/hanz/workspace/my-venv2.7/bin/python manage.py celery worker -c 6 -l debug</div><div class="line"></div><div class="line">autostart=true</div><div class="line"></div><div class="line">autorestart=true</div><div class="line"></div><div class="line">startsecs=3</div><div class="line"></div><div class="line">user = hanz                                                          ;</div><div class="line"></div><div class="line">stdout_logfile = /home/hanz/workspace/PycharmProjects/autohome_data_site/logs/autohome_celery.log</div><div class="line"></div><div class="line">redirect_stderr = true</div></pre></td></tr></table></figure>
-<ul>
-<li>添加web显示页面</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[inet_http_server]         ; inet (TCP) server disabled by default</div><div class="line"></div><div class="line">port=9001        ; (ip_address:port specifier, *:port for all iface)</div><div class="line"></div><div class="line">username=admin             ; (default is no username (open server))</div><div class="line"></div><div class="line">password=123               ; (default is no password (open server))</div></pre></td></tr></table></figure>
-<p>引用：</p>
-<p><a href="http://www.cnblogs.com/gsblog/p/3730293.html" target="_blank" rel="external">http://www.cnblogs.com/gsblog/p/3730293.html</a></p>
-<p><a href="http://www.cnblogs.com/yjf512/archive/2012/03/05/2380496.html" target="_blank" rel="external">http://www.cnblogs.com/yjf512/archive/2012/03/05/2380496.html</a></p>
-<p><a href="http://www.cnblogs.com/maseng/p/4670473.html" target="_blank" rel="external">http://www.cnblogs.com/maseng/p/4670473.html</a></p>
-<p><a href="http://liyangliang.me/posts/2015/06/using-supervisor/" target="_blank" rel="external">http://liyangliang.me/posts/2015/06/using-supervisor/</a></p>
-<h3 id="5-celery跑起来"><a href="#5-celery跑起来" class="headerlink" title="5. celery跑起来"></a>5. celery跑起来</h3><ul>
-<li>独立celery+python脚本</li>
-</ul>
-<ul>
-<li>django-celery替代celery，在django项目中的使用方法</li>
-</ul>
-<ul>
-<li>监控界面：flower</li>
-</ul>
-<ol>
-<li>安装：</li>
-</ol>
-<p><code>pip install flower</code></p>
-<ol>
-<li>使用方法：</li>
-</ol>
-<p>运行服务打开<a href="http://localhost:5555：" target="_blank" rel="external">http://localhost:5555：</a></p>
-<p><code>flower --port=5555</code></p>
-<p>或者从celery运行：</p>
-<p><code>celery flower --address=127.0.0.1 --port=5555</code></p>
-<p>Broker URL 和其他配置选项能够通过一个标准的celery选项：</p>
-<p><code>celery flower --broker=amqp://guest:guest@localhost:5672//</code></p>
-<p>在setting中添加：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">djcelery.setup_loader()</div><div class="line">CELERY_TIMEZONE = <span class="string">'Asia/Shanghai'</span></div><div class="line">BROKER_URL = <span class="string">'redis://127.0.0.1:6379/8'</span></div><div class="line">CELERY_RESULT_BACKEND = <span class="string">'redis://127.0.0.1:6379/9'</span></div><div class="line">CELERYBEAT_SCHEDULER = <span class="string">'djcelery.schedulers.DatabaseScheduler'</span></div><div class="line">CELERY_IMPORTS = (<span class="string">"apps.app1.tasks"</span>, <span class="string">"autohome.views"</span>)</div></pre></td></tr></table></figure>
-<p>想要使用任务 ，一定要imports对应的py文件，修改后需要重启celery服务</p>
-<p>引用：</p>
-<p><a href="http://flower-docs-cn.readthedocs.io/zh/latest/install.html" target="_blank" rel="external">http://flower-docs-cn.readthedocs.io/zh/latest/install.html</a></p>
-<p>-</p>
-<p>引用：</p>
-<blockquote>
-<p><a href="http://www.celeryproject.org/" target="_blank" rel="external">http://www.celeryproject.org/</a><br><a href="http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000" target="_blank" rel="external">http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000</a><br><a href="http://www.jianshu.com/p/1840035cb510" target="_blank" rel="external">http://www.jianshu.com/p/1840035cb510</a><br><a href="http://www.dongwm.com/archives/how-to-use-celery/" target="_blank" rel="external">http://www.dongwm.com/archives/how-to-use-celery/</a><br><a href="http://liuzxc.github.io/blog/celery/" target="_blank" rel="external">http://liuzxc.github.io/blog/celery/</a><br><a href="http://opslinux.com/2015/09/22/celery%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%AE%9E%E8%B7%B5/" target="_blank" rel="external">http://opslinux.com/2015/09/22/celery%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%AE%9E%E8%B7%B5/</a><br><a href="http://blog.csdn.net/vintage_1/article/details/47664297" target="_blank" rel="external">http://blog.csdn.net/vintage_1/article/details/47664297</a></p>
-</blockquote>
-<p>django celery</p>
-<blockquote>
-<p><a href="http://blog.csdn.net/vintage_1/article/details/47664297" target="_blank" rel="external">http://blog.csdn.net/vintage_1/article/details/47664297</a><br><a href="http://maslino.website/post/celery-documentation-django.html" target="_blank" rel="external">http://maslino.website/post/celery-documentation-django.html</a></p>
-</blockquote>
-<h3 id="6-jenkins走起"><a href="#6-jenkins走起" class="headerlink" title="6. jenkins走起"></a>6. jenkins走起</h3><ul>
-<li>jenkins 邮件配置</li>
-</ul>
-<p>引用：</p>
-<blockquote>
-<p><a href="http://www.cnblogs.com/amosli/p/3549918.html" target="_blank" rel="external">http://www.cnblogs.com/amosli/p/3549918.html</a><br><a href="http://www.cnblogs.com/GGHHLL/p/jenkins.html" target="_blank" rel="external">http://www.cnblogs.com/GGHHLL/p/jenkins.html</a></p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/12/基于python环境的各类环境搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1287,14 +1169,17 @@
 
       
         
-          
-            <h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
+          <h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
 <blockquote>
 <p>配置过程很简单，但每次都忘记一些细节，故做个笔记</p>
 </blockquote>
-<h3 id="单向免密码登陆"><a href="#单向免密码登陆" class="headerlink" title="单向免密码登陆"></a>单向免密码登陆</h3><p>服务器A，PC机B。</p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/12/linux免密码认证配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1433,12 +1318,17 @@
 
       
         
-          
-            <h1 id="深入python中文件读取的各类方法"><a href="#深入python中文件读取的各类方法" class="headerlink" title="深入python中文件读取的各类方法"></a>深入python中文件读取的各类方法</h1><blockquote>
-<p>参考<a href="http://www.pythondoc.com/pythontutorial3/index.html" target="_blank" rel="external">文档</a></p>
+          <h1 id="深入python中文件读取的各类方法"><a href="#深入python中文件读取的各类方法" class="headerlink" title="深入python中文件读取的各类方法"></a>深入python中文件读取的各类方法</h1><blockquote>
+<p>参考<a href="http://www.pythondoc.com/pythontutorial3/index.html">文档</a></p>
 </blockquote>
 <h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2>
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/11/python中的文件读取/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1577,32 +1467,15 @@
 
       
         
-          
-            <h1 id="居住证办理（原暂住证）"><a href="#居住证办理（原暂住证）" class="headerlink" title="居住证办理（原暂住证）"></a>居住证办理（原暂住证）</h1><p><a href="https://bjjzzpt.com/" target="_blank" rel="external">办理居住证传送门</a></p>
-<p>今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。</p>
-<h2 id="准备的材料"><a href="#准备的材料" class="headerlink" title="准备的材料"></a>准备的材料</h2><blockquote>
-<p>对于材料的准备，前期准备还是挺充分的，网上也有相关的提示。<br>虽说有了申请网站，而且各种<br>提示相对于之前来说也很全面，但距离商业类的服务站点，还是差了不少。</p>
-</blockquote>
-<p>以网上预约办理居住证，条件选的是5年社保，说说需要准备哪些：</p>
-<h3 id="身份证"><a href="#身份证" class="headerlink" title="身份证"></a>身份证</h3><p>没什么可说的，身份证必备，能证明真身的利器。</p>
-<h3 id="半年内的社保个人权益记录"><a href="#半年内的社保个人权益记录" class="headerlink" title="半年内的社保个人权益记录"></a>半年内的社保个人权益记录</h3><p>去北京市社会保障服务平台申请，<a href="http://www.bjrbj.gov.cn/csibiz/home/" target="_blank" rel="external">传送门</a></p>
-<p>登陆后在左树部分，选择个人权益记录 -&gt; 参保人缴费信息定制，从当前能选的最大月份往前推6个月即可。<br>时间选好点击提交请求，即可。</p>
-<p>一般情况下，当天提交第二天才能出结果。</p>
-<p>结果出来后打印这张单子。</p>
-<h3 id="房租租赁合同（如果有房本，直接拿着房本）"><a href="#房租租赁合同（如果有房本，直接拿着房本）" class="headerlink" title="房租租赁合同（如果有房本，直接拿着房本）"></a>房租租赁合同（如果有房本，直接拿着房本）</h3><p>在有效期内的房屋租赁合同即可，清楚标明甲方乙方和租赁结束日期的。</p>
-<blockquote>
-<p>我办理的时候，还准备了其他的东西，比如照片、公司的劳动合同，保密协议什么的，全都拿着<br>结果是根本也用不上。</p>
-</blockquote>
-<h2 id="寻找办理点"><a href="#寻找办理点" class="headerlink" title="寻找办理点"></a>寻找办理点</h2><p>网约居住证受理网点，不是辖区派出所，一般都是社区的来京人员服务站，如果你不熟悉，还是不太好找的。<br>好在鼻子底下有张嘴，百度到附近，然后问下大爷大妈基本很快就能找到了。</p>
-<h2 id="办理过程"><a href="#办理过程" class="headerlink" title="办理过程"></a>办理过程</h2><p>值得一提的是整个的办理过程，如果你拿着以上的文件，办理过程非常顺畅。</p>
-<h3 id="扫描文件"><a href="#扫描文件" class="headerlink" title="扫描文件"></a>扫描文件</h3><p>会逐个的把你的身份证、权益记录、租房合同都用扫描仪扫描下来，不保留你任何的纸质文件。</p>
-<h3 id="回执单"><a href="#回执单" class="headerlink" title="回执单"></a>回执单</h3><p>扫描完成后，会给你一张回执单，如果你网约的时候选的是EMS邮寄，则待15天左右即可；<br>如果是自取，需要到区域派出所领取。</p>
-<blockquote>
-<p>我就是选的EMS送，多方便啊，省得再请假了，人性化。</p>
-</blockquote>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>北京取消暂住证换居住证，东西我觉得还是那个东西，只不过是换了个叫法而已。<br>如果想在北京买房买车，摇号，小孩上幼儿园，那么还是办一个吧，比较方便；<br>即便是你有工作居住证，也要办一个（据说是政策规定的）</p>
-
-          
+          <h1 id="居住证办理（原暂住证）"><a href="#居住证办理（原暂住证）" class="headerlink" title="居住证办理（原暂住证）"></a>居住证办理（原暂住证）</h1><p><a href="https://bjjzzpt.com/">办理居住证传送门</a></p>
+<p>今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。<br>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/11/居住证办理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1741,9 +1614,14 @@
 
       
         
-          
-            <h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1>
-          
+          <h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/09/talking-about-python-unittest/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1864,26 +1742,21 @@
 
       
         
-          
-            <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
+          <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
 <p>系统：ubuntu 16.04 64位</p>
 </blockquote>
 <h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
 <h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>L https://deb.nodesource.com/setup_6.x | sudo -E bash -</div><div class="line"></div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure>
 <blockquote>
-<p>不同系统安装node参见：<a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="external">这里</a></p>
+<p>不同系统安装node参见：<a href="https://nodejs.org/en/download/package-manager/">这里</a></p>
 </blockquote>
-<h4 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
-<blockquote>
-<p>hexo官网很详细，见<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">这里</a></p>
-</blockquote>
-<h2 id="至此，环境基本配置完毕。"><a href="#至此，环境基本配置完毕。" class="headerlink" title="至此，环境基本配置完毕。"></a>至此，环境基本配置完毕。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init myblog</div></pre></td></tr></table></figure>
-<h2 id="教程参考："><a href="#教程参考：" class="headerlink" title="教程参考："></a>教程参考：</h2><blockquote>
-<p><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">官方教程</a><br><a href="http://jiji262.github.io/" target="_blank" rel="external">令狐葱</a></p>
-<p><a href="http://zhiho.github.io/2015/09/29/hexo-next/" target="_blank" rel="external">Zhiho’s Blog</a></p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/09/start-hexo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
