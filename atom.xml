@@ -65,12 +65,12 @@
     <link href="http://sugar.yer.pub/2016/12/16/python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91-Binary-tree/"/>
     <id>http://sugar.yer.pub/2016/12/16/python数据结构之二叉树-Binary-tree/</id>
     <published>2016-12-16T02:37:36.000Z</published>
-    <updated>2016-12-16T02:46:37.387Z</updated>
+    <updated>2016-12-16T05:44:17.340Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据结构之二叉树"><a href="#数据结构之二叉树" class="headerlink" title="数据结构之二叉树"></a>数据结构之二叉树</h1><p>定义，参考自：<a href="https://zh.wikipedia.org/zh/二叉树" target="_blank" rel="external">维基百科-二叉树</a></p>
 <p>特性：二元树是一个有根树，并且每个节点最多有2个子节点。非空的二叉树，若树叶总数为 n0，分支度为2的总数为 n2，则 n0 = n2 + 1。</p>
 <p>如图：</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/BinaryTree_leaf.jpg" alt="二叉树"><br><a id="more"></a></p>
+<p><img src="http://oi1wvrjc2.bkt.clouddn.com/16-12-16/27272502-file_1481867029975_ef8b.jpg" alt="二叉树"><br><a id="more"></a></p>
 <h2 id="二叉树的实现"><a href="#二叉树的实现" class="headerlink" title="二叉树的实现"></a>二叉树的实现</h2>]]></content>
     
     <summary type="html">
@@ -78,7 +78,7 @@
       &lt;h1 id=&quot;数据结构之二叉树&quot;&gt;&lt;a href=&quot;#数据结构之二叉树&quot; class=&quot;headerlink&quot; title=&quot;数据结构之二叉树&quot;&gt;&lt;/a&gt;数据结构之二叉树&lt;/h1&gt;&lt;p&gt;定义，参考自：&lt;a href=&quot;https://zh.wikipedia.org/zh/二叉树&quot;&gt;维基百科-二叉树&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;特性：二元树是一个有根树，并且每个节点最多有2个子节点。非空的二叉树，若树叶总数为 n0，分支度为2的总数为 n2，则 n0 = n2 + 1。&lt;/p&gt;
 &lt;p&gt;如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/b/b1/BinaryTree_leaf.jpg&quot; alt=&quot;二叉树&quot;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;http://oi1wvrjc2.bkt.clouddn.com/16-12-16/27272502-file_1481867029975_ef8b.jpg&quot; alt=&quot;二叉树&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -298,7 +298,7 @@
     <link href="http://sugar.yer.pub/2016/12/12/%E5%9F%BA%E4%BA%8Epython%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%84%E7%B1%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://sugar.yer.pub/2016/12/12/基于python环境的各类环境搭建/</id>
     <published>2016-12-12T08:01:13.000Z</published>
-    <updated>2016-12-14T07:35:48.326Z</updated>
+    <updated>2016-12-16T06:18:49.155Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基于python环境的各类环境搭建"><a href="#基于python环境的各类环境搭建" class="headerlink" title="基于python环境的各类环境搭建"></a>基于python环境的各类环境搭建</h1><h2 id="—服务类—"><a href="#—服务类—" class="headerlink" title="—服务类—"></a>—服务类—</h2><table>
 <thead>
@@ -536,7 +536,15 @@
       <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
     
     
-      <category term="python, gunicorn, django, supervisor, celery" scheme="http://sugar.yer.pub/tags/python-gunicorn-django-supervisor-celery/"/>
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+      <category term="gunicorn" scheme="http://sugar.yer.pub/tags/gunicorn/"/>
+    
+      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
+    
+      <category term="supervisor" scheme="http://sugar.yer.pub/tags/supervisor/"/>
+    
+      <category term="celery" scheme="http://sugar.yer.pub/tags/celery/"/>
     
   </entry>
   
@@ -545,7 +553,7 @@
     <link href="http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/"/>
     <id>http://sugar.yer.pub/2016/12/12/linux免密码认证配置/</id>
     <published>2016-12-12T03:26:53.000Z</published>
-    <updated>2016-12-14T07:35:48.274Z</updated>
+    <updated>2016-12-16T06:18:49.187Z</updated>
     
     <content type="html"><![CDATA[<h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
 <blockquote>
@@ -576,7 +584,7 @@
     <link href="http://sugar.yer.pub/2016/12/11/python%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
     <id>http://sugar.yer.pub/2016/12/11/python中的文件读取/</id>
     <published>2016-12-10T18:40:29.000Z</published>
-    <updated>2016-12-15T01:33:32.660Z</updated>
+    <updated>2016-12-16T06:18:49.207Z</updated>
     
     <content type="html"><![CDATA[<h1 id="深入python中文件读取的各类方法"><a href="#深入python中文件读取的各类方法" class="headerlink" title="深入python中文件读取的各类方法"></a>深入python中文件读取的各类方法</h1><blockquote>
 <p>参考<a href="http://www.pythondoc.com/pythontutorial3/index.html" target="_blank" rel="external">文档</a></p>
@@ -595,7 +603,11 @@
       <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
     
     
-      <category term="python, 文件, 读写" scheme="http://sugar.yer.pub/tags/python-%E6%96%87%E4%BB%B6-%E8%AF%BB%E5%86%99/"/>
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+      <category term="文件" scheme="http://sugar.yer.pub/tags/%E6%96%87%E4%BB%B6/"/>
+    
+      <category term="读写" scheme="http://sugar.yer.pub/tags/%E8%AF%BB%E5%86%99/"/>
     
   </entry>
   
@@ -604,7 +616,7 @@
     <link href="http://sugar.yer.pub/2016/12/11/%E5%B1%85%E4%BD%8F%E8%AF%81%E5%8A%9E%E7%90%86/"/>
     <id>http://sugar.yer.pub/2016/12/11/居住证办理/</id>
     <published>2016-12-10T17:26:18.000Z</published>
-    <updated>2016-12-14T07:35:48.250Z</updated>
+    <updated>2016-12-16T06:18:49.179Z</updated>
     
     <content type="html"><![CDATA[<h1 id="居住证办理（原暂住证）"><a href="#居住证办理（原暂住证）" class="headerlink" title="居住证办理（原暂住证）"></a>居住证办理（原暂住证）</h1><p><a href="https://bjjzzpt.com/" target="_blank" rel="external">办理居住证传送门</a></p>
 <p>今天周六，一大早就起来去预约的网点办理居住证，毕竟是去衙门口办事儿，不早点估计办不完。<br><a id="more"></a></p>
@@ -650,7 +662,7 @@
     <link href="http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/"/>
     <id>http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/</id>
     <published>2016-12-09T10:09:04.000Z</published>
-    <updated>2016-12-14T07:35:48.238Z</updated>
+    <updated>2016-12-16T06:18:49.171Z</updated>
     
     <content type="html"><![CDATA[<h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1><a id="more"></a>]]></content>
     
@@ -672,7 +684,7 @@
     <link href="http://sugar.yer.pub/2016/12/09/start-hexo/"/>
     <id>http://sugar.yer.pub/2016/12/09/start-hexo/</id>
     <published>2016-12-09T01:40:20.000Z</published>
-    <updated>2016-12-14T07:35:48.218Z</updated>
+    <updated>2016-12-16T06:18:49.219Z</updated>
     
     <content type="html"><![CDATA[<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
 <p>系统：ubuntu 16.04 64位</p>
@@ -708,6 +720,8 @@
     </summary>
     
     
+      <category term="hexo" scheme="http://sugar.yer.pub/tags/hexo/"/>
+    
   </entry>
   
   <entry>
@@ -715,7 +729,7 @@
     <link href="http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/"/>
     <id>http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/</id>
     <published>2016-12-08T22:22:48.000Z</published>
-    <updated>2016-12-14T07:35:48.350Z</updated>
+    <updated>2016-12-16T06:18:49.243Z</updated>
     
     <content type="html"><![CDATA[<h1 id="循环（迭代器与生成器）的那点事"><a href="#循环（迭代器与生成器）的那点事" class="headerlink" title="循环（迭代器与生成器）的那点事"></a>循环（迭代器与生成器）的那点事</h1><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><ul>
 <li>while 执行时的基本流程图</li>
@@ -874,7 +888,9 @@
       <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
     
     
-      <category term="python, 迭代" scheme="http://sugar.yer.pub/tags/python-%E8%BF%AD%E4%BB%A3/"/>
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+      <category term="迭代" scheme="http://sugar.yer.pub/tags/%E8%BF%AD%E4%BB%A3/"/>
     
   </entry>
   
