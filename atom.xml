@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2016-12-16T03:34:21.627Z</updated>
+  <updated>2016-12-27T10:26:09.680Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -16,11 +16,161 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Unit7: The Sampler</title>
+    <link href="http://sugar.yer.pub/2016/12/21/Unit7-The-Sampler/"/>
+    <id>http://sugar.yer.pub/2016/12/21/Unit7-The-Sampler/</id>
+    <published>2016-12-21T02:42:40.000Z</published>
+    <updated>2016-12-27T10:26:09.680Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Unit-Seven-The-Sampler"><a href="#Unit-Seven-The-Sampler" class="headerlink" title="Unit Seven: The Sampler"></a>Unit Seven: The Sampler</h1><a id="more"></a>
+<p>The author finds out that good intentions alone are not enough when<br>his attempt to be kind to an old man leaves them both feeling worse than<br>before.</p>
+<p><strong>find out</strong></p>
+<p>I have often wondered whether some people, who had no intention of making a purchase,<br>would take advantage of this privilege.</p>
+<p>我经常会奇怪，<br>One day I asked this question of shop girl, and I learned it was indeed the case.</p>
+<p>有一天我问了店员女孩这个问题，<br>“Now there’s one old gentleman, for instance,” she told me, “ he comes here<br>almost every week and samples each one of the puddings, though he never buys<br>anything, and I suspect he never will. I remember him from last year before<br>that, too. Well, let him come if he wants it, and welcome to it. And what’s more<br>, I hope there are a lot more stores where he can go and get his share. He looks as<br>if he needed it all right, and I suppose they can afford it .”</p>
+<p>She was still speaking when an elderly gentleman limped up to the counter and<br>began looking closely at the row of puddings with great interest.</p>
+<p>“Why, that’s the very gentleman I’ve been telling you about,” whispered the shop girl.”<br>Just watch him now. “And then turning to him:” Would you like to sample them, sir? Here’s<br>spoon for you to use.”</p>
+<p>The elderly gentleman, who was poorly but neatly dressed, accepted the spoon and began eagerly<br>to sample one after another of the puddings, only braking off occasionally to wipe his<br>red eyes with a large torn handkerchief.</p>
+<p>“This is quite good.”</p>
+<p>“This is not bad either, but a little too heavy.”</p>
+<p>All the time it was quite evident that he sincerely believed that he might eventually buy one<br>of these puddings, and I am positive that he did not for a moment feel that he was in any way cheating<br>the store. Poor old chap! Probably he had come down in the world and this sampling was all that was<br>left him from the time when he could afford to come and select his favorite pudding.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Unit-Seven-The-Sampler&quot;&gt;&lt;a href=&quot;#Unit-Seven-The-Sampler&quot; class=&quot;headerlink&quot; title=&quot;Unit Seven: The Sampler&quot;&gt;&lt;/a&gt;Unit Seven: The Sampler&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="http://sugar.yer.pub/categories/English/"/>
+    
+    
+      <category term="English" scheme="http://sugar.yer.pub/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>接口自动化，用例分析</title>
+    <link href="http://sugar.yer.pub/2016/12/20/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%8C%E7%94%A8%E4%BE%8B%E5%88%86%E6%9E%90/"/>
+    <id>http://sugar.yer.pub/2016/12/20/接口自动化，用例分析/</id>
+    <published>2016-12-20T08:09:08.000Z</published>
+    <updated>2016-12-20T10:02:53.741Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="用例分析"><a href="#用例分析" class="headerlink" title="用例分析"></a>用例分析</h1><h2 id="基础用例"><a href="#基础用例" class="headerlink" title="基础用例"></a>基础用例</h2><h3 id="request-params"><a href="#request-params" class="headerlink" title="request params"></a>request params</h3><h4 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h4><p>针对入参中的参数，对可选参数与必选参数进行组合请求，关注结果；</p>
+<h4 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h4><p>传入参数值包含大量非正常数据，包括特殊字符，无意义串</p>
+<h4 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h4><p>待补充</p>
+<h3 id="response-data"><a href="#response-data" class="headerlink" title="response data"></a>response data</h3><h4 id="timespend"><a href="#timespend" class="headerlink" title="timespend"></a>timespend</h4><p>请求接口的用时，可做为参考</p>
+<h4 id="对比-diff"><a href="#对比-diff" class="headerlink" title="对比(diff)"></a>对比(diff)</h4><p>对返回结果中，选取一级key值和二级key值，与正确返回值中的对应项进行对比；<br>确保无随意的增删字段产生</p>
+<h4 id="检查项"><a href="#检查项" class="headerlink" title="检查项"></a>检查项</h4><p>根据业务中的统一规则，对返回数据中的必要项目进行检查：<br>包括：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>200</td>
+</tr>
+<tr>
+<td>所有key</td>
+<td>小写</td>
+</tr>
+<tr>
+<td>一级key</td>
+<td>标准4个</td>
+</tr>
+<tr>
+<td>returncode</td>
+<td>0</td>
+</tr>
+<tr>
+<td>结果中的url链接</td>
+<td>2××、3××</td>
+</tr>
+</tbody>
+</table>
+<h2 id="业务用例-灰盒测试代码"><a href="#业务用例-灰盒测试代码" class="headerlink" title="业务用例(灰盒测试代码)"></a>业务用例(灰盒测试代码)</h2><h3 id="业务情景的基础用例覆盖"><a href="#业务情景的基础用例覆盖" class="headerlink" title="业务情景的基础用例覆盖"></a>业务情景的基础用例覆盖</h3><p>针对产品需求，对业务逻辑写测试代码，其中有判断条件，基于一定数据环境；</p>
+<h3 id="多数据覆盖"><a href="#多数据覆盖" class="headerlink" title="多数据覆盖"></a>多数据覆盖</h3><p>因无法修改源接口返回数据源（另外，修改起来代价太大，各业务方都有数据），所以<br>尽可能的对线上数据进行遍历操作</p>
+<h4 id="自动生成用例代码"><a href="#自动生成用例代码" class="headerlink" title="自动生成用例代码"></a>自动生成用例代码</h4><p>针对入参为城市、省份、品牌、车型、车系等可控数据，进行大范围\全范围遍历</p>
+<p>通过对<strong>init</strong>的覆写，来继承已完成的测试类；</p>
+<h4 id="自动化生成报告代码"><a href="#自动化生成报告代码" class="headerlink" title="自动化生成报告代码"></a>自动化生成报告代码</h4><p>使用HtmlTestRunner.py生成报告</p>
+<p>但因为如果用上面生成大范围用例，就可能出现大量的测试类，这时候需要将上千个测试类组装<br>到一起进行生成报告</p>
+<h2 id="页面组装"><a href="#页面组装" class="headerlink" title="页面组装"></a>页面组装</h2><p>希望把以上的功能集成至前端页面中，通过点击按钮的方式自动操作</p>
+<h3 id="组织结构设计"><a href="#组织结构设计" class="headerlink" title="组织结构设计"></a>组织结构设计</h3><p>将执行脚本、生成用例脚本、生成报告脚本做目录区分</p>
+<p>对每一次测试执行结果都进行保存</p>
+<h3 id="celery应用"><a href="#celery应用" class="headerlink" title="celery应用"></a>celery应用</h3><p>因为生成报告时间长、无需立即查看报告状态这些特点，可将生成报告做成异步</p>
+<h2 id="线上巡查"><a href="#线上巡查" class="headerlink" title="线上巡查"></a>线上巡查</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;用例分析&quot;&gt;&lt;a href=&quot;#用例分析&quot; class=&quot;headerlink&quot; title=&quot;用例分析&quot;&gt;&lt;/a&gt;用例分析&lt;/h1&gt;&lt;h2 id=&quot;基础用例&quot;&gt;&lt;a href=&quot;#基础用例&quot; class=&quot;headerlink&quot; title=&quot;基础用例&quot;&gt;&lt;/a
+    
+    </summary>
+    
+      <category term="自动化" scheme="http://sugar.yer.pub/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+    
+      <category term="自动化" scheme="http://sugar.yer.pub/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+      <category term="用例" scheme="http://sugar.yer.pub/tags/%E7%94%A8%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016年度总结与复习冲刺阶段</title>
+    <link href="http://sugar.yer.pub/2016/12/19/2016%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8E%E5%A4%8D%E4%B9%A0%E5%86%B2%E5%88%BA%E9%98%B6%E6%AE%B5/"/>
+    <id>http://sugar.yer.pub/2016/12/19/2016年度总结与复习冲刺阶段/</id>
+    <published>2016-12-19T01:35:53.000Z</published>
+    <updated>2016-12-21T02:27:41.596Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2016年终总结与复习汇总，用来记录"><a href="#2016年终总结与复习汇总，用来记录" class="headerlink" title="2016年终总结与复习汇总，用来记录"></a>2016年终总结与复习汇总，用来记录</h1><h2 id="复习汇总"><a href="#复习汇总" class="headerlink" title="复习汇总"></a>复习汇总</h2><h3 id="deadline"><a href="#deadline" class="headerlink" title="deadline"></a>deadline</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">subject</th>
+<th style="text-align:right">endtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">data structure</td>
+<td style="text-align:right">2017.01.08 am</td>
+</tr>
+<tr>
+<td style="text-align:right">english</td>
+<td style="text-align:right">2017.01.08 pm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="English"><a href="#English" class="headerlink" title="English"></a>English</h3><h4 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h4><p>背单词就靠她了<a href="https://quizlet.com/yangeren" target="_blank" rel="external">Quizlet</a></p>
+<p>自己把单词录入一遍，加深记忆，然后再背；<br>目前后面的几章都没录呢。。。</p>
+<h4 id="sentence-pattern"><a href="#sentence-pattern" class="headerlink" title="sentence pattern"></a>sentence pattern</h4><p>把老师特意备注的几种句型的用法总结起来，目前已经总结了<br><a href="http://sugar.yer.pub/2016/12/16/%E8%8B%B1%E8%AF%AD%E4%B8%AD%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E8%A7%A3%E6%9E%90/">虚拟语气</a><br>的用法，其它语法还有待整理。</p>
+<h3 id="data-structure"><a href="#data-structure" class="headerlink" title="data structure"></a>data structure</h3><p>数据结构需要对讲过的主要的几种数据结构进行实践</p>
+<h4 id="binary-tree"><a href="#binary-tree" class="headerlink" title="binary tree"></a>binary tree</h4><h4 id="Huffman-tree"><a href="#Huffman-tree" class="headerlink" title="Huffman tree"></a>Huffman tree</h4><h3 id="年终总结"><a href="#年终总结" class="headerlink" title="年终总结"></a>年终总结</h3><h4 id="about-study"><a href="#about-study" class="headerlink" title="about study"></a>about study</h4><h4 id="about-work"><a href="#about-work" class="headerlink" title="about work"></a>about work</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;a href=&quot;#2016年终总结与复习汇总，用来记录&quot; class=&quot;headerlink&quot; title=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;/a&gt;2016年终总结与复习汇总，用来记录&lt;/h1&gt;&lt;h2 id=&quot;复
+    
+    </summary>
+    
+      <category term="年终" scheme="http://sugar.yer.pub/categories/%E5%B9%B4%E7%BB%88/"/>
+    
+    
+      <category term="年终" scheme="http://sugar.yer.pub/tags/%E5%B9%B4%E7%BB%88/"/>
+    
+      <category term="复习" scheme="http://sugar.yer.pub/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英语中虚拟语气的用法及解析</title>
     <link href="http://sugar.yer.pub/2016/12/16/%E8%8B%B1%E8%AF%AD%E4%B8%AD%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E8%A7%A3%E6%9E%90/"/>
     <id>http://sugar.yer.pub/2016/12/16/英语中虚拟语气的用法及解析/</id>
     <published>2016-12-16T03:06:01.000Z</published>
-    <updated>2016-12-16T03:34:21.627Z</updated>
+    <updated>2016-12-17T16:22:23.049Z</updated>
     
     <content type="html"><![CDATA[<p>整理自教学笔记和网络<br><a id="more"></a></p>
 <h2 id="虚拟语气"><a href="#虚拟语气" class="headerlink" title="虚拟语气"></a>虚拟语气</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>虚拟语气用来表示假想，而不表示客观存在的事实，所说的是一个条件，不一定是事实，或与事实相反。</p>
@@ -43,6 +193,14 @@
 <h5 id="省略主或从句之一"><a href="#省略主或从句之一" class="headerlink" title="省略主或从句之一"></a>省略主或从句之一</h5><p>有时，虚拟条件句中，主、从句可以省略其中的一个，来表示说话人的一种强烈的感情。</p>
 <h6 id="省略从句"><a href="#省略从句" class="headerlink" title="省略从句"></a>省略从句</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">He would have finished it.</div><div class="line">他本该完成了。</div><div class="line"></div><div class="line">You could have passed this exam.</div><div class="line">你应该会通过这次考试了。</div></pre></td></tr></table></figure>
 <h6 id="省略主句"><a href="#省略主句" class="headerlink" title="省略主句"></a>省略主句</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">If I were at home now.</div><div class="line">要是我现在在家里该多好啊。</div><div class="line"></div><div class="line">If only I had got it.</div><div class="line">要是我得到它了该多好啊。</div></pre></td></tr></table></figure>
+<h3 id="其他状语从句的虚拟语气"><a href="#其他状语从句的虚拟语气" class="headerlink" title="其他状语从句的虚拟语气"></a>其他状语从句的虚拟语气</h3><h4 id="目的状语从句中的虚拟语气"><a href="#目的状语从句中的虚拟语气" class="headerlink" title="目的状语从句中的虚拟语气"></a>目的状语从句中的虚拟语气</h4><h5 id="should-动词原型"><a href="#should-动词原型" class="headerlink" title="should + 动词原型"></a>should + 动词原型</h5><p>在 for fear that \ in case \ lest 引导的目的状语从句中，若用虚拟语气时，<br>从句谓语为： should + 动词原形。并且 should 不能省略<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">She examined the door again for fear that a thief should come in.</div><div class="line">她又把门检查了一遍，以防盗贼的进入。</div><div class="line"></div><div class="line">He started out earlier lest he should be late.</div><div class="line">他很早就出发了以防迟到。</div></pre></td></tr></table></figure></p>
+<p>#####<br>在 so that \ in order that 所引导的目的状语从句中，<br>从句中的谓语为：can / may / could / might / will / would / should + 动词原形。</p>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">He goes closer to the speaker so that he can hear him clearer.</div><div class="line">他走近说话的人以便能挺得更清楚。</div><div class="line"></div><div class="line">He read the letter carefully in order that he should not miss a word.</div><div class="line">他把信读得很仔细以便不漏掉一个单词。</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>引用</p>
+<p><a href="http://blog.sina.com.cn/s/blog_14a9f05cc0102wlja.html" target="_blank" rel="external">英语中if虚拟语气的用法解析</a></p>
+<p><a href="http://baike.baidu.com/view/26751.htm" target="_blank" rel="external">虚拟语气-百度百科</a></p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
@@ -553,7 +711,7 @@
     <link href="http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/"/>
     <id>http://sugar.yer.pub/2016/12/12/linux免密码认证配置/</id>
     <published>2016-12-12T03:26:53.000Z</published>
-    <updated>2016-12-16T06:18:49.187Z</updated>
+    <updated>2016-12-21T06:12:16.627Z</updated>
     
     <content type="html"><![CDATA[<h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
 <blockquote>
@@ -561,6 +719,7 @@
 </blockquote>
 <a id="more"></a>
 <h3 id="单向免密码登陆"><a href="#单向免密码登陆" class="headerlink" title="单向免密码登陆"></a>单向免密码登陆</h3><p>服务器A，PC机B。</p>
+<p><a href="http://kuanghy.github.io/2016/09/01/linux-softwares" target="_blank" rel="external">linux下小工具参考</a></p>
 ]]></content>
     
     <summary type="html">
