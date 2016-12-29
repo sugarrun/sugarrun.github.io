@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2016-12-27T10:26:09.680Z</updated>
+  <updated>2016-12-29T05:46:14.963Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -16,11 +16,105 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python安装PIL模块</title>
+    <link href="http://sugar.yer.pub/2016/12/29/python%E5%AE%89%E8%A3%85PIL%E6%A8%A1%E5%9D%97/"/>
+    <id>http://sugar.yer.pub/2016/12/29/python安装PIL模块/</id>
+    <published>2016-12-29T02:59:36.000Z</published>
+    <updated>2016-12-29T05:46:14.963Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python安装PIL模块"><a href="#python安装PIL模块" class="headerlink" title="python安装PIL模块"></a>python安装PIL模块</h1><blockquote>
+<p>因为要获取图片的信息，所以需要PIL模块来解析</p>
+</blockquote>
+<p><a href="http://effbot.org/imagingbook/" target="_blank" rel="external">官方教程</a><br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -I --no-cache-dir -v Pillow</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div></pre></td></tr></table></figure>
+<h3 id="简单应用"><a href="#简单应用" class="headerlink" title="简单应用"></a>简单应用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="comment"># 打开</span></div><div class="line">ima = Image.open(<span class="string">"test.png"</span>)</div><div class="line"><span class="comment"># 获取尺寸\类型等</span></div><div class="line"><span class="keyword">print</span> ima.format, ima.size, ima.mode</div><div class="line"><span class="comment">#Out[19]: PNG (400, 300) RGB</span></div></pre></td></tr></table></figure>
+<h3 id="加载网络图片"><a href="#加载网络图片" class="headerlink" title="加载网络图片"></a>加载网络图片</h3><p>使用StringIO模块将文件写入内存，即伪装成file<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> StringIO</div><div class="line"><span class="keyword">import</span> requests</div><div class="line">res = requests.get(url=<span class="string">"http://car0.autoimg.cn/logo/brand/100/130549643705032710.jpg"</span>)</div><div class="line">resBuff = StringIO.StringIO(res.content)</div><div class="line">ima = Image.open(resBuff)</div><div class="line">ima.size</div><div class="line"><span class="comment">#Out[19]: (100, 100)</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;python安装PIL模块&quot;&gt;&lt;a href=&quot;#python安装PIL模块&quot; class=&quot;headerlink&quot; title=&quot;python安装PIL模块&quot;&gt;&lt;/a&gt;python安装PIL模块&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;因为要获取图片的信息，所以需要PIL模块来解析&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://effbot.org/imagingbook/&quot;&gt;官方教程&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
+    
+    
+      <category term="PIL" scheme="http://sugar.yer.pub/tags/PIL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>批量删除redis keys</title>
+    <link href="http://sugar.yer.pub/2016/12/28/%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4redis-keys/"/>
+    <id>http://sugar.yer.pub/2016/12/28/批量删除redis-keys/</id>
+    <published>2016-12-28T10:49:19.000Z</published>
+    <updated>2016-12-28T11:11:22.691Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="redis基本用法"><a href="#redis基本用法" class="headerlink" title="redis基本用法"></a>redis基本用法</h1><h2 id="连接redis库"><a href="#连接redis库" class="headerlink" title="连接redis库"></a>连接redis库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli -h 127.0.0.1 -p 6070 -a password</div></pre></td></tr></table></figure>
+<h2 id="选定数据库"><a href="#选定数据库" class="headerlink" title="选定数据库"></a>选定数据库</h2><p>默认数据库为0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select 0</div></pre></td></tr></table></figure></p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="单条查询"><a href="#单条查询" class="headerlink" title="单条查询"></a>单条查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keys &quot;key&quot;</div></pre></td></tr></table></figure>
+<h3 id="多条查询"><a href="#多条查询" class="headerlink" title="多条查询"></a>多条查询</h3><p>使用通配符*<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keys &quot;key*&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="单独删除key"><a href="#单独删除key" class="headerlink" title="单独删除key"></a>单独删除key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">del keys</div></pre></td></tr></table></figure>
+<h3 id="批量删除keys"><a href="#批量删除keys" class="headerlink" title="批量删除keys"></a>批量删除keys</h3><p>利用linux中的xargs参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis-cli keys &quot;mobile*&quot; | xargs redis-cli del</div><div class="line">//如果redis-cli没有设置成系统变量，需要指定redis-cli的完整路径</div><div class="line">//如：/opt/redis/redis-cli keys &quot;*&quot; | xargs /opt/redis/redis-cli del</div></pre></td></tr></table></figure></p>
+<p>如果更改了redis端口，则需要指定端口-p<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli -h 127.0.0.1 -p 6070 keys &quot;mobile*&quot; | xargs redis-cli -h 127.0.0.1 -p 6070 del</div></pre></td></tr></table></figure></p>
+<p>如果要指定redis库，则使用-n<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//下面的命令指定数据序号为0，即默认数据库</div><div class="line">redis-cli -h 127.0.0.1 -p 6070 keys &quot;mobile*&quot; -n 0 | xargs redis-cli -h 127.0.0.1 -p 6070 -n 0 del</div></pre></td></tr></table></figure></p>
+<h3 id="全部删除"><a href="#全部删除" class="headerlink" title="全部删除"></a>全部删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//删除当前数据库中的所有Key</div><div class="line">flushdb</div><div class="line"></div><div class="line">//删除所有数据库中的key</div><div class="line">flushall</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;redis基本用法&quot;&gt;&lt;a href=&quot;#redis基本用法&quot; class=&quot;headerlink&quot; title=&quot;redis基本用法&quot;&gt;&lt;/a&gt;redis基本用法&lt;/h1&gt;&lt;h2 id=&quot;连接redis库&quot;&gt;&lt;a href=&quot;#连接redis库&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="redis" scheme="http://sugar.yer.pub/categories/redis/"/>
+    
+    
+      <category term="redis" scheme="http://sugar.yer.pub/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu 常用工具</title>
+    <link href="http://sugar.yer.pub/2016/12/28/ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <id>http://sugar.yer.pub/2016/12/28/ubuntu-常用工具/</id>
+    <published>2016-12-28T06:16:15.000Z</published>
+    <updated>2016-12-28T06:26:50.657Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Ubuntu常用工具"><a href="#Ubuntu常用工具" class="headerlink" title="Ubuntu常用工具"></a>Ubuntu常用工具</h1><h3 id="版本控制软件GUI版"><a href="#版本控制软件GUI版" class="headerlink" title="版本控制软件GUI版"></a>版本控制软件GUI版</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
+<p>按照wiki安装，rabbitvcs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-add-repository universe</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install rabbitvcs-nautilus</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><a href="http://wiki.rabbitvcs.org/wiki/install/ubuntu" target="_blank" rel="external">WIKI</a></p>
+<h4 id="安装完毕重启"><a href="#安装完毕重启" class="headerlink" title="安装完毕重启"></a>安装完毕重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nautilus -q</div></pre></td></tr></table></figure>
+<h4 id="安装完成效果图"><a href="#安装完成效果图" class="headerlink" title="安装完成效果图"></a>安装完成效果图</h4><p><img src="http://oi1wvrjc2.bkt.clouddn.com/16-12-28/59784456-file_1482905990308_3716.png" alt="效果图1"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Ubuntu常用工具&quot;&gt;&lt;a href=&quot;#Ubuntu常用工具&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用工具&quot;&gt;&lt;/a&gt;Ubuntu常用工具&lt;/h1&gt;&lt;h3 id=&quot;版本控制软件GUI版&quot;&gt;&lt;a href=&quot;#版本控制软件GUI版&quot;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://sugar.yer.pub/categories/ubuntu/"/>
+    
+    
+      <category term="ubuntu" scheme="http://sugar.yer.pub/tags/ubuntu/"/>
+    
+      <category term="常用工具" scheme="http://sugar.yer.pub/tags/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Unit7: The Sampler</title>
     <link href="http://sugar.yer.pub/2016/12/21/Unit7-The-Sampler/"/>
     <id>http://sugar.yer.pub/2016/12/21/Unit7-The-Sampler/</id>
     <published>2016-12-21T02:42:40.000Z</published>
-    <updated>2016-12-27T10:26:09.680Z</updated>
+    <updated>2016-12-28T02:33:20.748Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Unit-Seven-The-Sampler"><a href="#Unit-Seven-The-Sampler" class="headerlink" title="Unit Seven: The Sampler"></a>Unit Seven: The Sampler</h1><a id="more"></a>
 <p>The author finds out that good intentions alone are not enough when<br>his attempt to be kind to an old man leaves them both feeling worse than<br>before.</p>
@@ -34,6 +128,9 @@
 <p>“This is quite good.”</p>
 <p>“This is not bad either, but a little too heavy.”</p>
 <p>All the time it was quite evident that he sincerely believed that he might eventually buy one<br>of these puddings, and I am positive that he did not for a moment feel that he was in any way cheating<br>the store. Poor old chap! Probably he had come down in the world and this sampling was all that was<br>left him from the time when he could afford to come and select his favorite pudding.</p>
+<p>Amidst the crowd of happy, prosperous looking Christmas shoppers, the little black figure of the of<br>man seemed pitiful and out of place, and in a burst of benevolence, I went up to him and said:<br>“Pardon me, sir, will you do me a favor? Let me purchase you one of these puddings. It would give me<br>such pleasure.”</p>
+<p>He jumped back as if he had been stung, and the blood rushed into his wrinkled face.</p>
+<p>“Excuse me,” he said, with more dignity than I would have thought possible</p>
 ]]></content>
     
     <summary type="html">
@@ -54,9 +151,10 @@
     <link href="http://sugar.yer.pub/2016/12/20/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%8C%E7%94%A8%E4%BE%8B%E5%88%86%E6%9E%90/"/>
     <id>http://sugar.yer.pub/2016/12/20/接口自动化，用例分析/</id>
     <published>2016-12-20T08:09:08.000Z</published>
-    <updated>2016-12-20T10:02:53.741Z</updated>
+    <updated>2016-12-28T01:42:41.396Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="用例分析"><a href="#用例分析" class="headerlink" title="用例分析"></a>用例分析</h1><h2 id="基础用例"><a href="#基础用例" class="headerlink" title="基础用例"></a>基础用例</h2><h3 id="request-params"><a href="#request-params" class="headerlink" title="request params"></a>request params</h3><h4 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h4><p>针对入参中的参数，对可选参数与必选参数进行组合请求，关注结果；</p>
+    <content type="html"><![CDATA[<h1 id="用例分析"><a href="#用例分析" class="headerlink" title="用例分析"></a>用例分析</h1><a id="more"></a>
+<h2 id="基础用例"><a href="#基础用例" class="headerlink" title="基础用例"></a>基础用例</h2><h3 id="request-params"><a href="#request-params" class="headerlink" title="request params"></a>request params</h3><h4 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h4><p>针对入参中的参数，对可选参数与必选参数进行组合请求，关注结果；</p>
 <h4 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h4><p>传入参数值包含大量非正常数据，包括特殊字符，无意义串</p>
 <h4 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h4><p>待补充</p>
 <h3 id="response-data"><a href="#response-data" class="headerlink" title="response data"></a>response data</h3><h4 id="timespend"><a href="#timespend" class="headerlink" title="timespend"></a>timespend</h4><p>请求接口的用时，可做为参考</p>
@@ -106,7 +204,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;用例分析&quot;&gt;&lt;a href=&quot;#用例分析&quot; class=&quot;headerlink&quot; title=&quot;用例分析&quot;&gt;&lt;/a&gt;用例分析&lt;/h1&gt;&lt;h2 id=&quot;基础用例&quot;&gt;&lt;a href=&quot;#基础用例&quot; class=&quot;headerlink&quot; title=&quot;基础用例&quot;&gt;&lt;/a
+      &lt;h1 id=&quot;用例分析&quot;&gt;&lt;a href=&quot;#用例分析&quot; class=&quot;headerlink&quot; title=&quot;用例分析&quot;&gt;&lt;/a&gt;用例分析&lt;/h1&gt;
     
     </summary>
     
@@ -124,9 +222,10 @@
     <link href="http://sugar.yer.pub/2016/12/19/2016%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E4%B8%8E%E5%A4%8D%E4%B9%A0%E5%86%B2%E5%88%BA%E9%98%B6%E6%AE%B5/"/>
     <id>http://sugar.yer.pub/2016/12/19/2016年度总结与复习冲刺阶段/</id>
     <published>2016-12-19T01:35:53.000Z</published>
-    <updated>2016-12-21T02:27:41.596Z</updated>
+    <updated>2016-12-28T01:42:41.404Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="2016年终总结与复习汇总，用来记录"><a href="#2016年终总结与复习汇总，用来记录" class="headerlink" title="2016年终总结与复习汇总，用来记录"></a>2016年终总结与复习汇总，用来记录</h1><h2 id="复习汇总"><a href="#复习汇总" class="headerlink" title="复习汇总"></a>复习汇总</h2><h3 id="deadline"><a href="#deadline" class="headerlink" title="deadline"></a>deadline</h3><table>
+    <content type="html"><![CDATA[<h1 id="2016年终总结与复习汇总，用来记录"><a href="#2016年终总结与复习汇总，用来记录" class="headerlink" title="2016年终总结与复习汇总，用来记录"></a>2016年终总结与复习汇总，用来记录</h1><a id="more"></a>
+<h2 id="复习汇总"><a href="#复习汇总" class="headerlink" title="复习汇总"></a>复习汇总</h2><h3 id="deadline"><a href="#deadline" class="headerlink" title="deadline"></a>deadline</h3><table>
 <thead>
 <tr>
 <th style="text-align:right">subject</th>
@@ -152,7 +251,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;a href=&quot;#2016年终总结与复习汇总，用来记录&quot; class=&quot;headerlink&quot; title=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;/a&gt;2016年终总结与复习汇总，用来记录&lt;/h1&gt;&lt;h2 id=&quot;复
+      &lt;h1 id=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;a href=&quot;#2016年终总结与复习汇总，用来记录&quot; class=&quot;headerlink&quot; title=&quot;2016年终总结与复习汇总，用来记录&quot;&gt;&lt;/a&gt;2016年终总结与复习汇总，用来记录&lt;/h1&gt;
     
     </summary>
     
@@ -880,190 +979,6 @@
     
     
       <category term="hexo" scheme="http://sugar.yer.pub/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python process control cycle: While and For</title>
-    <link href="http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/"/>
-    <id>http://sugar.yer.pub/2016/12/09/python-process-control-cycle-While-and-For/</id>
-    <published>2016-12-08T22:22:48.000Z</published>
-    <updated>2016-12-16T06:18:49.243Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="循环（迭代器与生成器）的那点事"><a href="#循环（迭代器与生成器）的那点事" class="headerlink" title="循环（迭代器与生成器）的那点事"></a>循环（迭代器与生成器）的那点事</h1><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><ul>
-<li>while 执行时的基本流程图</li>
-</ul>
-<p><img src="http://oi1wvrjc2.bkt.clouddn.com/while.png" alt="image" title="while流程图"></p>
-<a id="more"></a>
-<blockquote>
-<p>while语句的基本格式</p>
-</blockquote>
-<p>其中<exception>为对参数或表达式取布尔值，即：bool(<exception>)，结果只有两种，True和False</exception></exception></p>
-<p>如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> &lt;exception&gt;:</div><div class="line">    &lt;suite&gt;</div><div class="line">    &lt;<span class="keyword">break</span>&gt;</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    &lt;suite&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>tips:</p>
-</blockquote>
-<p>讲述一下bool值：</p>
-<ol>
-<li><p>在数值上下文环境中，True被当作1, False被当作0；如True+2 =&gt; 3, int(True) =&gt; 1</p>
-</li>
-<li><p>其他类型值转换bool值时，除了’’, “”, “”””, 0, (), [], {}, None, 0.0, 0L, 0.0+0.0j, False值为Faluse，其他的都为True；例如：bool(-1) =&gt; True</p>
-</li>
-</ol>
-<hr>
-<ul>
-<li>while表达式中的break，指跳出最近的所在的循环；一般为满足条件后跳出，以防止死循环； </li>
-</ul>
-<p>举例：猜字游戏</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        input_seed = raw_input(<span class="string">"please input the seed:"</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            seed = int(input_seed)</div><div class="line">            <span class="keyword">if</span> seed == <span class="number">11</span>:</div><div class="line">                print(<span class="string">"congretulations to you!"</span>)</div><div class="line">                <span class="keyword">break</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(<span class="string">"guess again!"</span>)</div><div class="line">        <span class="keyword">except</span> ValueError:</div><div class="line">            print(<span class="string">"please input int type"</span>)</div><div class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">            print(e)</div></pre></td></tr></table></figure>
-<ul>
-<li>else为可选部分，当控制权离开循环而又没有碰到break语句时，就会执行else中的语句；</li>
-</ul>
-<p>[注意：当第一次判断while循环条件时就不满足时，即一次循环也没有执行时，还是会执行else语句的]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">()</span>:</span></div><div class="line">    keys = <span class="string">"goodjob"</span></div><div class="line">    <span class="keyword">while</span> keys:</div><div class="line">        print(keys)</div><div class="line">        keys = keys[<span class="number">1</span>:]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">"done"</span>)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func3</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">False</span>:</div><div class="line">        print(<span class="string">"false"</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">"the end"</span>)</div></pre></td></tr></table></figure>
-<ul>
-<li>break, continue和pass</li>
-</ul>
-<blockquote>
-<p>break: 跳出最近所在的循环 （指跳出整个循环）</p>
-</blockquote>
-<p>continue: 立即跳到循环的顶端，即跳过本次循环，执行下一次循环</p>
-<p>pass: 占位语句，无实际作用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">10</span></div><div class="line">b = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">if</span> a == <span class="number">1</span>: <span class="keyword">break</span></div><div class="line">    b += <span class="number">1</span></div><div class="line">    print(<span class="string">"b="</span>,b)</div><div class="line">    <span class="keyword">if</span> b == <span class="number">100</span>: <span class="keyword">break</span></div><div class="line">    <span class="keyword">if</span> a == <span class="number">3</span>: <span class="keyword">continue</span></div><div class="line">    a -= <span class="number">1</span></div><div class="line">    print(<span class="string">"a="</span>,a)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">pass</span></div></pre></td></tr></table></figure>
-<hr>
-<h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><blockquote>
-<p>for语句的基本格式和一般用法</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> &lt;target&gt; <span class="keyword">in</span> &lt;object&gt;:</div><div class="line">    &lt;suite1&gt;</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    &lt;suite2&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>执行方式</p>
-</blockquote>
-<p>当运行for循环时，会将序列对象中的元素逐个赋值给目标，然后为每个元素执行循环主体。</p>
-<hr>
-<ul>
-<li>for循环也有break, continue和else子句</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> &lt;target&gt; <span class="keyword">in</span> &lt;object&gt;:</div><div class="line">    &lt;suite1&gt;</div><div class="line">    <span class="keyword">if</span> &lt;test&gt;: <span class="keyword">break</span></div><div class="line">    <span class="keyword">if</span> &lt;test&gt;: contiune</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    &lt;suite2&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>基本用法 </li>
-</ul>
-<blockquote>
-<p>求1-10之和，之积</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func4</span><span class="params">()</span>:</span></div><div class="line">    h = <span class="number">0</span></div><div class="line">    j = <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> xrange(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">        h += x</div><div class="line">        j *= x</div><div class="line">    <span class="keyword">print</span> h, j</div></pre></td></tr></table></figure>
-<ul>
-<li>for中的元组赋值</li>
-</ul>
-<p>若对应列表中的元组进行赋值，则可看做对元组的解包运算；</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func5</span><span class="params">()</span>:</span></div><div class="line">    T = [(<span class="number">1</span>,<span class="number">2</span>),(<span class="number">3</span>,<span class="number">4</span>),(<span class="number">5</span>,<span class="number">6</span>)]</div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> T:</div><div class="line">        <span class="keyword">print</span> x</div><div class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> T:</div><div class="line">        print(x,<span class="string">"=&gt;"</span>,y)</div></pre></td></tr></table></figure>
-<ul>
-<li>结合items操作字典</li>
-</ul>
-<p>for 循环中的元组使得用items方法来遍历字典中的键和值变得很方便，而不必再遍历键并手动索引以获取值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func6</span><span class="params">()</span>:</span></div><div class="line">    D = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> D:</div><div class="line">        <span class="keyword">print</span> x</div><div class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> D.items():</div><div class="line">        print(x,<span class="string">"=&gt;"</span>,y)</div></pre></td></tr></table></figure>
-<ul>
-<li>多重for循环</li>
-</ul>
-<p>注意：else是第二层循环中的子句，而非if的子句</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func7</span><span class="params">()</span>:</span></div><div class="line">    items = [<span class="string">'aaa'</span>,<span class="number">111</span>,(<span class="number">4</span>,<span class="number">5</span>),<span class="number">2.01</span>]</div><div class="line">    tests = [(<span class="number">4</span>,<span class="number">5</span>),<span class="number">3.14</span>]</div><div class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> tests:</div><div class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">            <span class="keyword">if</span> key == item:</div><div class="line">                print(key, <span class="string">"was found"</span>)</div><div class="line">                <span class="keyword">break</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(key, <span class="string">"not found"</span>)</div></pre></td></tr></table></figure>
-<ul>
-<li>常用range搭配，来做循环计数器和索引</li>
-</ul>
-<blockquote>
-<p>range，python2.7为生成list，python3.*与xrange合并，均变为生成可迭代的对象；</p>
-</blockquote>
-<p>简单说区别：生成可迭代对象比生成list速度更快，占用内存更小，在大数据量情况下非常有效。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">list(range(<span class="number">-5</span>,<span class="number">5</span>))</div><div class="line">&gt;&gt; [<span class="number">-5</span>, <span class="number">-4</span>, <span class="number">-3</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">list(range(<span class="number">5</span>,<span class="number">-5</span>,<span class="number">-2</span>))</div><div class="line">&gt;&gt; [<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-3</span>]</div></pre></td></tr></table></figure>
-<ul>
-<li>利用range进行索引，可以通过控制range来实现特殊的遍历，例如，可跳过一些元素</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">S = <span class="string">'abcdefghijklmn'</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(S), <span class="number">2</span>): <span class="keyword">print</span> S[i],</div><div class="line">&gt;&gt; a c e g i k m</div></pre></td></tr></table></figure>
-<blockquote>
-<p>扩展：其他的跳过元素的方式，运用切片技术，如需要可详细了解：</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> S[::<span class="number">2</span>]:<span class="keyword">print</span> item,</div><div class="line">&gt;&gt; a c e g i k m</div></pre></td></tr></table></figure>
-<ul>
-<li>并行遍历</li>
-</ul>
-<p>对两组列表进行并行遍历</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func9</span><span class="params">()</span>:</span></div><div class="line">    a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line">    b = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>]</div><div class="line">    c = zip(a,b)</div><div class="line">    <span class="keyword">print</span> type(c)</div><div class="line">    <span class="keyword">print</span> c</div><div class="line">    <span class="keyword">for</span> m, n <span class="keyword">in</span> c:</div><div class="line">        <span class="keyword">print</span> m,<span class="string">"+"</span>,n,<span class="string">"="</span>,m+n</div><div class="line">&gt;&gt;</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line">[(<span class="number">1</span>, <span class="number">11</span>), (<span class="number">2</span>, <span class="number">22</span>), (<span class="number">3</span>, <span class="number">33</span>), (<span class="number">4</span>, <span class="number">44</span>)]</div><div class="line"><span class="number">1</span> + <span class="number">11</span> = <span class="number">12</span></div><div class="line"><span class="number">2</span> + <span class="number">22</span> = <span class="number">24</span></div><div class="line"><span class="number">3</span> + <span class="number">33</span> = <span class="number">36</span></div><div class="line"><span class="number">4</span> + <span class="number">44</span> = <span class="number">48</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>扩展：zip和range一样，2.×时代生成为list，3.×时代均为可迭代对象；</p>
-</blockquote>
-<hr>
-<ul>
-<li>产生偏移和元素: enumerate</li>
-</ul>
-<p>有时可能会有这种需求，查看迭代的元素所在的位置，可以这样实现</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func10</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="string">"abcdefg"</span></div><div class="line">    j = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line">        <span class="keyword">print</span> x, <span class="string">"offset is "</span>,j</div><div class="line">        j += <span class="number">1</span></div><div class="line">&gt;&gt;&gt;</div><div class="line">a offset <span class="keyword">is</span>  <span class="number">0</span></div><div class="line">b offset <span class="keyword">is</span>  <span class="number">1</span></div><div class="line">c offset <span class="keyword">is</span>  <span class="number">2</span></div><div class="line">d offset <span class="keyword">is</span>  <span class="number">3</span></div><div class="line">e offset <span class="keyword">is</span>  <span class="number">4</span></div><div class="line">f offset <span class="keyword">is</span>  <span class="number">5</span></div><div class="line">g offset <span class="keyword">is</span>  <span class="number">6</span></div></pre></td></tr></table></figure>
-<p>但内置函数enumerate可以帮我们做</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func11</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="string">"abcdefg"</span></div><div class="line">    j = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> m, n <span class="keyword">in</span> enumerate(a):</div><div class="line">        <span class="keyword">print</span> n, <span class="string">"offset is --"</span>, m</div></pre></td></tr></table></figure>
-<h2 id="列表推导"><a href="#列表推导" class="headerlink" title="列表推导"></a>列表推导</h2><blockquote>
-<p>列表推导式为从序列中创建列表提供了一个简单的方法。</p>
-</blockquote>
-<h3 id="普通创建列表方式"><a href="#普通创建列表方式" class="headerlink" title="普通创建列表方式"></a>普通创建列表方式</h3><p>我们可以像这样创建一个普通的列表，像这样：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">testlist = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    testlist.append(x**<span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> testlist</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</div></pre></td></tr></table></figure></p>
-<p>通过上面的程序可以发现，通过for循环中被创建的名为x的变量在循环完毕后，依然存在。<br>如果想完成上面的功能，且不会产生其他的副作用，可以使用lambda来创建：</p>
-<h3 id="通过lambda表达式来创建"><a href="#通过lambda表达式来创建" class="headerlink" title="通过lambda表达式来创建"></a>通过lambda表达式来创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">testlist = list(map(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, range(<span class="number">10</span>)))</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</div></pre></td></tr></table></figure>
-<p>还有一种更加易读的创建方式：</p>
-<h3 id="通过列表推导创建"><a href="#通过列表推导创建" class="headerlink" title="通过列表推导创建"></a>通过列表推导创建</h3><h4 id="基本列表推导式"><a href="#基本列表推导式" class="headerlink" title="基本列表推导式"></a>基本列表推导式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">testlist = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</div></pre></td></tr></table></figure>
-<p>这种方式更加易读，且创建起列表来得心应手。<br>下面我们来看看，它是如何来创建的，即它的格式是什么。</p>
-<blockquote>
-<p>列表推导式由包含一个表达式的括号组成，表达式后面跟随一个 for 子句，<br>之后可以有零或多个 for 或 if 子句。结果是一个列表，<br>由表达式依据其后面的 for 和 if 子句上下文计算而来的结果构成。</p>
-</blockquote>
-<p>等同于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">testlist = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    testlist.append(x**<span class="number">2</span>)</div><div class="line"></div><div class="line">testlist</div><div class="line"></div><div class="line">&gt;&gt;&gt;[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</div></pre></td></tr></table></figure></p>
-<h4 id="带控制流程的列表推导"><a href="#带控制流程的列表推导" class="headerlink" title="带控制流程的列表推导"></a>带控制流程的列表推导</h4><p>来具体看个例子：<br>双重循环加判断：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">3</span>,<span class="number">1</span>,<span class="number">5</span>] <span class="keyword">if</span> x != y ]</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[(<span class="number">1</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">5</span>), (<span class="number">2</span>, <span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">1</span>), (<span class="number">3</span>, <span class="number">5</span>)]</div></pre></td></tr></table></figure></p>
-<p>如果看起来太复杂，那么变成常规的语法来看看：<br>上面的等同于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">testlist = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]:</div><div class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">3</span>,<span class="number">1</span>,<span class="number">5</span>]:</div><div class="line">        <span class="keyword">if</span> x != y:</div><div class="line">            testlist.append((x, y))</div><div class="line"></div><div class="line">testlist</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[(<span class="number">1</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">5</span>), (<span class="number">2</span>, <span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">1</span>), (<span class="number">3</span>, <span class="number">5</span>)]</div></pre></td></tr></table></figure></p>
-<p>注意下上面的for 和if语句的顺序。</p>
-<h4 id="嵌套的列表推导式"><a href="#嵌套的列表推导式" class="headerlink" title="嵌套的列表推导式"></a>嵌套的列表推导式</h4><p>列表解析中的第一个表达式可以是任何表达式，包括列表解析。</p>
-<p>再看一个例子：<br>有一个长度为4的列表组成的3×4的矩阵，如果想要交换行列，应如何操作？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">testlist = [</div><div class="line">    [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</div><div class="line">    [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],</div><div class="line">    [<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>],</div><div class="line">]</div></pre></td></tr></table></figure></p>
-<h5 id="普通方式："><a href="#普通方式：" class="headerlink" title="普通方式："></a>普通方式：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">result = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">    bb = []</div><div class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> testlist:</div><div class="line">        bb.append(y[x])</div><div class="line">    result.append(bb)</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>], [<span class="number">2</span>, <span class="number">6</span>, <span class="number">10</span>], [<span class="number">3</span>, <span class="number">7</span>, <span class="number">11</span>], [<span class="number">4</span>, <span class="number">8</span>, <span class="number">12</span>]]</div></pre></td></tr></table></figure>
-<h5 id="一层列表推导："><a href="#一层列表推导：" class="headerlink" title="一层列表推导："></a>一层列表推导：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">result = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">    result.append([row[i] <span class="keyword">for</span> i <span class="keyword">in</span> testlist])</div><div class="line"></div><div class="line">result</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>], [<span class="number">2</span>, <span class="number">6</span>, <span class="number">10</span>], [<span class="number">3</span>, <span class="number">7</span>, <span class="number">11</span>], [<span class="number">4</span>, <span class="number">8</span>, <span class="number">12</span>]]</div></pre></td></tr></table></figure>
-<h5 id="双层列表推导"><a href="#双层列表推导" class="headerlink" title="双层列表推导"></a>双层列表推导</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[y[x] <span class="keyword">for</span> y <span class="keyword">in</span> testlist] <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>)]</div></pre></td></tr></table></figure>
-<h5 id="内置函数处理"><a href="#内置函数处理" class="headerlink" title="内置函数处理"></a>内置函数处理</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list(zip(*testlist))</div></pre></td></tr></table></figure>
-<p>上次讲过一点zip的功能，这里的*号为参数列表的分拆，等同于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line">b = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line">c = [<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</div><div class="line">tt = zip(a,b,c)</div><div class="line">result = list(tt)</div></pre></td></tr></table></figure></p>
-<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>自己偿试将上次的food.py中的循环判断语句，使用列表表达式的方式进行处理</p>
-<p>用自己的话来说一遍：<br>把最终要处理的表达式提在最前面，把循环语句放在后面；循环语句与判断语句按顺序依次排列。<br>每一层中扩号都执行了一次append操作。</p>
-<h2 id="文件迭代器"><a href="#文件迭代器" class="headerlink" title="文件迭代器"></a>文件迭代器</h2><h3 id="文件读取方法大集合"><a href="#文件读取方法大集合" class="headerlink" title="文件读取方法大集合"></a>文件读取方法大集合</h3><ul>
-<li>基本读取文件方法</li>
-</ul>
-<ul>
-<li>with的用法</li>
-</ul>
-<h2 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器-generator"></a>生成器-generator</h2><p>yield</p>
-<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;a href=&quot;#循环（迭代器与生成器）的那点事&quot; class=&quot;headerlink&quot; title=&quot;循环（迭代器与生成器）的那点事&quot;&gt;&lt;/a&gt;循环（迭代器与生成器）的那点事&lt;/h1&gt;&lt;h2 id=&quot;while&quot;&gt;&lt;a href=&quot;#while&quot; class=&quot;headerlink&quot; title=&quot;while&quot;&gt;&lt;/a&gt;while&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;while 执行时的基本流程图&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://oi1wvrjc2.bkt.clouddn.com/while.png&quot; alt=&quot;image&quot; title=&quot;while流程图&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
-    
-      <category term="迭代" scheme="http://sugar.yer.pub/tags/%E8%BF%AD%E4%BB%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>New World!</title>
-    <link href="http://sugar.yer.pub/2016/12/09/New-World/"/>
-    <id>http://sugar.yer.pub/2016/12/09/New-World/</id>
-    <published>2016-12-08T21:43:00.000Z</published>
-    <updated>2016-12-12T11:44:17.085Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
