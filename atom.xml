@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2016-12-29T05:46:14.963Z</updated>
+  <updated>2017-01-03T03:28:23.685Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu下使用Thunderbird连接Exchange邮件服务器</title>
+    <link href="http://sugar.yer.pub/2017/01/03/ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8Thunderbird%E8%BF%9E%E6%8E%A5Exchange%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://sugar.yer.pub/2017/01/03/ubuntu下使用Thunderbird连接Exchange邮件服务器/</id>
+    <published>2017-01-03T02:26:26.000Z</published>
+    <updated>2017-01-03T03:28:23.685Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ubuntu下使用Thunderbird连接Exchange邮件服务器"><a href="#ubuntu下使用Thunderbird连接Exchange邮件服务器" class="headerlink" title="ubuntu下使用Thunderbird连接Exchange邮件服务器"></a>ubuntu下使用Thunderbird连接Exchange邮件服务器</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司为了加强安全性，故邮件服务器改为了exchange，这样一来，需要修改下自己邮件客户端及配置；<br>exchange的设置跟普通的126,163又有些区别，这里记录一下，也方便ubuntu的用户。</p>
+<h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><a id="more"></a>
+<p>插件下载地址：<a href="https://addons.mozilla.org/zh-CN/thunderbird/addon/exquilla-exchange-web-services/" target="_blank" rel="external">exquilla</a></p>
+<p>插件安装和firefox浏览器一样，非常方便<br>免费使用60天</p>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>60天肯定是不够用的，从网上找了个破解脚本，给力！</p>
+<p>脚本下载：<a href="http://oi1wvrjc2.bkt.clouddn.com/generater_license.py" target="_blank" rel="external">下载</a></p>
+<p>参考文章：<a href="http://blog.ssfighter.com/2015/01/exquilla-31-0-crack/" target="_blank" rel="external">破解方法</a></p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><h3 id="面包屑"><a href="#面包屑" class="headerlink" title="面包屑"></a>面包屑</h3><blockquote>
+<p>工具 &gt;&gt; ExQuilla for Microsoft Exchange &gt;&gt; ExQuilla license options</p>
+</blockquote>
+<h3 id="如图"><a href="#如图" class="headerlink" title="如图"></a>如图</h3><p><img src="http://oi1wvrjc2.bkt.clouddn.com/2017-01-03%2011-19-20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE1.png" alt="设置"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ubuntu下使用Thunderbird连接Exchange邮件服务器&quot;&gt;&lt;a href=&quot;#ubuntu下使用Thunderbird连接Exchange邮件服务器&quot; class=&quot;headerlink&quot; title=&quot;ubuntu下使用Thunderbird连接Exchange邮件服务器&quot;&gt;&lt;/a&gt;ubuntu下使用Thunderbird连接Exchange邮件服务器&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;公司为了加强安全性，故邮件服务器改为了exchange，这样一来，需要修改下自己邮件客户端及配置；&lt;br&gt;exchange的设置跟普通的126,163又有些区别，这里记录一下，也方便ubuntu的用户。&lt;/p&gt;
+&lt;h2 id=&quot;使用插件&quot;&gt;&lt;a href=&quot;#使用插件&quot; class=&quot;headerlink&quot; title=&quot;使用插件&quot;&gt;&lt;/a&gt;使用插件&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://sugar.yer.pub/categories/ubuntu/"/>
+    
+    
+      <category term="ubuntu" scheme="http://sugar.yer.pub/tags/ubuntu/"/>
+    
+      <category term="Thunderbird" scheme="http://sugar.yer.pub/tags/Thunderbird/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>django中使用自定义context processor实现模板全局变量</title>
+    <link href="http://sugar.yer.pub/2016/12/30/django%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89context-processor%E5%AE%9E%E7%8E%B0%E6%A8%A1%E6%9D%BF%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/"/>
+    <id>http://sugar.yer.pub/2016/12/30/django中使用自定义context-processor实现模板全局变量/</id>
+    <published>2016-12-30T03:34:04.000Z</published>
+    <updated>2017-01-03T03:09:16.882Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="django中使用自定义context-processor实现模板全局变量"><a href="#django中使用自定义context-processor实现模板全局变量" class="headerlink" title="django中使用自定义context processor实现模板全局变量"></a>django中使用自定义context processor实现模板全局变量</h1><h2 id="在视图中定义全局变量方法"><a href="#在视图中定义全局变量方法" class="headerlink" title="在视图中定义全局变量方法"></a>在视图中定义全局变量方法</h2><a id="more"></a>
+<h3 id="在每个页面显示google指向的ip"><a href="#在每个页面显示google指向的ip" class="headerlink" title="在每个页面显示google指向的ip"></a>在每个页面显示google指向的ip</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">context_proc</span><span class="params">(request)</span>:</span></div><div class="line">    <span class="string">"""获取google的ip指向，每个页面都需要显示"""</span></div><div class="line">    env = socket.getaddrinfo(<span class="string">"www.google.com"</span>, <span class="string">"http"</span>)[<span class="number">0</span>][<span class="number">4</span>][<span class="number">0</span>]</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">    <span class="string">"env"</span>: env,</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="如果有多个全局变量要显示，在return中添加即可"><a href="#如果有多个全局变量要显示，在return中添加即可" class="headerlink" title="如果有多个全局变量要显示，在return中添加即可"></a>如果有多个全局变量要显示，在return中添加即可</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> &#123;</div><div class="line"><span class="string">"evn"</span>: evn,</div><div class="line"><span class="string">"host"</span>: host,</div><div class="line"><span class="string">"user"</span>: request.user,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="将全局变量方法添加至setting中的Templates"><a href="#将全局变量方法添加至setting中的Templates" class="headerlink" title="将全局变量方法添加至setting中的Templates"></a>将全局变量方法添加至setting中的Templates</h2><h3 id="添加位置"><a href="#添加位置" class="headerlink" title="添加位置"></a>添加位置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">TEMPLATES = [</div><div class="line">    &#123;</div><div class="line">        <span class="string">'BACKEND'</span>: <span class="string">"..."</span>,</div><div class="line">        <span class="string">"..."</span>: <span class="string">"..."</span>,</div><div class="line">        <span class="string">"OPTIONS"</span>: &#123;</div><div class="line">            <span class="string">"context_processors"</span>: [</div><div class="line">                <span class="string">"..."</span>,</div><div class="line">                <span class="string">"views.context_proc"</span>,</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="在模板中引用即可"><a href="#在模板中引用即可" class="headerlink" title="在模板中引用即可"></a>在模板中引用即可</h2><h3 id="head-html"><a href="#head-html" class="headerlink" title="head.html"></a>head.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>&#123;% block env %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% block env %&#125;</div><div class="line">&#123;&#123; env &#125;&#125;</div><div class="line">&#123;% endblock %&#125;&#125;</div></pre></td></tr></table></figure>
+<h2 id="关于setting-py"><a href="#关于setting-py" class="headerlink" title="关于setting.py"></a>关于setting.py</h2><p>setting中的各种设置参数都是对global_settings的覆写<br>可以引用后进行覆写</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> global_settings</div></pre></td></tr></table></figure>
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>一般位于<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python根目录/site-package/django/conf/global_setting.py</div></pre></td></tr></table></figure></p>
+<h3 id="覆写"><a href="#覆写" class="headerlink" title="覆写"></a>覆写</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALLOWED_HOSTS = []</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;django中使用自定义context-processor实现模板全局变量&quot;&gt;&lt;a href=&quot;#django中使用自定义context-processor实现模板全局变量&quot; class=&quot;headerlink&quot; title=&quot;django中使用自定义context processor实现模板全局变量&quot;&gt;&lt;/a&gt;django中使用自定义context processor实现模板全局变量&lt;/h1&gt;&lt;h2 id=&quot;在视图中定义全局变量方法&quot;&gt;&lt;a href=&quot;#在视图中定义全局变量方法&quot; class=&quot;headerlink&quot; title=&quot;在视图中定义全局变量方法&quot;&gt;&lt;/a&gt;在视图中定义全局变量方法&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="django" scheme="http://sugar.yer.pub/categories/django/"/>
+    
+    
+      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
+    
+  </entry>
   
   <entry>
     <title>python安装PIL模块</title>
@@ -84,19 +151,28 @@
     <link href="http://sugar.yer.pub/2016/12/28/ubuntu-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     <id>http://sugar.yer.pub/2016/12/28/ubuntu-常用工具/</id>
     <published>2016-12-28T06:16:15.000Z</published>
-    <updated>2016-12-28T06:26:50.657Z</updated>
+    <updated>2016-12-29T06:21:43.521Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Ubuntu常用工具"><a href="#Ubuntu常用工具" class="headerlink" title="Ubuntu常用工具"></a>Ubuntu常用工具</h1><h3 id="版本控制软件GUI版"><a href="#版本控制软件GUI版" class="headerlink" title="版本控制软件GUI版"></a>版本控制软件GUI版</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
+    <content type="html"><![CDATA[<h1 id="Ubuntu常用工具"><a href="#Ubuntu常用工具" class="headerlink" title="Ubuntu常用工具"></a>Ubuntu常用工具</h1><blockquote>
+<p>收集了ubuntu下常用的小工具</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="版本控制软件GUI版"><a href="#版本控制软件GUI版" class="headerlink" title="版本控制软件GUI版"></a>版本控制软件GUI版</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
 <p>按照wiki安装，rabbitvcs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-add-repository universe</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install rabbitvcs-nautilus</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p><a href="http://wiki.rabbitvcs.org/wiki/install/ubuntu" target="_blank" rel="external">WIKI</a></p>
 <h4 id="安装完毕重启"><a href="#安装完毕重启" class="headerlink" title="安装完毕重启"></a>安装完毕重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nautilus -q</div></pre></td></tr></table></figure>
 <h4 id="安装完成效果图"><a href="#安装完成效果图" class="headerlink" title="安装完成效果图"></a>安装完成效果图</h4><p><img src="http://oi1wvrjc2.bkt.clouddn.com/16-12-28/59784456-file_1482905990308_3716.png" alt="效果图1"></p>
+<blockquote>
+<p>部分引用<br><a href="http://kuanghy.github.io/2016/09/01/linux-softwares" target="_blank" rel="external">旷世的忧伤博客</a></p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Ubuntu常用工具&quot;&gt;&lt;a href=&quot;#Ubuntu常用工具&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用工具&quot;&gt;&lt;/a&gt;Ubuntu常用工具&lt;/h1&gt;&lt;h3 id=&quot;版本控制软件GUI版&quot;&gt;&lt;a href=&quot;#版本控制软件GUI版&quot;
+      &lt;h1 id=&quot;Ubuntu常用工具&quot;&gt;&lt;a href=&quot;#Ubuntu常用工具&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用工具&quot;&gt;&lt;/a&gt;Ubuntu常用工具&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;收集了ubuntu下常用的小工具&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -793,11 +869,11 @@
       <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
     
     
+      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
+    
       <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
     
       <category term="gunicorn" scheme="http://sugar.yer.pub/tags/gunicorn/"/>
-    
-      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
     
       <category term="supervisor" scheme="http://sugar.yer.pub/tags/supervisor/"/>
     
@@ -810,7 +886,7 @@
     <link href="http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/"/>
     <id>http://sugar.yer.pub/2016/12/12/linux免密码认证配置/</id>
     <published>2016-12-12T03:26:53.000Z</published>
-    <updated>2016-12-21T06:12:16.627Z</updated>
+    <updated>2016-12-29T09:39:56.495Z</updated>
     
     <content type="html"><![CDATA[<h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
 <blockquote>
@@ -818,6 +894,12 @@
 </blockquote>
 <a id="more"></a>
 <h3 id="单向免密码登陆"><a href="#单向免密码登陆" class="headerlink" title="单向免密码登陆"></a>单向免密码登陆</h3><p>服务器A，PC机B。</p>
+<h4 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h4><p>一般情况下，linux系统都会在你的目录下<code>~/</code>有<code>.ssh</code>文件夹，如果没有，则需要生成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen</div></pre></td></tr></table></figure></p>
+<p>如果不需要特殊配置，直接一路yes就可以了<br>这时候再去看，就已经有了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls ~/.ssh</div><div class="line"></div><div class="line">id_rsa  id_rsa.pub  known_hosts</div></pre></td></tr></table></figure></p>
+<h4 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h4><h5 id="在目标服务器新建认证文件"><a href="#在目标服务器新建认证文件" class="headerlink" title="在目标服务器新建认证文件"></a>在目标服务器新建认证文件</h5><p>在需要免密码的服务器上，即A服务器中的<code>~/.ssh/</code>下新建文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">touch authorized_keys</div></pre></td></tr></table></figure></p>
+<h5 id="获取公钥"><a href="#获取公钥" class="headerlink" title="获取公钥"></a>获取公钥</h5><p>将操作机pc中的公钥<code>id_rsa.pub</code>取出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
+<h5 id="完成认证"><a href="#完成认证" class="headerlink" title="完成认证"></a>完成认证</h5><p>将打印出来的<code>id_rsa.pub</code>中的内容粘贴至服务器A的authorized_keys中，保存即可。</p>
+<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><p>如果需要认证多台机器，可以自行将以上过程做成小脚本，我懒，没做。。。</p>
 <p><a href="http://kuanghy.github.io/2016/09/01/linux-softwares" target="_blank" rel="external">linux下小工具参考</a></p>
 ]]></content>
     
@@ -912,73 +994,6 @@
     
     
       <category term="北京工作居住证" scheme="http://sugar.yer.pub/tags/%E5%8C%97%E4%BA%AC%E5%B7%A5%E4%BD%9C%E5%B1%85%E4%BD%8F%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>talking about python unittest</title>
-    <link href="http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/"/>
-    <id>http://sugar.yer.pub/2016/12/09/talking-about-python-unittest/</id>
-    <published>2016-12-09T10:09:04.000Z</published>
-    <updated>2016-12-16T06:18:49.171Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="python-unittest-基础教程分享"><a href="#python-unittest-基础教程分享" class="headerlink" title="python unittest 基础教程分享"></a>python unittest 基础教程分享</h1><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;python-unittest-基础教程分享&quot;&gt;&lt;a href=&quot;#python-unittest-基础教程分享&quot; class=&quot;headerlink&quot; title=&quot;python unittest 基础教程分享&quot;&gt;&lt;/a&gt;python unittest 基础教程分享&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-    
-      <category term="python unittest test" scheme="http://sugar.yer.pub/tags/python-unittest-test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>start-hexo</title>
-    <link href="http://sugar.yer.pub/2016/12/09/start-hexo/"/>
-    <id>http://sugar.yer.pub/2016/12/09/start-hexo/</id>
-    <published>2016-12-09T01:40:20.000Z</published>
-    <updated>2016-12-16T06:18:49.219Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
-<p>系统：ubuntu 16.04 64位</p>
-</blockquote>
-<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
-<h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>L https://deb.nodesource.com/setup_6.x | sudo -E bash -</div><div class="line"></div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure>
-<blockquote>
-<p>不同系统安装node参见：<a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="external">这里</a></p>
-</blockquote>
-<a id="more"></a>
-<h4 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
-<blockquote>
-<p>hexo官网很详细，见<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">这里</a></p>
-</blockquote>
-<h2 id="至此，环境基本配置完毕。"><a href="#至此，环境基本配置完毕。" class="headerlink" title="至此，环境基本配置完毕。"></a>至此，环境基本配置完毕。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init myblog</div></pre></td></tr></table></figure>
-<h2 id="教程参考："><a href="#教程参考：" class="headerlink" title="教程参考："></a>教程参考：</h2><blockquote>
-<p><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">官方教程</a><br><a href="http://jiji262.github.io/" target="_blank" rel="external">令狐葱</a></p>
-<p><a href="http://zhiho.github.io/2015/09/29/hexo-next/" target="_blank" rel="external">Zhiho’s Blog</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;HEXO&quot;&gt;&lt;a href=&quot;#HEXO&quot; class=&quot;headerlink&quot; title=&quot;HEXO&quot;&gt;&lt;/a&gt;HEXO&lt;/h1&gt;&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;系统：ubuntu 16.04 64位&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;安装git&quot;&gt;&lt;a href=&quot;#安装git&quot; class=&quot;headerlink&quot; title=&quot;安装git&quot;&gt;&lt;/a&gt;安装git&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;安装node&quot;&gt;&lt;a href=&quot;#安装node&quot; class=&quot;headerlink&quot; title=&quot;安装node&quot;&gt;&lt;/a&gt;安装node&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;L https://deb.nodesource.com/setup_6.x | sudo -E bash -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install -y nodejs&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;不同系统安装node参见：&lt;a href=&quot;https://nodejs.org/en/download/package-manager/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="http://sugar.yer.pub/tags/hexo/"/>
     
   </entry>
   
