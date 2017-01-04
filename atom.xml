@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2017-01-03T03:28:23.685Z</updated>
+  <updated>2017-01-03T05:52:31.840Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://sugar.yer.pub/2017/01/03/ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8Thunderbird%E8%BF%9E%E6%8E%A5Exchange%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://sugar.yer.pub/2017/01/03/ubuntu下使用Thunderbird连接Exchange邮件服务器/</id>
     <published>2017-01-03T02:26:26.000Z</published>
-    <updated>2017-01-03T03:28:23.685Z</updated>
+    <updated>2017-01-03T05:52:31.840Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ubuntu下使用Thunderbird连接Exchange邮件服务器"><a href="#ubuntu下使用Thunderbird连接Exchange邮件服务器" class="headerlink" title="ubuntu下使用Thunderbird连接Exchange邮件服务器"></a>ubuntu下使用Thunderbird连接Exchange邮件服务器</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>公司为了加强安全性，故邮件服务器改为了exchange，这样一来，需要修改下自己邮件客户端及配置；<br>exchange的设置跟普通的126,163又有些区别，这里记录一下，也方便ubuntu的用户。</p>
 <h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><a id="more"></a>
@@ -28,6 +28,18 @@
 <p>插件安装和firefox浏览器一样，非常方便<br>免费使用60天</p>
 <h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>60天肯定是不够用的，从网上找了个破解脚本，给力！</p>
 <p>脚本下载：<a href="http://oi1wvrjc2.bkt.clouddn.com/generater_license.py" target="_blank" rel="external">下载</a></p>
+<h3 id="破解方法，引用文章"><a href="#破解方法，引用文章" class="headerlink" title="破解方法，引用文章"></a>破解方法，引用文章</h3><blockquote>
+<p>可以看到，注册码被用逗号分成了四个部分：</p>
+<ol>
+<li>第一部分是注册类型，EX0是免费给的试用类型，我不知道EX1、EX2是什么情况，但试了下，EX1是可以用的</li>
+<li>第二部分是邮件，<em>@</em>是免费给的60天试用的，这里要填有效的Exchange邮箱，可以在选项里Valid Emails里看到</li>
+<li>第三部分是license过期日期。</li>
+<li>第四部分是校验码，分别是前三个部分再加上356B4B5C算出来的MD5值。</li>
+</ol>
+<p>例如，注册类型EX1、Exchange邮箱i@ssfighter.com，到期日期2015-01-18，可以计算出MD5值为：</p>
+<p>MD5(EX1,i@ssfighter.com,2015-01-18,356B4B5C)=<br>5253dbb7d2b5a6e152974b2003025ba9</p>
+<p>用计算出的MD5值作为注册码的最后一部分即可注册成功。</p>
+</blockquote>
 <p>参考文章：<a href="http://blog.ssfighter.com/2015/01/exquilla-31-0-crack/" target="_blank" rel="external">破解方法</a></p>
 <h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><h3 id="面包屑"><a href="#面包屑" class="headerlink" title="面包屑"></a>面包屑</h3><blockquote>
 <p>工具 &gt;&gt; ExQuilla for Microsoft Exchange &gt;&gt; ExQuilla license options</p>
