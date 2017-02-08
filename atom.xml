@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2017-01-07T05:40:13.358Z</updated>
+  <updated>2017-02-08T06:43:55.387Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -16,16 +16,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>phpMyAdmin导出excel文件解析时的坑</title>
+    <link href="http://sugar.yer.pub/2017/02/08/phpMyAdmin%E5%AF%BC%E5%87%BAexcel%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%97%B6%E7%9A%84%E5%9D%91/"/>
+    <id>http://sugar.yer.pub/2017/02/08/phpMyAdmin导出excel文件解析时的坑/</id>
+    <published>2017-02-08T06:17:38.000Z</published>
+    <updated>2017-02-08T06:43:55.387Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="phpMyAdmin导出excel文件，在解析时遇到的问题"><a href="#phpMyAdmin导出excel文件，在解析时遇到的问题" class="headerlink" title="phpMyAdmin导出excel文件，在解析时遇到的问题"></a>phpMyAdmin导出excel文件，在解析时遇到的问题</h2><h3 id="phpMyAdmin"><a href="#phpMyAdmin" class="headerlink" title="phpMyAdmin"></a>phpMyAdmin</h3><p>很多人都喜欢使用的WEB数据库管理系统，前几年非常流行，刚好我要查询对方数据库，<br>他们就用的这个</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>我的要求很简单，从他们库中导出数据文件，excel即可，然后自己解析，再进行处理数据<br><a id="more"></a></p>
+<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>解析excel，当然首选简单好用的包，xlrd就很不错;</p>
+<h4 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h4><p>但在读取时，总会报错；错误如下：</p>
+<h5 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> xlrd</div><div class="line">workbook = xlrd.open_workbook(<span class="string">"/home/hanz/book1.xls"</span>)</div></pre></td></tr></table></figure>
+<p>结果是，报错如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xlrd.biffh.XLRDError: Unsupported format, or corrupt file: Expected BOF record;</div><div class="line">found &apos;&lt;html r&apos;&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="其他解析excel包"><a href="#其他解析excel包" class="headerlink" title="其他解析excel包"></a>其他解析excel包</h4><p>之后又试了pandas，巨大无比的一个解析数据的包，但同样无法解析。。。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="根据报错分析原因"><a href="#根据报错分析原因" class="headerlink" title="根据报错分析原因"></a>根据报错分析原因</h4><p>根据xlrd报的错，猜了一下原因，有可能导出的excel文件并不是正规的excel保存的那种；<br>里面的&lt;html就能看出来，中间是包含有html代码的，于是，用文本打开了看了一下，果然：</p>
+<p><img src="http://oi1wvrjc2.bkt.clouddn.com/17-2-8/44364820-file_1486535637317_11f27.png" alt="phpmyadmin-export-excel-file"></p>
+<p>把后缀改为.html，直接就能浏览器打开了。。。果然是伪excel文件。。。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>知道原因了，解决起来就简单了</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>如果是html文件，那首选html解析的包就可以，不用去做正则匹配，这类解析包也有很多，比如：</p>
+<p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/" target="_blank" rel="external">beautifulsoup</a></p>
+<p><a href="https://pythonhosted.org/pyquery" target="_blank" rel="external">pyquery</a></p>
+<h4 id="选用"><a href="#选用" class="headerlink" title="选用"></a>选用</h4><p>在这里选用我的宗旨就是方便，人生苦短嘛。<br>所以就用pyquery喽。<br>语法非常方便！～<br>pyquery完全API点击这里：<a href="[pyquery](https://pythonhosted.org/pyquery/api.html">PyQuery-API</a>)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery</div><div class="line">f = PyQuery(<span class="string">"/home/hanz/o12_adsf.xls"</span>)</div><div class="line">doo = f(<span class="string">"tr"</span>)</div><div class="line">doo.text()</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;phpMyAdmin导出excel文件，在解析时遇到的问题&quot;&gt;&lt;a href=&quot;#phpMyAdmin导出excel文件，在解析时遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;phpMyAdmin导出excel文件，在解析时遇到的问题&quot;&gt;&lt;/a&gt;phpMyAdmin导出excel文件，在解析时遇到的问题&lt;/h2&gt;&lt;h3 id=&quot;phpMyAdmin&quot;&gt;&lt;a href=&quot;#phpMyAdmin&quot; class=&quot;headerlink&quot; title=&quot;phpMyAdmin&quot;&gt;&lt;/a&gt;phpMyAdmin&lt;/h3&gt;&lt;p&gt;很多人都喜欢使用的WEB数据库管理系统，前几年非常流行，刚好我要查询对方数据库，&lt;br&gt;他们就用的这个&lt;/p&gt;
+&lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;我的要求很简单，从他们库中导出数据文件，excel即可，然后自己解析，再进行处理数据&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在POST请求中，如何获取select的值</title>
+    <link href="http://sugar.yer.pub/2017/02/08/%E5%9C%A8POST%E8%AF%B7%E6%B1%82%E4%B8%AD%EF%BC%8C%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96select%E7%9A%84%E5%80%BC/"/>
+    <id>http://sugar.yer.pub/2017/02/08/在POST请求中，如何获取select的值/</id>
+    <published>2017-02-08T02:05:59.000Z</published>
+    <updated>2017-02-08T06:18:23.340Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="从页面POST请求中，如何获取select中option的值"><a href="#从页面POST请求中，如何获取select中option的值" class="headerlink" title="从页面POST请求中，如何获取select中option的值"></a>从页面POST请求中，如何获取select中option的值</h2><h3 id="GET方法中获取"><a href="#GET方法中获取" class="headerlink" title="GET方法中获取"></a>GET方法中获取</h3><p>通过GET方法传参，在request.GET中，可以获取到相对应的参数的值，<br>但POST方法中只能获取到input框中传的内容<br>如果真是这样的话，那就太恶心了，好在有stackoverflow</p>
+<a id="more"></a>
+<h3 id="stackoverflow中的解决办法"><a href="#stackoverflow中的解决办法" class="headerlink" title="stackoverflow中的解决办法"></a>stackoverflow中的解决办法</h3><p><a href="http://stackoverflow.com/questions/39200802/django-post-get-options-from-select" target="_blank" rel="external">解决方案</a></p>
+<p><code>request.POST.getlist(&quot;name&quot;)[0]</code></p>
+<p>在POST方法中居然还有个getlist，当时我debug时也没有看到有此方法，使用了一下，<br>果然可正常获取。</p>
+<p>如图：</p>
+<p><img src="http://oi1wvrjc2.bkt.clouddn.com/django_requsts_post_getlist.png" alt="request.POST.getlist"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;从页面POST请求中，如何获取select中option的值&quot;&gt;&lt;a href=&quot;#从页面POST请求中，如何获取select中option的值&quot; class=&quot;headerlink&quot; title=&quot;从页面POST请求中，如何获取select中option的值&quot;&gt;&lt;/a&gt;从页面POST请求中，如何获取select中option的值&lt;/h2&gt;&lt;h3 id=&quot;GET方法中获取&quot;&gt;&lt;a href=&quot;#GET方法中获取&quot; class=&quot;headerlink&quot; title=&quot;GET方法中获取&quot;&gt;&lt;/a&gt;GET方法中获取&lt;/h3&gt;&lt;p&gt;通过GET方法传参，在request.GET中，可以获取到相对应的参数的值，&lt;br&gt;但POST方法中只能获取到input框中传的内容&lt;br&gt;如果真是这样的话，那就太恶心了，好在有stackoverflow&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>高分电影之地球脉动 Planet Earth Season</title>
     <link href="http://sugar.yer.pub/2017/01/07/%E9%AB%98%E5%88%86%E7%94%B5%E5%BD%B1%E4%B9%8B%E5%9C%B0%E7%90%83%E8%84%89%E5%8A%A8-Planet-Earth-Season/"/>
     <id>http://sugar.yer.pub/2017/01/07/高分电影之地球脉动-Planet-Earth-Season/</id>
     <published>2017-01-07T05:23:38.000Z</published>
-    <updated>2017-01-07T05:40:13.358Z</updated>
+    <updated>2017-01-08T12:35:04.924Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="高分电影之地球脉动-Planet-Earth-Season"><a href="#高分电影之地球脉动-Planet-Earth-Season" class="headerlink" title="高分电影之地球脉动 Planet Earth Season"></a>高分电影之地球脉动 Planet Earth Season</h1><h2 id="地球脉动-第二季-Planet-Earth-Season-2"><a href="#地球脉动-第二季-Planet-Earth-Season-2" class="headerlink" title="地球脉动 第二季 Planet Earth Season 2"></a>地球脉动 第二季 Planet Earth Season 2</h2><blockquote>
+    <content type="html"><![CDATA[<h1 id="高分电影之地球脉动-Planet-Earth-Season"><a href="#高分电影之地球脉动-Planet-Earth-Season" class="headerlink" title="高分电影之地球脉动 Planet Earth Season"></a>高分电影之地球脉动 Planet Earth Season</h1><h2 id="地球脉动-第二季-Planet-Earth-Season-2-2016"><a href="#地球脉动-第二季-Planet-Earth-Season-2-2016" class="headerlink" title="地球脉动 第二季 Planet Earth Season 2 2016"></a>地球脉动 第二季 Planet Earth Season 2 2016</h2><blockquote>
 <p>这部电影不用多说，通过独立鱼了解到的，看豆瓣评分就知道了：<a href="https://movie.douban.com/subject/26733371/" target="_blank" rel="external">豆瓣评分9.9</a><br>一共六集，每一集都很震撼，每一个镜头都非常精彩，每一个画面都是壁纸，精彩至极，美轮美奂。</p>
 </blockquote>
-<h3 id="第一集"><a href="#第一集" class="headerlink" title="第一集"></a>第一集</h3><h3 id="第二集"><a href="#第二集" class="headerlink" title="第二集"></a>第二集</h3><h3 id="第三集"><a href="#第三集" class="headerlink" title="第三集"></a>第三集</h3><h3 id="第四集"><a href="#第四集" class="headerlink" title="第四集"></a>第四集</h3><h3 id="第五集"><a href="#第五集" class="headerlink" title="第五集"></a>第五集</h3><h3 id="第六集"><a href="#第六集" class="headerlink" title="第六集"></a>第六集</h3>]]></content>
+<p><img src="http://image18.poco.cn/mypoco/myphoto/20161217/19/183365877201612171902122187116865658_000.jpg" alt="地球脉动"></p>
+<p>我大电影天堂的资源，记录上；而且貌似腾讯视频把版权买下来了。</p>
+<p>###【下载地址】</p>
+<p><a href="ftp://ygdy8:ygdy8@y219.dydytt.net:8201/[阳光电影www.ygdy8.com].地球脉动2.第一集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第一集</a><br><a href="ftp://ygdy8:ygdy8@y153.dydytt.net:8223/[阳光电影www.ygdy8.com].地球脉动2.第二集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第二集</a><br><a href="ftp://ygdy8:ygdy8@y219.dydytt.net:9225/[阳光电影www.ygdy8.com].地球脉动2.第三集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第三集</a><br><a href="ftp://ygdy8:ygdy8@y153.dydytt.net:9170/[阳光电影www.ygdy8.com].地球脉动2.第四集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第四集</a><br><a href="ftp://ygdy8:ygdy8@y219.dydytt.net:9225/[阳光电影www.ygdy8.com].地球脉动2.第五集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第五集</a><br><a href="ftp://ygdy8:ygdy8@y153.dydytt.net:9170/[阳光电影www.ygdy8.com].地球脉动2.第六集.BD.720p.中英双字幕.mkv" target="_blank" rel="external">第六集</a></p>
+<h3 id="观影感受"><a href="#观影感受" class="headerlink" title="观影感受"></a>观影感受</h3><h4 id="第一集"><a href="#第一集" class="headerlink" title="第一集"></a>第一集</h4><h4 id="第二集"><a href="#第二集" class="headerlink" title="第二集"></a>第二集</h4><h4 id="第三集-雨林"><a href="#第三集-雨林" class="headerlink" title="第三集 雨林"></a>第三集 雨林</h4><h4 id="第四集"><a href="#第四集" class="headerlink" title="第四集"></a>第四集</h4><h4 id="第五集"><a href="#第五集" class="headerlink" title="第五集"></a>第五集</h4><h4 id="第六集"><a href="#第六集" class="headerlink" title="第六集"></a>第六集</h4><h2 id="地球脉动-第一季-Planet-Earth-Season-1-2006"><a href="#地球脉动-第一季-Planet-Earth-Season-1-2006" class="headerlink" title="地球脉动 第一季 Planet Earth Season 1 (2006)"></a>地球脉动 第一季 Planet Earth Season 1 (2006)</h2><blockquote>
+<p>补上第一季，回头重温一遍：<a href="https://movie.douban.com/subject/1871906/" target="_blank" rel="external">豆瓣评分9.7</a></p>
+</blockquote>
+<p><img src="http://ww2.sinaimg.cn/mw690/af0de422gw1f1fgkdwyqvj207r0b4q3z.jpg" alt="地球脉动1"></p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="[下载地址]"></a>[下载地址]</h3><p><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8301%5D.Planet.Earth.01.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|998975412|cd24991bb3210b270156576c4876ef64|h=ntrplgbi4jzk6rhqhveqoyecxx6nfxiq|/%20" target="_blank" rel="external">第一集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8302%5D.Planet.Earth.02.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|1006495160|2d74749d73de3a6510186a3112e1130a|h=cqlmfmilhyipyot7s5wpehasbdjjvlfd|/%20" target="_blank" rel="external">第二集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8303%5D.Planet.Earth.03.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|999102809|5db35d5591c92a3b5d80b6dcbffd9d72|h=b6f5t5jtnwehq7pmsbfjoohnltcgso5m|/%20" target="_blank" rel="external">第三集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8304%5D.Planet.Earth.04.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|999118732|29c6275de49faeb068a85baa7eaffcb2|h=j5xr6qlkkelfr76te4df7sride26qh24|/%20" target="_blank" rel="external">第四集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8305%5D.Planet.Earth.05.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|1006555512|402fdec03c404145f118f6830f5b0c8f|h=koaewrnxbs74me3dnynge6y6ohwllmvb|/%20" target="_blank" rel="external">第五集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8306%5D.Planet.Earth.06.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|999074319|7a27f1b9646585054a80729c8055b258|h=kf3a3i24evsgm34l6atwg7hdnaup2g3d|/%20" target="_blank" rel="external">第六集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8307%5D.Planet.Earth.07.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|999175302|d5fab1283e1873337e43e52b7c4e9396|h=bmsfh3diffj4ydjo6kkmfvbcgzzg255y|/%20" target="_blank" rel="external">第七集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8308%5D.Planet.Earth.08.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|1006370847|1973be54a704cb9fd6430c2aab1a0699|h=avbqzzdbmndzqibeehkxtyygp6b55blg|/%20" target="_blank" rel="external">第八集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8309%5D.Planet.Earth.09.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|998931813|5bbb7785ac26c7f4b28f7dfb92508d28|h=6ca2dtsgc4pqhmndr7t73agc534c3hg3|/%20" target="_blank" rel="external">第九集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8310%5D.Planet.Earth.10.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|999050396|7721c08ccfa202f384291473afbe1a37|h=snuzsnsqpz4mbpcymy6426ijqtwnsamt|/%20" target="_blank" rel="external">第十集</a><br><a href="ed2k://|file|%5B%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%8311%5D.Planet.Earth.11.%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95.HR-HDTV.AC3.960X528.x264-%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86.mkv|998835608|bb9f6c586ca9b6b69a1ea31729a7ac82|h=47doibafg6pefz4dyjq2ahsmxx4nfcfi|/" target="_blank" rel="external">第十一集</a></p>
+<h3 id="共11集"><a href="#共11集" class="headerlink" title="共11集"></a>共11集</h3>]]></content>
     
     <summary type="html">
     
@@ -726,13 +798,13 @@
     <link href="http://sugar.yer.pub/2016/12/13/M%E7%AB%99UI%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%87%E7%A8%8B/"/>
     <id>http://sugar.yer.pub/2016/12/13/M站UI自动化过程/</id>
     <published>2016-12-13T03:37:13.000Z</published>
-    <updated>2016-12-14T07:35:48.362Z</updated>
+    <updated>2017-01-08T09:36:22.313Z</updated>
     
     <content type="html"><![CDATA[<h1 id="M站UI自动化过程"><a href="#M站UI自动化过程" class="headerlink" title="M站UI自动化过程"></a>M站UI自动化过程</h1><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">官网下载，linux与apple免安装</div></pre></td></tr></table></figure>
 <h4 id="创建沙盒环境"><a href="#创建沙盒环境" class="headerlink" title="创建沙盒环境"></a>创建沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv myvenv</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="切换沙盒环境"><a href="#切换沙盒环境" class="headerlink" title="切换沙盒环境"></a>切换沙盒环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source myvenv/bin/activate</div></pre></td></tr></table></figure>
-<h4 id="安装selenium包"><a href="#安装selenium包" class="headerlink" title="安装selenium包"></a>安装selenium包</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install selenium</div></pre></td></tr></table></figure>
+<h4 id="安装selenium包"><a href="#安装selenium包" class="headerlink" title="安装selenium包"></a>安装selenium包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install selenium</div></pre></td></tr></table></figure>
 <h4 id="下载chromedriver，用来支持webdriver调用chrome"><a href="#下载chromedriver，用来支持webdriver调用chrome" class="headerlink" title="下载chromedriver，用来支持webdriver调用chrome"></a>下载chromedriver，用来支持webdriver调用chrome</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://chromedriver.storage.googleapis.com/2.22/chromedriver_linux64.zip</div></pre></td></tr></table></figure>
 <h4 id="将chromedriver路径加入环境变量"><a href="#将chromedriver路径加入环境变量" class="headerlink" title="将chromedriver路径加入环境变量"></a>将chromedriver路径加入环境变量</h4><blockquote>
 <p>windows和linux方式有所不同，请自行google。</p>
@@ -766,299 +838,6 @@
       <category term="Remote" scheme="http://sugar.yer.pub/tags/Remote/"/>
     
       <category term="UI自动化" scheme="http://sugar.yer.pub/tags/UI%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于python环境的各类环境搭建</title>
-    <link href="http://sugar.yer.pub/2016/12/12/%E5%9F%BA%E4%BA%8Epython%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%84%E7%B1%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://sugar.yer.pub/2016/12/12/基于python环境的各类环境搭建/</id>
-    <published>2016-12-12T08:01:13.000Z</published>
-    <updated>2016-12-16T06:18:49.155Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基于python环境的各类环境搭建"><a href="#基于python环境的各类环境搭建" class="headerlink" title="基于python环境的各类环境搭建"></a>基于python环境的各类环境搭建</h1><h2 id="—服务类—"><a href="#—服务类—" class="headerlink" title="—服务类—"></a>—服务类—</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">序号</th>
-<th style="text-align:left">功能</th>
-<th style="text-align:left">作用</th>
-<th style="text-align:left">状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">django跑起来</td>
-<td style="text-align:left">站点</td>
-<td style="text-align:left">完成</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">gunicorn跑起来</td>
-<td style="text-align:left">内部分发服务</td>
-<td style="text-align:left">完成</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">nginx跑起来</td>
-<td style="text-align:left">静态外部服务器</td>
-<td style="text-align:left">完成</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">supervisor跑起来</td>
-<td style="text-align:left">任务监控</td>
-<td style="text-align:left">完成</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">celery跑起来</td>
-<td style="text-align:left">定时任务</td>
-<td style="text-align:left">未完成</td>
-</tr>
-<tr>
-<td style="text-align:left">6</td>
-<td style="text-align:left">redis跑起来</td>
-<td style="text-align:left">nosql快速缓存</td>
-<td style="text-align:left">未完成</td>
-</tr>
-<tr>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-</tr>
-</tbody>
-</table>
-<p>|1|jenkins走起|testcase定时任务及结果|完成|</p>
-<a id="more"></a>
-<h2 id="—页面类—"><a href="#—页面类—" class="headerlink" title="—页面类—"></a>—页面类—</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">序号</th>
-<th>功能</th>
-<th>作用</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td>前台页面做起来</td>
-<td>把后台功能及数据展示做到前台页面上</td>
-<td>部分完成</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td>前台样式用起来</td>
-<td>前台样式使用通用bootstrap样式包</td>
-<td>未完成</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-django跑起来"><a href="#1-django跑起来" class="headerlink" title="1. django跑起来"></a>1. django跑起来</h3><p>引用：</p>
-<p>官方文档</p>
-<h4 id="用到的功能："><a href="#用到的功能：" class="headerlink" title="用到的功能："></a>用到的功能：</h4><p>模板分页：</p>
-<p><a href="https://mozillazg.com/2013/01/django-pagination-by-use-paginator.html" target="_blank" rel="external">https://mozillazg.com/2013/01/django-pagination-by-use-paginator.html</a></p>
-<p><a href="http://python.usyiyi.cn/django/topics/pagination.html" target="_blank" rel="external">http://python.usyiyi.cn/django/topics/pagination.html</a></p>
-<h3 id="2-gunicorn跑起来"><a href="#2-gunicorn跑起来" class="headerlink" title="2. gunicorn跑起来"></a>2. gunicorn跑起来</h3><p>引用：</p>
-<p><a href="http://foofish.net/blog/18/django-deploy" target="_blank" rel="external">http://foofish.net/blog/18/django-deploy</a></p>
-<p><a href="http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/" target="_blank" rel="external">http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/</a></p>
-<h4 id="gunicorn超时时间设置"><a href="#gunicorn超时时间设置" class="headerlink" title="gunicorn超时时间设置"></a>gunicorn超时时间设置</h4><p>引用：</p>
-<p><a href="http://stackoverflow.com/questions/6816215/gunicorn-nginx-timeout-problem" target="_blank" rel="external">http://stackoverflow.com/questions/6816215/gunicorn-nginx-timeout-problem</a></p>
-<p>脚本文件bin/gunicorn_start.sh</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">NUM_WORKERS=<span class="number">3</span></div><div class="line">TIMEOUT=<span class="number">120</span></div><div class="line"></div><div class="line"><span class="keyword">exec</span> gunicorn $&#123;DJANGO_WSGI_MODULE&#125;:application \</div><div class="line">--name $NAME \</div><div class="line">--workers $NUM_WORKERS \</div><div class="line">--timeout $TIMEOUT \</div><div class="line">--log-level=debug \</div><div class="line">--bind=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span> \</div><div class="line">--pid=$PIDFILE</div></pre></td></tr></table></figure>
-<h3 id="3-nginx跑起来"><a href="#3-nginx跑起来" class="headerlink" title="3. nginx跑起来"></a>3. nginx跑起来</h3><p>引用：</p>
-<p><a href="http://blog.csdn.net/qq_24861509/article/details/45727983" target="_blank" rel="external">http://blog.csdn.net/qq_24861509/article/details/45727983</a></p>
-<p><a href="http://www.111cn.net/sys/linux/79751.htm" target="_blank" rel="external">http://www.111cn.net/sys/linux/79751.htm</a></p>
-<h3 id="4-supervisor跑起来"><a href="#4-supervisor跑起来" class="headerlink" title="4. supervisor跑起来"></a>4. supervisor跑起来</h3><ul>
-<li>安装</li>
-</ul>
-<p><code>sudo apt-get install supervisor</code></p>
-<ul>
-<li>启动</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">service supervisor start/restart/stop</div><div class="line"></div><div class="line">/etc/init.d/supervisor start/restart/stop</div></pre></td></tr></table></figure>
-<ul>
-<li>配置文件位置</li>
-</ul>
-<p><code>/etc/supervisor/supervisord.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">; supervisor config file</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[unix_http_server]</div><div class="line"></div><div class="line">#file=/var/run/supervisor.sock   ; (the path to the socket file)</div><div class="line"></div><div class="line">file=/tmp/supervisor.sock	;</div><div class="line"></div><div class="line">chmod=0700                       ; sockef file mode (default 0700)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[supervisord]</div><div class="line"></div><div class="line">logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)</div><div class="line"></div><div class="line">pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)</div><div class="line"></div><div class="line">childlogdir=/var/log/supervisor            ; (&apos;AUTO&apos; child log dir, default $TEMP)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">; the below section must remain in the config file for RPC</div><div class="line"></div><div class="line">; (supervisorctl/web interface) to work, additional interfaces may be</div><div class="line"></div><div class="line">; added by defining them in separate rpcinterface: sections</div><div class="line"></div><div class="line">[rpcinterface:supervisor]</div><div class="line"></div><div class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[supervisorctl]</div><div class="line"></div><div class="line">#serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket</div><div class="line"></div><div class="line">serverurl=unix:///tmp/supervisor.sock ;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">; The [include] section can just contain the &quot;files&quot; setting.  This</div><div class="line"></div><div class="line">; setting can list multiple files (separated by whitespace or</div><div class="line"></div><div class="line">; newlines).  It can also contain wildcards.  The filenames are</div><div class="line"></div><div class="line">; interpreted as relative to this file.  Included files *cannot*</div><div class="line"></div><div class="line">; include files themselves.</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[include]</div><div class="line"></div><div class="line">files = /etc/supervisor/conf.d/*.conf</div></pre></td></tr></table></figure>
-<ul>
-<li>增加任务</li>
-</ul>
-<p><code>/etc/supervisor/conf.d/autohome_celery.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[program:autohome_celery]</div><div class="line"></div><div class="line">directory = /home/hanz/workspace/PycharmProjects/autohome_data_site</div><div class="line"></div><div class="line">command = /home/hanz/workspace/my-venv2.7/bin/python manage.py celery worker -c 6 -l debug</div><div class="line"></div><div class="line">autostart=true</div><div class="line"></div><div class="line">autorestart=true</div><div class="line"></div><div class="line">startsecs=3</div><div class="line"></div><div class="line">user = hanz                                                          ;</div><div class="line"></div><div class="line">stdout_logfile = /home/hanz/workspace/PycharmProjects/autohome_data_site/logs/autohome_celery.log</div><div class="line"></div><div class="line">redirect_stderr = true</div></pre></td></tr></table></figure>
-<ul>
-<li>添加web显示页面</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[inet_http_server]         ; inet (TCP) server disabled by default</div><div class="line"></div><div class="line">port=9001        ; (ip_address:port specifier, *:port for all iface)</div><div class="line"></div><div class="line">username=admin             ; (default is no username (open server))</div><div class="line"></div><div class="line">password=123               ; (default is no password (open server))</div></pre></td></tr></table></figure>
-<p>引用：</p>
-<p><a href="http://www.cnblogs.com/gsblog/p/3730293.html" target="_blank" rel="external">http://www.cnblogs.com/gsblog/p/3730293.html</a></p>
-<p><a href="http://www.cnblogs.com/yjf512/archive/2012/03/05/2380496.html" target="_blank" rel="external">http://www.cnblogs.com/yjf512/archive/2012/03/05/2380496.html</a></p>
-<p><a href="http://www.cnblogs.com/maseng/p/4670473.html" target="_blank" rel="external">http://www.cnblogs.com/maseng/p/4670473.html</a></p>
-<p><a href="http://liyangliang.me/posts/2015/06/using-supervisor/" target="_blank" rel="external">http://liyangliang.me/posts/2015/06/using-supervisor/</a></p>
-<h3 id="5-celery跑起来"><a href="#5-celery跑起来" class="headerlink" title="5. celery跑起来"></a>5. celery跑起来</h3><ul>
-<li>独立celery+python脚本</li>
-</ul>
-<ul>
-<li>django-celery替代celery，在django项目中的使用方法</li>
-</ul>
-<ul>
-<li>监控界面：flower</li>
-</ul>
-<ol>
-<li>安装：</li>
-</ol>
-<p><code>pip install flower</code></p>
-<ol>
-<li>使用方法：</li>
-</ol>
-<p>运行服务打开<a href="http://localhost:5555：" target="_blank" rel="external">http://localhost:5555：</a></p>
-<p><code>flower --port=5555</code></p>
-<p>或者从celery运行：</p>
-<p><code>celery flower --address=127.0.0.1 --port=5555</code></p>
-<p>Broker URL 和其他配置选项能够通过一个标准的celery选项：</p>
-<p><code>celery flower --broker=amqp://guest:guest@localhost:5672//</code></p>
-<p>在setting中添加：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">djcelery.setup_loader()</div><div class="line">CELERY_TIMEZONE = <span class="string">'Asia/Shanghai'</span></div><div class="line">BROKER_URL = <span class="string">'redis://127.0.0.1:6379/8'</span></div><div class="line">CELERY_RESULT_BACKEND = <span class="string">'redis://127.0.0.1:6379/9'</span></div><div class="line">CELERYBEAT_SCHEDULER = <span class="string">'djcelery.schedulers.DatabaseScheduler'</span></div><div class="line">CELERY_IMPORTS = (<span class="string">"apps.app1.tasks"</span>, <span class="string">"autohome.views"</span>)</div></pre></td></tr></table></figure>
-<p>想要使用任务 ，一定要imports对应的py文件，修改后需要重启celery服务</p>
-<p>引用：</p>
-<p><a href="http://flower-docs-cn.readthedocs.io/zh/latest/install.html" target="_blank" rel="external">http://flower-docs-cn.readthedocs.io/zh/latest/install.html</a></p>
-<p>-</p>
-<p>引用：</p>
-<blockquote>
-<p><a href="http://www.celeryproject.org/" target="_blank" rel="external">http://www.celeryproject.org/</a><br><a href="http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000" target="_blank" rel="external">http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000</a><br><a href="http://www.jianshu.com/p/1840035cb510" target="_blank" rel="external">http://www.jianshu.com/p/1840035cb510</a><br><a href="http://www.dongwm.com/archives/how-to-use-celery/" target="_blank" rel="external">http://www.dongwm.com/archives/how-to-use-celery/</a><br><a href="http://liuzxc.github.io/blog/celery/" target="_blank" rel="external">http://liuzxc.github.io/blog/celery/</a><br><a href="http://opslinux.com/2015/09/22/celery%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%AE%9E%E8%B7%B5/" target="_blank" rel="external">http://opslinux.com/2015/09/22/celery%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%AE%9E%E8%B7%B5/</a><br><a href="http://blog.csdn.net/vintage_1/article/details/47664297" target="_blank" rel="external">http://blog.csdn.net/vintage_1/article/details/47664297</a></p>
-</blockquote>
-<p>django celery</p>
-<blockquote>
-<p><a href="http://blog.csdn.net/vintage_1/article/details/47664297" target="_blank" rel="external">http://blog.csdn.net/vintage_1/article/details/47664297</a><br><a href="http://maslino.website/post/celery-documentation-django.html" target="_blank" rel="external">http://maslino.website/post/celery-documentation-django.html</a></p>
-</blockquote>
-<h3 id="6-jenkins走起"><a href="#6-jenkins走起" class="headerlink" title="6. jenkins走起"></a>6. jenkins走起</h3><ul>
-<li>jenkins 邮件配置</li>
-</ul>
-<p>引用：</p>
-<blockquote>
-<p><a href="http://www.cnblogs.com/amosli/p/3549918.html" target="_blank" rel="external">http://www.cnblogs.com/amosli/p/3549918.html</a><br><a href="http://www.cnblogs.com/GGHHLL/p/jenkins.html" target="_blank" rel="external">http://www.cnblogs.com/GGHHLL/p/jenkins.html</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;a href=&quot;#基于python环境的各类环境搭建&quot; class=&quot;headerlink&quot; title=&quot;基于python环境的各类环境搭建&quot;&gt;&lt;/a&gt;基于python环境的各类环境搭建&lt;/h1&gt;&lt;h2 id=&quot;—服务类—&quot;&gt;&lt;a href=&quot;#—服务类—&quot; class=&quot;headerlink&quot; title=&quot;—服务类—&quot;&gt;&lt;/a&gt;—服务类—&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;序号&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;功能&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;作用&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;状态&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;1&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;django跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;站点&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;2&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;gunicorn跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;内部分发服务&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;3&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;nginx跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;静态外部服务器&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;4&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;supervisor跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;任务监控&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;5&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;celery跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;定时任务&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;未完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;6&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;redis跑起来&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;nosql快速缓存&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;未完成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;|1|jenkins走起|testcase定时任务及结果|完成|&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
-    
-      <category term="django" scheme="http://sugar.yer.pub/tags/django/"/>
-    
-      <category term="gunicorn" scheme="http://sugar.yer.pub/tags/gunicorn/"/>
-    
-      <category term="supervisor" scheme="http://sugar.yer.pub/tags/supervisor/"/>
-    
-      <category term="celery" scheme="http://sugar.yer.pub/tags/celery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux免密码认证配置</title>
-    <link href="http://sugar.yer.pub/2016/12/12/linux%E5%85%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/"/>
-    <id>http://sugar.yer.pub/2016/12/12/linux免密码认证配置/</id>
-    <published>2016-12-12T03:26:53.000Z</published>
-    <updated>2016-12-29T09:39:56.495Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="服务器免密码认证"><a href="#服务器免密码认证" class="headerlink" title="服务器免密码认证"></a>服务器免密码认证</h1><hr>
-<blockquote>
-<p>配置过程很简单，但每次都忘记一些细节，故做个笔记</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="单向免密码登陆"><a href="#单向免密码登陆" class="headerlink" title="单向免密码登陆"></a>单向免密码登陆</h3><p>服务器A，PC机B。</p>
-<h4 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h4><p>一般情况下，linux系统都会在你的目录下<code>~/</code>有<code>.ssh</code>文件夹，如果没有，则需要生成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen</div></pre></td></tr></table></figure></p>
-<p>如果不需要特殊配置，直接一路yes就可以了<br>这时候再去看，就已经有了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls ~/.ssh</div><div class="line"></div><div class="line">id_rsa  id_rsa.pub  known_hosts</div></pre></td></tr></table></figure></p>
-<h4 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h4><h5 id="在目标服务器新建认证文件"><a href="#在目标服务器新建认证文件" class="headerlink" title="在目标服务器新建认证文件"></a>在目标服务器新建认证文件</h5><p>在需要免密码的服务器上，即A服务器中的<code>~/.ssh/</code>下新建文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">touch authorized_keys</div></pre></td></tr></table></figure></p>
-<h5 id="获取公钥"><a href="#获取公钥" class="headerlink" title="获取公钥"></a>获取公钥</h5><p>将操作机pc中的公钥<code>id_rsa.pub</code>取出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
-<h5 id="完成认证"><a href="#完成认证" class="headerlink" title="完成认证"></a>完成认证</h5><p>将打印出来的<code>id_rsa.pub</code>中的内容粘贴至服务器A的authorized_keys中，保存即可。</p>
-<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><p>如果需要认证多台机器，可以自行将以上过程做成小脚本，我懒，没做。。。</p>
-<p><a href="http://kuanghy.github.io/2016/09/01/linux-softwares" target="_blank" rel="external">linux下小工具参考</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;服务器免密码认证&quot;&gt;&lt;a href=&quot;#服务器免密码认证&quot; class=&quot;headerlink&quot; title=&quot;服务器免密码认证&quot;&gt;&lt;/a&gt;服务器免密码认证&lt;/h1&gt;&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;配置过程很简单，但每次都忘记一些细节，故做个笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="server" scheme="http://sugar.yer.pub/categories/server/"/>
-    
-    
-      <category term="linux, ubuntu, rsa认证" scheme="http://sugar.yer.pub/tags/linux-ubuntu-rsa%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
