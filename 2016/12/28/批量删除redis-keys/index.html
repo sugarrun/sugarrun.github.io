@@ -91,30 +91,18 @@
 
 
 <meta name="description" content="redis基本用法连接redis库1redis-cli -h 127.0.0.1 -p 6070 -a password
-选定数据库默认数据库为01select 0
-查询单条查询1keys &amp;quot;key&amp;quot;
-多条查询使用通配符*1keys &amp;quot;key*&amp;quot;
-删除单独删除key1del keys
-批量删除keys利用linux中的xargs参数123redis-cli">
+选定数据库默认数据库为01select 0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量删除redis keys">
 <meta property="og:url" content="http://sugar.yer.pub/2016/12/28/批量删除redis-keys/index.html">
 <meta property="og:site_name" content="Run! Sugar,Run!">
 <meta property="og:description" content="redis基本用法连接redis库1redis-cli -h 127.0.0.1 -p 6070 -a password
-选定数据库默认数据库为01select 0
-查询单条查询1keys &amp;quot;key&amp;quot;
-多条查询使用通配符*1keys &amp;quot;key*&amp;quot;
-删除单独删除key1del keys
-批量删除keys利用linux中的xargs参数123redis-cli">
-<meta property="og:updated_time" content="2016-12-28T11:11:22.691Z">
+选定数据库默认数据库为01select 0">
+<meta property="og:updated_time" content="2017-02-08T06:48:04.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="批量删除redis keys">
 <meta name="twitter:description" content="redis基本用法连接redis库1redis-cli -h 127.0.0.1 -p 6070 -a password
-选定数据库默认数据库为01select 0
-查询单条查询1keys &amp;quot;key&amp;quot;
-多条查询使用通配符*1keys &amp;quot;key*&amp;quot;
-删除单独删除key1del keys
-批量删除keys利用linux中的xargs参数123redis-cli">
+选定数据库默认数据库为01select 0">
 
 
 
@@ -389,6 +377,7 @@
       
         <h1 id="redis基本用法"><a href="#redis基本用法" class="headerlink" title="redis基本用法"></a>redis基本用法</h1><h2 id="连接redis库"><a href="#连接redis库" class="headerlink" title="连接redis库"></a>连接redis库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli -h 127.0.0.1 -p 6070 -a password</div></pre></td></tr></table></figure>
 <h2 id="选定数据库"><a href="#选定数据库" class="headerlink" title="选定数据库"></a>选定数据库</h2><p>默认数据库为0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select 0</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="单条查询"><a href="#单条查询" class="headerlink" title="单条查询"></a>单条查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keys &quot;key&quot;</div></pre></td></tr></table></figure>
 <h3 id="多条查询"><a href="#多条查询" class="headerlink" title="多条查询"></a>多条查询</h3><p>使用通配符*<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keys &quot;key*&quot;</div></pre></td></tr></table></figure></p>
 <h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="单独删除key"><a href="#单独删除key" class="headerlink" title="单独删除key"></a>单独删除key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">del keys</div></pre></td></tr></table></figure>
