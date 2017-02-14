@@ -99,7 +99,7 @@
 <meta property="og:description" content="phpMyAdmin导出excel文件，在解析时遇到的问题phpMyAdmin很多人都喜欢使用的WEB数据库管理系统，前几年非常流行，刚好我要查询对方数据库，他们就用的这个
 需求我的要求很简单，从他们库中导出数据文件，excel即可，然后自己解析，再进行处理数据">
 <meta property="og:image" content="http://oi1wvrjc2.bkt.clouddn.com/17-2-8/44364820-file_1486535637317_11f27.png">
-<meta property="og:updated_time" content="2017-02-08T06:43:55.387Z">
+<meta property="og:updated_time" content="2017-02-14T02:39:30.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="phpMyAdmin导出excel文件解析时的坑">
 <meta name="twitter:description" content="phpMyAdmin导出excel文件，在解析时遇到的问题phpMyAdmin很多人都喜欢使用的WEB数据库管理系统，前几年非常流行，刚好我要查询对方数据库，他们就用的这个
@@ -327,6 +327,24 @@
           </span>
 
           
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -373,7 +391,7 @@
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>如果是html文件，那首选html解析的包就可以，不用去做正则匹配，这类解析包也有很多，比如：</p>
 <p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/" target="_blank" rel="external">beautifulsoup</a></p>
 <p><a href="https://pythonhosted.org/pyquery" target="_blank" rel="external">pyquery</a></p>
-<h4 id="选用"><a href="#选用" class="headerlink" title="选用"></a>选用</h4><p>在这里选用我的宗旨就是方便，人生苦短嘛。<br>所以就用pyquery喽。<br>语法非常方便！～<br>pyquery完全API点击这里：<a href="[pyquery](https://pythonhosted.org/pyquery/api.html">PyQuery-API</a>)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery</div><div class="line">f = PyQuery(<span class="string">"/home/hanz/o12_adsf.xls"</span>)</div><div class="line">doo = f(<span class="string">"tr"</span>)</div><div class="line">doo.text()</div></pre></td></tr></table></figure></p>
+<h4 id="选用"><a href="#选用" class="headerlink" title="选用"></a>选用</h4><p>在这里选用我的宗旨就是方便，人生苦短嘛。<br>所以就用pyquery喽。<br>语法非常方便！～<br>pyquery完全API点击这里：<a href="https://pythonhosted.org/pyquery/api.html" target="_blank" rel="external">PyQuery-API</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery</div><div class="line">f = PyQuery(<span class="string">"/home/hanz/o12_adsf.xls"</span>)</div><div class="line">doo = f(<span class="string">"tr"</span>)</div><div class="line">doo.text()</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -431,6 +449,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/13/django-admin的个性定制与方法覆写/" rel="prev" title="django admin的个性定制与方法覆写">
+                django admin的个性定制与方法覆写 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -528,7 +550,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -545,7 +567,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
