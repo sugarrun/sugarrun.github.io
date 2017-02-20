@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2017-02-14T06:25:39.483Z</updated>
+  <updated>2017-02-20T01:54:40.106Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -14,6 +14,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>url的解析方式</title>
+    <link href="http://sugar.yer.pub/2017/02/20/url%E7%9A%84%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F/"/>
+    <id>http://sugar.yer.pub/2017/02/20/url的解析方式/</id>
+    <published>2017-02-20T01:23:58.000Z</published>
+    <updated>2017-02-20T01:54:40.106Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="URL的解析方式，简单有效"><a href="#URL的解析方式，简单有效" class="headerlink" title="URL的解析方式，简单有效"></a>URL的解析方式，简单有效</h2><h3 id="URL的组成"><a href="#URL的组成" class="headerlink" title="URL的组成"></a>URL的组成</h3><h4 id="举例url："><a href="#举例url：" class="headerlink" title="举例url："></a>举例url：</h4><a id="more"></a>
+<p><code>https://www.domain.org/this-is-path?username=w&amp;password=p</code></p>
+<ul>
+<li><code>scheme</code> 如：https://</li>
+<li><code>domain</code> 如：www.domain.org</li>
+<li><code>path</code> 如：this-is-path</li>
+<li><code>params</code> 如：username=w&amp;password=p <code>params</code> 数据成对出现</li>
+</ul>
+<h3 id="解析URL"><a href="#解析URL" class="headerlink" title="解析URL"></a>解析URL</h3><h4 id="引用包urlparse"><a href="#引用包urlparse" class="headerlink" title="引用包urlparse"></a>引用包urlparse</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urlparse</div><div class="line">url = <span class="string">"https://www.domain.org/this-is-path?username=w&amp;password=p"</span></div><div class="line">pa = urlparse.urlparse(url)</div><div class="line"><span class="keyword">print</span> pa</div></pre></td></tr></table></figure>
+<p>将url解析成了对象，如下：<br><code>Out[28]: ParseResult(scheme=&#39;https&#39;, netloc=&#39;www.domain.org&#39;, path=&#39;/this-is-path&#39;, params=&#39;&#39;, query=&#39;username=w&amp;password=p&#39;, fragment=&#39;&#39;)</code></p>
+<h4 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">In [29]: pa.scheme</div><div class="line">Out[29]: &apos;https&apos;</div><div class="line"></div><div class="line">In [30]: pa.netloc</div><div class="line">Out[30]: &apos;www.domain.org&apos;</div><div class="line"></div><div class="line">In [34]: pa.hostname</div><div class="line">Out[34]: &apos;www.domain.org&apos;</div><div class="line"></div><div class="line">In [37]: pa.path</div><div class="line">Out[37]: &apos;/this-is-path&apos;</div><div class="line"></div><div class="line">In [38]: pa.query</div><div class="line">Out[38]: &apos;username=w&amp;password=p&apos;</div></pre></td></tr></table></figure>
+<h4 id="如何将参数格式化成dict类型？"><a href="#如何将参数格式化成dict类型？" class="headerlink" title="如何将参数格式化成dict类型？"></a>如何将参数格式化成dict类型？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [40]: urlparse.parse_qs(pa.query)</div><div class="line">Out[40]: &#123;&apos;password&apos;: [&apos;p&apos;], &apos;username&apos;: [&apos;w&apos;]&#125;</div><div class="line"></div><div class="line">In [41]: dict(urlparse.parse_qsl(pa.query))</div><div class="line">Out[41]: &#123;&apos;password&apos;: &apos;p&apos;, &apos;username&apos;: &apos;w&apos;&#125;</div></pre></td></tr></table></figure>
+<h4 id="带参数据GET请求"><a href="#带参数据GET请求" class="headerlink" title="带参数据GET请求"></a>带参数据GET请求</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">url = <span class="string">"https://www.domain.org/this-is-path"</span></div><div class="line">params = &#123;</div><div class="line"><span class="string">"username"</span>: <span class="string">"w"</span>,</div><div class="line"><span class="string">"password"</span>:<span class="string">"p"</span>,</div><div class="line">&#125;</div><div class="line">res = requests.get(url=url, params=params)</div></pre></td></tr></table></figure>
+<h4 id="如果你有一段raw形式的参数要进行请求，可以使用parse-qs进行格式化后请求"><a href="#如果你有一段raw形式的参数要进行请求，可以使用parse-qs进行格式化后请求" class="headerlink" title="如果你有一段raw形式的参数要进行请求，可以使用parse_qs进行格式化后请求"></a>如果你有一段raw形式的参数要进行请求，可以使用parse_qs进行格式化后请求</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> urlparse</div><div class="line">url = <span class="string">"https://www.domain.org/this-is-path"</span></div><div class="line">p = <span class="string">"username=w&amp;password=p"</span></div><div class="line">params = urlparse.parse_qs(p)</div><div class="line">res = requests.get(url=url, params=params)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;URL的解析方式，简单有效&quot;&gt;&lt;a href=&quot;#URL的解析方式，简单有效&quot; class=&quot;headerlink&quot; title=&quot;URL的解析方式，简单有效&quot;&gt;&lt;/a&gt;URL的解析方式，简单有效&lt;/h2&gt;&lt;h3 id=&quot;URL的组成&quot;&gt;&lt;a href=&quot;#URL的组成&quot; class=&quot;headerlink&quot; title=&quot;URL的组成&quot;&gt;&lt;/a&gt;URL的组成&lt;/h3&gt;&lt;h4 id=&quot;举例url：&quot;&gt;&lt;a href=&quot;#举例url：&quot; class=&quot;headerlink&quot; title=&quot;举例url：&quot;&gt;&lt;/a&gt;举例url：&lt;/h4&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
+    
+      <category term="url" scheme="http://sugar.yer.pub/tags/url/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>django 添加联合唯一索引</title>
+    <link href="http://sugar.yer.pub/2017/02/16/django-%E6%B7%BB%E5%8A%A0%E8%81%94%E5%90%88%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95/"/>
+    <id>http://sugar.yer.pub/2017/02/16/django-添加联合唯一索引/</id>
+    <published>2017-02-16T08:25:29.000Z</published>
+    <updated>2017-02-20T01:56:20.941Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Django-添加联系唯一索引方法"><a href="#Django-添加联系唯一索引方法" class="headerlink" title="Django 添加联系唯一索引方法"></a>Django 添加联系唯一索引方法</h2><blockquote>
+<p>联合唯一索引，指的是，多个键值相同时保持唯一，添加方法如下：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyModel</span><span class="params">(models.Model)</span>:</span></div><div class="line">    name = models.CharField(max_length=<span class="number">200</span>, verbose_name=<span class="string">"name"</span>)</div><div class="line">    version = models.IntegerField(max_length=<span class="number">100</span>, verbose_name=<span class="string">"version"</span>)</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span><span class="params">()</span>:</span></div><div class="line">        verbose_name = <span class="string">"mymodel"</span></div><div class="line">        verbose_name_plural = <span class="string">"mymodel"</span></div><div class="line">        unique_together = ((<span class="string">"name"</span>, <span class="string">"version"</span>),)</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Django-添加联系唯一索引方法&quot;&gt;&lt;a href=&quot;#Django-添加联系唯一索引方法&quot; class=&quot;headerlink&quot; title=&quot;Django 添加联系唯一索引方法&quot;&gt;&lt;/a&gt;Django 添加联系唯一索引方法&lt;/h2&gt;&lt;blockquote&gt;
+
+    
+    </summary>
+    
+      <category term="django" scheme="http://sugar.yer.pub/categories/django/"/>
+    
+    
+      <category term="联合唯一索引" scheme="http://sugar.yer.pub/tags/%E8%81%94%E5%90%88%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Many-to-many模型的创建、添加、保存 | Django</title>
+    <link href="http://sugar.yer.pub/2017/02/16/Many-to-many%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E6%B7%BB%E5%8A%A0%E3%80%81%E4%BF%9D%E5%AD%98-Django/"/>
+    <id>http://sugar.yer.pub/2017/02/16/Many-to-many模型的创建、添加、保存-Django/</id>
+    <published>2017-02-16T06:59:21.000Z</published>
+    <updated>2017-02-16T07:08:10.325Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Django项目中ManyToMany数据类型"><a href="#Django项目中ManyToMany数据类型" class="headerlink" title="Django项目中ManyToMany数据类型"></a>Django项目中ManyToMany数据类型</h2><h3 id="介绍ManyToMany结构"><a href="#介绍ManyToMany结构" class="headerlink" title="介绍ManyToMany结构"></a>介绍ManyToMany结构</h3><p>ManyToMany即多对多关系</p>
+<p>最简单的例如大学生选课</p>
+<p>一个学生可以选多门课，而一门课也可以被多个学生选休，这就是多对多的关系；</p>
+<h3 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h3><a id="more"></a>
+<h4 id="添加多对多数据模型"><a href="#添加多对多数据模型" class="headerlink" title="添加多对多数据模型"></a>添加多对多数据模型</h4><h4 id="查看数据库中的具体实现"><a href="#查看数据库中的具体实现" class="headerlink" title="查看数据库中的具体实现"></a>查看数据库中的具体实现</h4><h4 id="外部保存多对多关系数据的方法"><a href="#外部保存多对多关系数据的方法" class="headerlink" title="外部保存多对多关系数据的方法"></a>外部保存多对多关系数据的方法</h4><h4 id="官方参考文档"><a href="#官方参考文档" class="headerlink" title="官方参考文档"></a>官方参考文档</h4><p><a href="https://docs.djangoproject.com/en/1.10/ref/models/fields/#django.db.models.ManyToManyField" target="_blank" rel="external">ManyToMany数据类型</a></p>
+<p><a href="https://docs.djangoproject.com/en/1.10/topics/db/examples/many_to_many/" target="_blank" rel="external">ManyToMany示例</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Django项目中ManyToMany数据类型&quot;&gt;&lt;a href=&quot;#Django项目中ManyToMany数据类型&quot; class=&quot;headerlink&quot; title=&quot;Django项目中ManyToMany数据类型&quot;&gt;&lt;/a&gt;Django项目中ManyToMany数据类型&lt;/h2&gt;&lt;h3 id=&quot;介绍ManyToMany结构&quot;&gt;&lt;a href=&quot;#介绍ManyToMany结构&quot; class=&quot;headerlink&quot; title=&quot;介绍ManyToMany结构&quot;&gt;&lt;/a&gt;介绍ManyToMany结构&lt;/h3&gt;&lt;p&gt;ManyToMany即多对多关系&lt;/p&gt;
+&lt;p&gt;最简单的例如大学生选课&lt;/p&gt;
+&lt;p&gt;一个学生可以选多门课，而一门课也可以被多个学生选休，这就是多对多的关系；&lt;/p&gt;
+&lt;h3 id=&quot;项目中实践&quot;&gt;&lt;a href=&quot;#项目中实践&quot; class=&quot;headerlink&quot; title=&quot;项目中实践&quot;&gt;&lt;/a&gt;项目中实践&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="django" scheme="http://sugar.yer.pub/categories/django/"/>
+    
+    
+      <category term="many-to-many" scheme="http://sugar.yer.pub/tags/many-to-many/"/>
+    
+      <category term="model" scheme="http://sugar.yer.pub/tags/model/"/>
+    
+  </entry>
   
   <entry>
     <title>django admin的个性定制与方法覆写</title>
@@ -195,11 +292,11 @@
 <h3 id="template"><a href="#template" class="headerlink" title="template"></a>template</h3><blockquote>
 <p>模板中使用jquery的get方法，将数据组装后传，调用后端方法，进行请求，并接收回传结果并显示。<br>我是通过对id后面的数值判断拿的参数值，应该还有其他的方法，后期再研究一下。</p>
 </blockquote>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">extends</span></span> "base/head.html" %&#125;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> title %&#125;</span></div><div class="line">    <span class="template-variable">&#123;&#123; title &#125;&#125;</span> detail</div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> env %&#125;</span></div><div class="line">    <span class="template-variable">&#123;&#123; env &#125;&#125;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> script %&#125;</span></div><div class="line">    &lt;script type="application/javascript"&gt;</div><div class="line">        $(document).ready(function () &#123;</div><div class="line">            $("button").click(function () &#123;</div><div class="line">                <span class="comment">&#123;#                alert($(this).attr("id").slice(3));#&#125;</span></div><div class="line">                var nowid = $(this).attr("id").slice(3);</div><div class="line">                $.get("<span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> "interface:reqfunc" %&#125;</span>",</div><div class="line">                        &#123;</div><div class="line">                            url: $("#comurl" + nowid).text(),</div><div class="line">                        &#125;,</div><div class="line">                        function (ret) &#123;</div><div class="line">                            $("#code" + nowid).text(ret.code);</div><div class="line">                            $("#time" + nowid).text(ret.time + " S");</div><div class="line">                            $("#content" + nowid).text(ret.content);</div><div class="line">                        &#125;);</div><div class="line">            &#125;);</div><div class="line">            $("#hidden").click(function () &#123;</div><div class="line">                $("#cont").toggle(speed, callback);</div><div class="line">            &#125;)</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> content %&#125;</span></div><div class="line">    &lt;h1&gt;<span class="template-variable">&#123;&#123; url.name &#125;&#125;</span>&lt;/h1&gt;</div><div class="line">    &lt;table class="table table-bordered"&gt;</div><div class="line">        &lt;thead&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;th&gt;num&lt;/th&gt;</div><div class="line">            &lt;th&gt;接口&lt;/th&gt;</div><div class="line">            &lt;th&gt;code&lt;/th&gt;</div><div class="line">            &lt;th&gt;time&lt;/th&gt;</div><div class="line">            &lt;th&gt;run&lt;/th&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;/thead&gt;</div><div class="line">        &lt;tbody&gt;</div><div class="line">        <span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> i <span class="keyword">in</span> params %&#125;</span></div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;td&gt;<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>&lt;/td&gt;</div><div class="line">                &lt;td&gt;&lt;span</div><div class="line">                        id="comurl<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>"&gt;<span class="template-variable">&#123;&#123; url.schame &#125;&#125;</span><span class="template-variable">&#123;&#123; url.domain &#125;&#125;</span><span class="template-variable">&#123;&#123; url.version.version &#125;&#125;</span><span class="template-variable">&#123;&#123; url.path &#125;&#125;</span>?<span class="template-variable">&#123;&#123; i.query &#125;&#125;</span>&lt;/span&gt;</div><div class="line">                &lt;/td&gt;</div><div class="line">                &lt;td&gt;&lt;span id="code<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>" class="label label-danger"&gt;&lt;/span&gt;&lt;/td&gt;</div><div class="line">                &lt;td&gt;&lt;span id="time<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>" class="label label-danger"&gt;&lt;/span&gt;&lt;/td&gt;</div><div class="line">                &lt;td&gt;</div><div class="line">                    &lt;button id="run<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>"&gt;run&lt;/button&gt;</div><div class="line">                &lt;/td&gt;</div><div class="line">                                &lt;table id="cont" border="1"&gt;</div><div class="line">                                    &lt;tr&gt;</div><div class="line">                                        <span class="template-tag">&#123;% <span class="name"><span class="name">autoescape</span></span> off %&#125;</span></div><div class="line">                                        &lt;td id="content<span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span>"&gt;&lt;/td&gt;</div><div class="line">                                        <span class="template-tag">&#123;% <span class="name"><span class="name">endautoescape</span></span> %&#125;</span></div><div class="line">                                    &lt;td id="hidden"&gt;hidden&lt;/td&gt;</div><div class="line">                                    &lt;/tr&gt;</div><div class="line">                                &lt;/table&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">        &lt;/tbody&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span></div></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">extends</span></span> "base/head.html" %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> title %&#125;</span><span class="xml"></span></div><div class="line">    <span class="template-variable">&#123;&#123; title &#125;&#125;</span><span class="xml"> detail</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> env %&#125;</span><span class="xml"></span></div><div class="line">    <span class="template-variable">&#123;&#123; env &#125;&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> script %&#125;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">        $(document).ready(function () &#123;</div><div class="line">            $("button").click(function () &#123;</div><div class="line">                <span class="comment">&#123;#                alert($(this).attr("id").slice(3));#&#125;</span><span class="xml"><span class="undefined"></span></span></div><div class="line">                var nowid = $(this).attr("id").slice(3);</div><div class="line">                $.get("<span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> "interface:reqfunc" %&#125;</span><span class="xml"><span class="undefined">",</span></span></div><div class="line">                        &#123;</div><div class="line">                            url: $("#comurl" + nowid).text(),</div><div class="line">                        &#125;,</div><div class="line">                        function (ret) &#123;</div><div class="line">                            $("#code" + nowid).text(ret.code);</div><div class="line">                            $("#time" + nowid).text(ret.time + " S");</div><div class="line">                            $("#content" + nowid).text(ret.content);</div><div class="line">                        &#125;);</div><div class="line">            &#125;);</div><div class="line">            $("#hidden").click(function () &#123;</div><div class="line">                $("#cont").toggle(speed, callback);</div><div class="line">            &#125;)</div><div class="line">        &#125;);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">block</span></span> content %&#125;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="template-variable">&#123;&#123; url.name &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-bordered"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>num<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>接口<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>code<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>time<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>run<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></div><div class="line">        <span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> i <span class="keyword">in</span> params %&#125;</span><span class="xml"></span></div><div class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">span</span></span></div><div class="line">                        <span class="attr">id</span>=<span class="string">"comurl</span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; url.schame &#125;&#125;</span><span class="xml"></span><span class="template-variable">&#123;&#123; url.domain &#125;&#125;</span><span class="xml"></span><span class="template-variable">&#123;&#123; url.version.version &#125;&#125;</span><span class="xml"></span><span class="template-variable">&#123;&#123; url.path &#125;&#125;</span><span class="xml">?</span><span class="template-variable">&#123;&#123; i.query &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"code</span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">class</span>=<span class="string">"label label-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"time</span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">class</span>=<span class="string">"label label-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"run</span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>run<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"cont"</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">                                        <span class="template-tag">&#123;% <span class="name"><span class="name">autoescape</span></span> off %&#125;</span><span class="xml"></span></div><div class="line">                                        <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"content</span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></div><div class="line">                                        <span class="template-tag">&#123;% <span class="name"><span class="name">endautoescape</span></span> %&#125;</span><span class="xml"></span></div><div class="line">                                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"hidden"</span>&gt;</span>hidden<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endblock</span></span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
 <h3 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h3><blockquote>
 <p>需要将视图层的数据做url指向</p>
 </blockquote>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url(r'^reqfunc/$', views.req_func, name="reqfunc"),</div></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml">url(r'^reqfunc/$', views.req_func, name="reqfunc"),</span></div></pre></td></tr></table></figure>
 <p>目前就这些，参考资料后补。</p>
 ]]></content>
     
@@ -765,96 +862,6 @@
       <category term="sort" scheme="http://sugar.yer.pub/tags/sort/"/>
     
       <category term="sorted" scheme="http://sugar.yer.pub/tags/sorted/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://sugar.yer.pub/2016/12/14/hello-world/"/>
-    <id>http://sugar.yer.pub/2016/12/14/hello-world/</id>
-    <published>2016-12-14T07:33:22.796Z</published>
-    <updated>2016-12-14T07:33:22.796Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="helloworld" scheme="http://sugar.yer.pub/tags/helloworld/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单递归</title>
-    <link href="http://sugar.yer.pub/2016/12/14/%E7%AE%80%E5%8D%95%E9%80%92%E5%BD%92/"/>
-    <id>http://sugar.yer.pub/2016/12/14/简单递归/</id>
-    <published>2016-12-14T02:57:29.000Z</published>
-    <updated>2016-12-14T07:44:54.495Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一些简单功能的递归实现"><a href="#一些简单功能的递归实现" class="headerlink" title="一些简单功能的递归实现"></a>一些简单功能的递归实现</h1><h2 id="递归的实现原理"><a href="#递归的实现原理" class="headerlink" title="递归的实现原理"></a>递归的实现原理</h2><a id="more"></a>
-<h2 id="计算列表长度，不限深度"><a href="#计算列表长度，不限深度" class="headerlink" title="计算列表长度，不限深度"></a>计算列表长度，不限深度</h2><p>如：有列表如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>), (<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)],[(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>), (<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>)]]</div></pre></td></tr></table></figure></p>
-<p>实现方式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_length</span><span class="params">(data)</span>:</span></div><div class="line">    length = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</div><div class="line">        <span class="keyword">if</span> type(i) == list:</div><div class="line">            length += get_length(i)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            length += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> length</div></pre></td></tr></table></figure></p>
-<h2 id="通过递归找出json中value值为链接"><a href="#通过递归找出json中value值为链接" class="headerlink" title="通过递归找出json中value值为链接"></a>通过递归找出json中value值为链接</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一些简单功能的递归实现&quot;&gt;&lt;a href=&quot;#一些简单功能的递归实现&quot; class=&quot;headerlink&quot; title=&quot;一些简单功能的递归实现&quot;&gt;&lt;/a&gt;一些简单功能的递归实现&lt;/h1&gt;&lt;h2 id=&quot;递归的实现原理&quot;&gt;&lt;a href=&quot;#递归的实现原理&quot; class=&quot;headerlink&quot; title=&quot;递归的实现原理&quot;&gt;&lt;/a&gt;递归的实现原理&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
-    
-      <category term="递归" scheme="http://sugar.yer.pub/tags/%E9%80%92%E5%BD%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python风格指南</title>
-    <link href="http://sugar.yer.pub/2016/12/13/python%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/"/>
-    <id>http://sugar.yer.pub/2016/12/13/python风格指南/</id>
-    <published>2016-12-13T07:35:16.000Z</published>
-    <updated>2016-12-14T07:35:48.302Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
-<p>有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。</p>
-</blockquote>
-<p><a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/" target="_blank" rel="external">python风格规范</a><br><a id="more"></a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;有一个好的代码风格并且遵循规范还是很有必要的，这决定了你的代码能被多少人读懂。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/&quot;&gt;python风格规范&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-      <category term="标准" scheme="http://sugar.yer.pub/categories/python/%E6%A0%87%E5%87%86/"/>
-    
-    
-      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
-    
-      <category term="风格" scheme="http://sugar.yer.pub/tags/%E9%A3%8E%E6%A0%BC/"/>
     
   </entry>
   
