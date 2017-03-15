@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sugar.yer.pub/about/index.html</loc>
+    
+    <lastmod>2017-03-15T19:10:39.210Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://sugar.yer.pub/2017/02/16/django-%E6%B7%BB%E5%8A%A0%E8%81%94%E5%90%88%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95/</loc>
     
     <lastmod>2017-02-20T01:56:20.941Z</lastmod>
@@ -236,13 +243,6 @@
     <loc>http://sugar.yer.pub/2016/12/09/New-World/</loc>
     
     <lastmod>2016-12-12T11:44:17.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sugar.yer.pub/about/index.html</loc>
-    
-    <lastmod>2016-12-12T11:06:33.620Z</lastmod>
     
   </url>
   
