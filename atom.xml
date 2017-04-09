@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sugar.yer.pub/"/>
-  <updated>2017-02-20T01:54:40.106Z</updated>
+  <updated>2017-04-09T07:56:04.955Z</updated>
   <id>http://sugar.yer.pub/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pycharm license server</title>
+    <link href="http://sugar.yer.pub/2017/04/09/pycharm-license-server/"/>
+    <id>http://sugar.yer.pub/2017/04/09/pycharm-license-server/</id>
+    <published>2017-04-09T07:52:58.000Z</published>
+    <updated>2017-04-09T07:56:04.955Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="域名和端口如下"><a href="#域名和端口如下" class="headerlink" title="域名和端口如下"></a>域名和端口如下</h2><h2 id="JetBrains-License-Server-url-as-follows："><a href="#JetBrains-License-Server-url-as-follows：" class="headerlink" title="JetBrains License Server url as follows："></a>JetBrains License Server url as follows：</h2><p><a href="http://pycharm.tyr.gift:8888" target="_blank" rel="external">http://pycharm.tyr.gift:8888</a></p>
+<p>—转—</p>
+<blockquote>
+<p>搭了一个支持JetBrains全系列产品的License Server，理论上支持以下所有版本：</p>
+</blockquote>
+<ul>
+<li>IntelliJ IDEA</li>
+<li>PhpStorm</li>
+<li>PyCharm</li>
+<li>RubyMine</li>
+<li>WebStorm</li>
+<li>AppCode</li>
+<li>CLion</li>
+<li>DataGrip</li>
+<li>ReSharper</li>
+<li>ReSharper C++</li>
+<li>dotTrace</li>
+<li>dotMemory</li>
+<li>dotCover</li>
+<li>dotPeek</li>
+</ul>
+<blockquote>
+<p>不过本人仅测试了pycharm。个人搭建教程请参考idea.lanyus.com</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;域名和端口如下&quot;&gt;&lt;a href=&quot;#域名和端口如下&quot; class=&quot;headerlink&quot; title=&quot;域名和端口如下&quot;&gt;&lt;/a&gt;域名和端口如下&lt;/h2&gt;&lt;h2 id=&quot;JetBrains-License-Server-url-as-follows：&quot;&gt;&lt;a 
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>url的解析方式</title>
@@ -824,44 +866,6 @@
       <category term="单例" scheme="http://sugar.yer.pub/tags/%E5%8D%95%E4%BE%8B/"/>
     
       <category term="设计模式" scheme="http://sugar.yer.pub/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python中的排序操作</title>
-    <link href="http://sugar.yer.pub/2016/12/15/python%E4%B8%AD%E7%9A%84%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C/"/>
-    <id>http://sugar.yer.pub/2016/12/15/python中的排序操作/</id>
-    <published>2016-12-15T10:25:11.000Z</published>
-    <updated>2016-12-16T02:19:14.085Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="详细介绍python中的排序方法-sort-sorted"><a href="#详细介绍python中的排序方法-sort-sorted" class="headerlink" title="详细介绍python中的排序方法(sort, sorted)"></a>详细介绍python中的排序方法(sort, sorted)</h1><blockquote>
-<p>排序操作在日常工作中会经常用到，这里把python的各类排序方法来具体说明</p>
-</blockquote>
-<a id="more"></a>
-<p>本文整理自<a href="https://mozillazg.com/2013/03/python-sorting-how-to.html" target="_blank" rel="external">mozillazg’s Blog</a></p>
-<p>英文原文为：<a href="https://wiki.python.org/moin/HowTo/Sorting/" target="_blank" rel="external">HowTo/Sorting</a>，可阅读原文</p>
-<p>Python 内置的<code>sort()</code>方法可以实现对列表的原地排序功能。<br>内置的<code>sorted()</code>函数则不会修改原列表，而是生成一个经过排序的新列表。</p>
-<p>下面总结一些常用的排序方法。</p>
-<h3 id="基本排序"><a href="#基本排序" class="headerlink" title="基本排序"></a>基本排序</h3><h3 id="可选参数及高级用法"><a href="#可选参数及高级用法" class="headerlink" title="可选参数及高级用法"></a>可选参数及高级用法</h3><h4 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h4><h4 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a>Operator</h4><h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><h4 id="平衡（Stability）排序和复杂排序"><a href="#平衡（Stability）排序和复杂排序" class="headerlink" title="平衡（Stability）排序和复杂排序"></a>平衡（Stability）排序和复杂排序</h4><h4 id="根据多个参数无固定顺序排序"><a href="#根据多个参数无固定顺序排序" class="headerlink" title="根据多个参数无固定顺序排序"></a>根据多个参数无固定顺序排序</h4><h3 id="以前的实现方法"><a href="#以前的实现方法" class="headerlink" title="以前的实现方法"></a>以前的实现方法</h3><h4 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h4><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;详细介绍python中的排序方法-sort-sorted&quot;&gt;&lt;a href=&quot;#详细介绍python中的排序方法-sort-sorted&quot; class=&quot;headerlink&quot; title=&quot;详细介绍python中的排序方法(sort, sorted)&quot;&gt;&lt;/a&gt;详细介绍python中的排序方法(sort, sorted)&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;排序操作在日常工作中会经常用到，这里把python的各类排序方法来具体说明&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://sugar.yer.pub/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://sugar.yer.pub/tags/python/"/>
-    
-      <category term="排序" scheme="http://sugar.yer.pub/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="sort" scheme="http://sugar.yer.pub/tags/sort/"/>
-    
-      <category term="sorted" scheme="http://sugar.yer.pub/tags/sorted/"/>
     
   </entry>
   
